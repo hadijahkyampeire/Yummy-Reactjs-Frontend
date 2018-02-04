@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette|Petit+Formal+Script|Tillana:400,500,600,700,800');
+.section{
+	background-color:grey;
+	height:575px;
+	width:1050px;
+	float:right;
+	opacity:0.9;
+
+	border-radius:15px;
+
+}
+.background-image{
+    background: url("images/bg.jpg") no-repeat;
+    padding:0 0 19% 0;
+}
+.background{
+    background: url("images/dashboard.jpeg") repeat;
+    /* padding:0 0 32% 0; */
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: auto 100% ;
+    padding: 11% 0 19% 0;
+}
+#updatebar{
+    text-align: left;
+    background: palegreen;
+}
+#main {
+    padding-right: 100px;
+    padding-left: 100px;
+    text-align: center; 
+}
+#header {
+   padding: 5px;
+   background-color: black;
+   height: 67px;  
+}
+#menu{
+    float: right;
+    padding-top: 15px;
+}  
+#recipebar{
+    background: lightgrey;
+}
+#signup {
+    width: 80px;
+    height: 30px;
+    background-color:rgb(32, 178, 32);
+    border: solid 1px #000;
+    border-radius: 10px;
+    float:right;
+}
+#signin{
+    width: 80px;
+    height: 30px;
+    background-color:lightskyblue;
+    border: solid 1px #000;
+    border-radius: 10px
+}
+.btnrecipeedit{
+    width: 100px;
+    height: 30px;
+    background-color:rgb(102, 126, 139);
+    border: solid 1px #000;
+    border-radius: 10px
+    
+}
+.btnrecipeadd{
+    width: 100px;
+    height: 30px;
+    background-color:rgb(73, 167, 94);
+    border: solid 1px #000;
+    border-radius: 10px
+    
+}
+.btnrecipedel{
+    width: 100px;
+    height: 30px;
+    background-color:rgb(172, 66, 66);
+    border: solid 1px #000;
+    border-radius: 10px
+    
+}
+#welcome{
+   text-align: center; 
+   padding-top: 341px; 
+   color: #000;
+   background: #ffffff3d;
+   font-family: 'Tillana', cursive;
+   font-size:800px;
+
+}
+.btn-btn-default{
+    border-radius: 10px;
+    width: 80px;
+    height: 30px;
+    float:left;
+}
+#author{
+    color: aqua;
+    float: left;
+    font-family: 'Suranna', serif;
+}
+#signbar{
+font-family: 'Tillana', cursive;
+background: #e0ffffb3;;
+text-align: center;
+height: 500px;
+width: 500px;
+display:block;
+padding:10px;
+font-size:20px;
+margin: 9px auto;
+}
+.addrecipe{
+    background:lightgray;
+}
+#views{
+background: lightgrey;
+}
+#logbar{
+    font-family: 'Tillana', cursive;
+    background: #798080b3;;
+    text-align: center;
+    height: 500px;
+    width: 500px;
+    display:block;
+    padding:10px;
+    font-size:20px;
+    margin: 9px auto;
+}
+#save {
+	position:absolute;
+	z-index: 10;
+	border:1;
+    background: green;
+    width: 80px;
+    height: 30px;
+    padding-bottom: 20px;
+}
+#home{
+    background: lightgrey;
+    width: 70px;
+    height: 20px;
+}
+#view{
+    background: lightblue;
+    width: 120px;
+    height: 20px;
+}
+.footer{
+    text-align: center;
+    background: lightblue;
+    padding-bottom: 5px;
+    height: 40px;
+
+}
+#words{
+text-align: center;
+}
+.change_link{
+    padding-bottom: 5px;
+    color:black;
+}
+.toregister{
+    color:green;
+    font-size: 30px;
+}
