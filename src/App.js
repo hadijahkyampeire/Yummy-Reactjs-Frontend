@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Notifications from 'react-notify-toast';
 
-import Signup from './components/signup';
-import Login from './components/login';
-import Categories from './components/dashboard';
-import Landing from './components/landing';
+import Signup from './components/auth/signup';
+import Login from './components/auth/login';
+import Categories from './components/categories/dashboard';
+
+import Landing from './components/auth/landing';
 import './css/style.css';
 
 const NotFound = () => (

@@ -1,0 +1,56 @@
+import React, { Component } from 'react';
+import axios from 'axios';
+import CreateCategory from './CreateCategory';
+
+const Category =(props)=>(
+    <div className="col-md-3 col-sm-6">
+    <div className="card " style={{width: '18rem'}}>
+  <div className="card-body">
+    <h5 className="card-title">{props.name}</h5>
+    <button className="btn btn-sm btn-success card-link" value="Edit Category" ><i className="fa fa-edit"/></button>
+    <button className="btn btn-sm btn-danger card-link" value="Delete Category"><i className="fa fa-trash"/></button>
+  </div>
+</div>
+</div>
+)
+
+class Categories extends Component {
+    state={
+        categories: [],
+    }
+    getCategories = ()=>{
+        const headers={Authorization:`Bearer ${localStorage.getItem('accessToken')}`}
+        axios.get('http://127.0.0.1:5000/api/v1/categories/',{headers})
+        .then(response=>{
+            this.setState({
+                categories:response.data.categories
+            });
+            console.log(this.state.categories)
+        
+        }).catch(error=>{
+            console.log(error)
+        });
+    }
+    
+    componentWillMount(){
+       this.getCategories();
+    }
+  render() {
+      const categoryitems = this.state.categories.map(category=>(
+          <Category name={category.cat.name} key={category.cat.id}/>
+
+      ))
+      console.log(categoryitems)
+    return (
+      <div >
+        <CreateCategory getCategories={this.getCategories}/>
+        <div className="row">
+            {this.state.categories.length
+            ?categoryitems:null}
+
+        </div>
+      </div>
+    );
+  }
+}
+export default Categories;

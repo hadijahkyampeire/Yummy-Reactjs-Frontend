@@ -18,7 +18,7 @@
     /* padding:0 0 32% 0; */
     background-repeat: no-repeat;
     height: 100%;
-    background-size: auto 100% ;
+    background-size: cover;
     padding: 11% 0 19% 0;
 }
 #updatebar{
@@ -165,4 +165,10 @@ text-align: center;
 .toregister{
     color:green;
     font-size: 30px;
+}
+.btn{
+    margin-left: 5px;
+}
+#logout{
+    float: right;
 }
