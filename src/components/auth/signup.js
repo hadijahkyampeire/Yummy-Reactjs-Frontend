@@ -43,7 +43,7 @@ class Signup extends Component {
                     <h1> CREATE AN ACCOUNT TO GET STARTED</h1>
                     <form onSubmit={this.handleRegister} >
                         <div className="form-group">
-                            <label for="emailsignup" class="youmail" data-icon="e" >Email</label>
+                            <label htmlFor="emailsignup" class="youmail" data-icon="e" >Email</label>
                             <input type="email" id="emailsignup" name="email_field" className="form-control" placeholder=" email" onChange={this.handleInputChange} value={email_field}/>
                         </div>
                         <br />

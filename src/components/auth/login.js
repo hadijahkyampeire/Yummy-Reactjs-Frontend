@@ -17,7 +17,7 @@ handleInputChange = (event)=>{
     });
 }
 
-handleRegister = (event)=>{
+handleLogin = (event)=>{
     const {email_field:email, password_field:password} = this.state;
 
     event.preventDefault();
@@ -25,6 +25,7 @@ handleRegister = (event)=>{
     .then(response=>{
         notify.show(response.data.message, 'success', 4000);
         this.props.history.push('/dashboard');
+        localStorage.setItem('accessToken', response.data.access_token);
         console.log(response);
     }).catch(error=>{
         if(error.response){
@@ -41,18 +42,18 @@ handleRegister = (event)=>{
         <div id="logbar">
         <div className="form-group">
           <h1> LOGIN HERE</h1>
-          <form method="POST" name="login">
+          <form onSubmit={this.handleLogin} >
             <label>Email</label>
             <input type="email" name="email_field" className="form-control" onChange={this.handleInputChange} value={email_field}/>
             <label>Pass word</label>
             <input type="password" name="password_field"  className="form-control" onChange={this.handleInputChange} value={password_field}/>
             <br/>
-            <input name="signin" id="signin" value="LOGIN" type="Submit"/>
+            <input name="signin" id="signin" value="LOGIN" type="submit"/>
           </form>
-          <p class="change_link">
+          <div className="change_link">
 				Not a member yet ?
-				<Link to="/register">< h4 class="toregister" >Join us</h4></Link>
-								</p>
+				<Link to="/register">< h4 className="toregister" >Join us</h4></Link>
+								</div>
         </div>
         </div>
         <footer className="footer">
