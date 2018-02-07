@@ -72,7 +72,23 @@ export const Nav = () => (
     <div id="menu">
       <Link to="/login" id="signin" className="btn btn-nav">Login</Link>
       <Link to="/register" id="signup" className="btn btn-nav"> Signup</Link>
-      <Link to="/" id="logout" className="btn btn-warning btn-nav "> Logout</Link>
+      <div className="dropdown">
+        <span
+          className="btn btn-secondary dropdown-toggle"
+          href="#"
+          role="button"
+          id="dropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Account:
+        </span>
+        <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a className="dropdown-item" href="/">Logout</a>
+          <a className="dropdown-item" href="#">change password</a>
+        </div>
+      </div>
     </div>
   </div>
 
