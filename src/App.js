@@ -5,6 +5,7 @@ import Notifications from 'react-notify-toast';
 import Signup from './components/auth/signup';
 import Login from './components/auth/login';
 import Categories from './components/categories/dashboard';
+import { Nav } from './components/auth/landing';
 
 import Landing from './components/auth/landing';
 import './css/style.css';
@@ -18,6 +19,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
+          <Nav/>
           <Notifications />
           <Switch>
             <Route exact path="/" component={Landing} />

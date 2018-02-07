@@ -41,21 +41,19 @@
 }  
 #recipebar{
     background: lightgrey;
+    padding: 20px;
 }
 #signup {
-    width: 80px;
-    height: 30px;
     background-color:rgb(32, 178, 32);
-    border: solid 1px #000;
-    border-radius: 10px;
-    float:right;
 }
 #signin{
-    width: 80px;
-    height: 30px;
     background-color:lightskyblue;
+}
+
+.btn-nav {
+
     border: solid 1px #000;
-    border-radius: 10px
+    border-radius: 10px;
 }
 .btnrecipeedit{
     width: 100px;
@@ -161,6 +159,8 @@ text-align: center;
 .change_link{
     padding-bottom: 5px;
     color:black;
+    clear: both;
+    margin-top: 20px;
 }
 .toregister{
     color:green;
@@ -171,4 +171,12 @@ text-align: center;
 }
 #logout{
     float: right;
+}
+.category-card{
+ margin-top:10px;
+
+}
+#pagination{
+    padding-top:200px;
+    margin-right: 5px;
 }
