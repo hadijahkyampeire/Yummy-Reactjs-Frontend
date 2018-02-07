@@ -180,3 +180,6 @@ text-align: center;
     padding-top:200px;
     margin-right: 5px;
 }
+.dropdown{
+    float: right;
+}
