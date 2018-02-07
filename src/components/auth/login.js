@@ -43,12 +43,31 @@ handleLogin = (event)=>{
         <div className="form-group">
           <h1> LOGIN HERE</h1>
           <form onSubmit={this.handleLogin} >
-            <label>Email</label>
-            <input type="email" name="email_field" className="form-control" onChange={this.handleInputChange} value={email_field}/>
-            <label>Pass word</label>
-            <input type="password" name="password_field"  className="form-control" onChange={this.handleInputChange} value={password_field}/>
+          <div className="input-group">
+          <span className="input-group-addon" id="email"><i className='fa fa-envelope'/></span>
+          <input
+              type="email"
+              id="emailsignup"
+              name="email_field"
+              aria-describedby="email"
+              className="form-control"
+              placeholder="example@gmail.com"
+              onChange={this.handleInputChange}
+              value={email_field}/>
+      </div>
+      <br/>
+      <div className="input-group">
+          <span className="input-group-addon" id="email"><i className='fa fa-lock'/></span>
+          <input
+              type="password"
+              name="password_field"
+              className="form-control"
+              onChange={this.handleInputChange}
+              value={password_field}
+              placeholder="Password"/>
+      </div>
             <br/>
-            <input name="signin" id="signin" value="LOGIN" type="submit"/>
+            <input name="signin" className="btn-nav" id="signin" value="LOGIN" type="submit"/>
           </form>
           <div className="change_link">
 				Not a member yet ?
