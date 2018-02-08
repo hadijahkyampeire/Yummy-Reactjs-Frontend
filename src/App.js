@@ -4,8 +4,11 @@ import Notifications from 'react-notify-toast';
 
 import Signup from './components/auth/signup';
 import Login from './components/auth/login';
+import About from './components/auth/About';
+import ChangePassword from './components/auth/changePassword';
 import Categories from './components/categories/dashboard';
 import { Nav } from './components/auth/landing';
+import CreateRecipe from './components/recipes/CreateRecipes';
 
 import Landing from './components/auth/landing';
 import './css/style.css';
@@ -19,13 +22,16 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Nav/>
+          <Nav />
           <Notifications />
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Signup} />
+            <Route exact path="/about" component={About} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/changepassword" component={ChangePassword} />
             <Route exact path="/dashboard" component={Categories} />
+            <Route exact path="/recipes" component={CreateRecipe} />
             <Route component={NotFound} />
           </Switch>
         </div>

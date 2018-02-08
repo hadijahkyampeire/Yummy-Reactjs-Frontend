@@ -42,13 +42,9 @@ class CreateCategory extends Component {
                         <div className='row'>
                             <div
                                 className='col-xs-8  col-sm-6 offset-xs-2 offset-sm-3 col-md-4 offset-md-4'>
-                                <h2>Create Your Yummy Recipes</h2>
+                                <h2>Create Your Recipe Category</h2>
 
                                 <form onSubmit={this.handleAddCategories}>
-                                    <h3>
-                                        <label >Recipe category</label>
-                                    </h3>
-
                                     <div className="form-group">
                                         <input
                                             type="text"

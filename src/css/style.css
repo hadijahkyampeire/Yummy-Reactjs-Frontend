@@ -5,9 +5,7 @@
 	width:1050px;
 	float:right;
 	opacity:0.9;
-
 	border-radius:15px;
-
 }
 .background-image{
     background: url("images/bg.jpg") no-repeat;
@@ -19,7 +17,15 @@
     background-repeat: no-repeat;
     height: 100%;
     background-size: cover;
-    padding: 11% 0 19% 0;
+    padding: 10% 0 4% 0;
+}
+.logo{
+    background: url("images/images.png");
+    background-size: 100px 100px;
+    display:block;
+    width: 100px;
+    height: 100px;
+    float: left;
 }
 #updatebar{
     text-align: left;
@@ -32,8 +38,8 @@
 }
 #header {
    padding: 5px;
-   background-color: black;
-   height: 67px;  
+   background-color: rgb(59, 61, 50);
+   height: 110px;  
 }
 #menu{
     float: right;
@@ -41,6 +47,10 @@
 }  
 #recipebar{
     background: lightgrey;
+    padding: 20px;
+}
+#recipesbar{
+    background: peru;
     padding: 20px;
 }
 #signup {
@@ -118,7 +128,18 @@ background: lightgrey;
 }
 #logbar{
     font-family: 'Tillana', cursive;
-    background: #798080b3;;
+    background: #d3dadab3;;
+    text-align: center;
+    height: 500px;
+    width: 500px;
+    display:block;
+    padding:10px;
+    font-size:20px;
+    margin: 9px auto;
+}
+#changepassword{
+    font-family: 'Tillana', cursive;
+    background: #8adadab3;;
     text-align: center;
     height: 500px;
     width: 500px;
@@ -164,7 +185,7 @@ text-align: center;
 }
 .toregister{
     color:green;
-    font-size: 30px;
+    font-size: 20px;
 }
 .btn{
     margin-left: 5px;
@@ -177,9 +198,12 @@ text-align: center;
 
 }
 #pagination{
-    padding-top:200px;
+    padding-top:180px;
     margin-right: 5px;
 }
 .dropdown{
     float: right;
+}
+.description{
+    height:80px;
 }

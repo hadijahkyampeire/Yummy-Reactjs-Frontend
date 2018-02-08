@@ -68,6 +68,7 @@ class Clock extends React.Component {
 }
 export const Nav = () => (
   <div id="header">
+    <div className="logo" />
     <div id="author"><h3>React Yummy Recipes by KH</h3></div>
     <div id="menu">
       <Link to="/login" id="signin" className="btn btn-nav">Login</Link>
@@ -86,7 +87,7 @@ export const Nav = () => (
         </span>
         <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a className="dropdown-item" href="/">Logout</a>
-          <a className="dropdown-item" href="#">change password</a>
+          <a className="dropdown-item" href="/about">About</a>
         </div>
       </div>
     </div>
