@@ -41,7 +41,7 @@ handleLogin = (event)=>{
       <div className="background">
         <div id="logbar">
         <div className="form-group">
-          <h1> LOGIN HERE</h1>
+          <h1> LOGIN </h1>
           <form onSubmit={this.handleLogin} >
           <div className="input-group">
           <span className="input-group-addon" id="email"><i className='fa fa-envelope'/></span>
@@ -67,13 +67,41 @@ handleLogin = (event)=>{
               placeholder="Password"/>
       </div>
             <br/>
-            <input name="signin" className="btn-nav" id="signin" value="LOGIN" type="submit"/>
+            
+            <button name="signin" className="btn btn-default" id="signin" type="submit">
+            <i className="glyphicon glyphicon-log-in"> LOGIN</i></button>
           </form>
           <div className="change_link">
 				Not a member yet ?
-				<Link to="/register">< h4 className="toregister" >Join us</h4></Link>
+				<Link to="/register">< h4 className="toregister" >Register Here</h4></Link>
 								</div>
         </div>
+        <a href="#" data-toggle="modal" data-target="#forgot_password">ForgotPassword?</a>
+        <div class="modal fade" id="forgot_password" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reset password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                <input
+                    type="email"
+                    id="emailsignup"
+                    name="email_field"
+                    aria-describedby="email"
+                    className="form-control"
+                    placeholder="example@gmail.com"/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Send Email</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
         <footer className="footer">
           <p>&copy; Hadijah 2018</p>

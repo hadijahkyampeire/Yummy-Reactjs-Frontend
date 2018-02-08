@@ -9,6 +9,7 @@ const Category =(props)=>(
     <h5 className="card-title">{props.name}</h5>
     <button className="btn btn-sm btn-success card-link" value="Edit Category" ><i className="fa fa-edit"/></button>
     <button className="btn btn-sm btn-danger card-link" value="Delete Category"><i className="fa fa-trash"/></button>
+    <a href="/recipes"><h5 className="card-footer">View Recipes</h5></a>
   </div>
 </div>
 </div>
