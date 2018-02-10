@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import axiosInstance from '../Apicalls';
 
 class CreateRecipe extends Component {
     state = {
@@ -18,7 +18,7 @@ class CreateRecipe extends Component {
         }
         event.preventDefault()
         let category_id =this.props.match.params.id
-        axios.post(`http://127.0.0.1:5000/api/v1/categories/${category_id}/recipes`,{title,description},{headers})
+        axiosInstance.post(`categories/${category_id}/recipes`,{title,description},{headers})
         .then(response =>{
             this
                 .props

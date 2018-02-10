@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+import axiosInstance from '../Apicalls';
 import {notify} from 'react-notify-toast'
 import {Link} from 'react-router-dom';
 
@@ -18,8 +18,8 @@ class Signup extends Component {
         const {email_field: email, password_field: password} = this.state;
 
         event.preventDefault();
-        axios
-            .post('http://127.0.0.1:5000/api/v1/auth/register', {email, password})
+        axiosInstance
+            .post('auth/register', {email, password})
             .then(response => {
                 notify.show(response.data.message, 'success', 4000);
                 this

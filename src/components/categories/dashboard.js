@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {notify} from 'react-notify-toast';
-import axios from 'axios';
+import axiosInstance from '../Apicalls';
 import CreateCategory from './CreateCategory';
 
 const Category =(props)=>(
@@ -9,10 +9,10 @@ const Category =(props)=>(
     <div className="card " >
   <div className="card-block">
     <h5 className="card-title">{props.name}</h5>
-    <Link className="btn btn-sm btn-success card-link" data-toggle="modal" data-target="#edit_category" to="#"><i className="fa fa-edit"/></Link>
+    <Link className="btn btn-sm btn-success card-link" data-toggle="modal" data-target={`#edit_category${props.id}`} to="#"><i className="fa fa-edit"/></Link>
     <Link className="btn btn-sm btn-danger card-link" onClick = {props.deleteCategory} to={`#`}><i className="fa fa-trash"/></Link>
     <Link to={`/category/${props.id}/recipes`}><h5 className="card-footer">View Recipes</h5></Link>
-    <div className="modal fade" id="edit_category" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div className="modal fade" id={`edit_category${props.id}`} role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog" role="document">
                 <div className="modal-content">
                 <div className="modal-header">
@@ -27,12 +27,12 @@ const Category =(props)=>(
                                 type="text"
                                 name="name"
                                 className='form-control'
-                                placeholder={props.name}/>
+                                value={props.name}/>
                                     </div>
 
                 </div>
                 <div className="modal-footer">
-                    <button type="button" className="btn btn-primary" onClick = {props.editCategory} to={`#`}>Update</button>
+                    <button type="button" className="btn btn-primary" onClick = {props.editCategory}>Update</button>
                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
       </div>
     </div>
@@ -50,7 +50,7 @@ class Categories extends Component {
     }
     getCategories = ()=>{
         const headers={Authorization:`Bearer ${localStorage.getItem('accessToken')}`}
-        axios.get('http://127.0.0.1:5000/api/v1/categories/',{headers})
+        axiosInstance.get('categories/',{headers})
         .then(response=>{
             this.setState({
                 categories:response.data.categories
@@ -72,7 +72,7 @@ class Categories extends Component {
     }
     deleteCategory(value){
         const headers={Authorization:`Bearer ${localStorage.getItem('accessToken')}`}
-        axios.delete(`http://127.0.0.1:5000/api/v1/categories/${value}`,{headers})
+        axiosInstance.delete(`categories/${value}`,{headers})
         .then(response=>{
             notify.show(response.data.message, 'success', 4000);
             this.getCategories();
@@ -80,7 +80,7 @@ class Categories extends Component {
     }
     editCategory(value){
         const headers={Authorization:`Bearer ${localStorage.getItem('accessToken')}`}
-        axios.put(`http://127.0.0.1:5000/api/v1/categories/${value}`,{headers})
+        axiosInstance.put(`categories/${value}`,{headers})
         .then(response=>{
             notify.show(response.data.message, 'success', 4000);
             this.getCategories();
