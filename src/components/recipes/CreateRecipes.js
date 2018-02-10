@@ -1,6 +1,37 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class CreateRecipe extends Component {
+    state = {
+        title:'',
+        description:''
+
+    }
+    handleInputChange = (event) =>{
+        const {name, value} = event.target;
+        this.setState({[name]: value});
+    }
+    handleAddRecipes = (event) => {
+        const {title,description} = this.state;
+        const headers = {
+            Authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
+        event.preventDefault()
+        let category_id =this.props.match.params.id
+        axios.post(`http://127.0.0.1:5000/api/v1/categories/${category_id}/recipes`,{title,description},{headers})
+        .then(response =>{
+            this
+                .props
+                .getRecipes();
+                console.log(response)
+        }).catch(error => {
+            if (error.response) {
+                alert(error.response.data.message)
+            } else if (error.request) {
+                alert("Request not made")
+            }
+        });
+    }
   render() {
     return (
       <div>
@@ -19,14 +50,19 @@ class CreateRecipe extends Component {
                                         name="title"
                                         className="form-control"
                                         placeholder="recipe title"
+                                        onChange={this.handleInputChange}
+                                        value={this.state.title}
                                         />
                                   </div>
                                 <div className="form-group">
                                     <textarea
                                         rows="4"
                                         cols="50"
+                                        name="description"
                                         className="form-control description"
                                         placeholder="description or instructions"
+                                        onChange={this.handleInputChange}
+                                        value={this.state.description}
                                       >
                                       </textarea>
                                   </div>
@@ -49,7 +85,12 @@ class CreateRecipe extends Component {
                   </form>
 
               </div>
+              <div>
+                <div>
+                </div>
           </div>
+          </div>
+          
     );
   }
 }

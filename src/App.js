@@ -8,7 +8,8 @@ import About from './components/auth/About';
 import ChangePassword from './components/auth/changePassword';
 import Categories from './components/categories/dashboard';
 import { Nav } from './components/auth/landing';
-import CreateRecipe from './components/recipes/CreateRecipes';
+// import { Footer } from './components/auth/login';
+import ViewRecipes from './components/recipes/ViewRecipes';
 
 import Landing from './components/auth/landing';
 import './css/style.css';
@@ -31,9 +32,10 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/changepassword" component={ChangePassword} />
             <Route exact path="/dashboard" component={Categories} />
-            <Route exact path="/recipes" component={CreateRecipe} />
+            <Route exact path="/category/:id/recipes" component={ViewRecipes} />
             <Route component={NotFound} />
           </Switch>
+          {/* <Footer/> */}
         </div>
       </BrowserRouter>
 

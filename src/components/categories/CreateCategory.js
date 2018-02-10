@@ -17,13 +17,11 @@ class CreateCategory extends Component {
         }
 
         event.preventDefault();
-        axios.post('http://127.0.0.1:5000/api/v1/categories/', {
-            name
-        }, {headers}).then(response => {
+        axios.post('http://127.0.0.1:5000/api/v1/categories/', {name}, {headers})
+        .then(response => {
             this
                 .props
                 .getCategories()
-            console.log(response);
 
         }).catch(error => {
             if (error.response) {
@@ -67,7 +65,7 @@ class CreateCategory extends Component {
                             <input type="text" className="form-control" placeholder="Search for a category..." name="srch-term"/>
                             <div className="input-group-btn">
                                 <button className="btn btn-default" type="submit">
-                                    <i class="glyphicon glyphicon-search"></i></button>
+                                    <i className="glyphicon glyphicon-search"></i></button>
                             </div>
                         </div>
                     </form>
