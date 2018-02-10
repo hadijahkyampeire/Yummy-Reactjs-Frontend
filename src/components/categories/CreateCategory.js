@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import axios from 'axios';
+import axiosInstance from '../Apicalls';
 
 class CreateCategory extends Component {
     state = {
@@ -17,7 +17,7 @@ class CreateCategory extends Component {
         }
 
         event.preventDefault();
-        axios.post('http://127.0.0.1:5000/api/v1/categories/', {name}, {headers})
+        axiosInstance.post('categories/', {name}, {headers})
         .then(response => {
             this
                 .props

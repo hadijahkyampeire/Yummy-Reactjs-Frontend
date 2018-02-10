@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
-import axios from 'axios';
+import axiosInstance from '../Apicalls';
 import {notify} from 'react-notify-toast';
-import { Link } from 'react-router-dom';
+import { Link,Redirect } from 'react-router-dom';
 
 class Login extends Component {
   state = {
@@ -21,12 +21,11 @@ handleLogin = (event)=>{
     const {email_field:email, password_field:password} = this.state;
 
     event.preventDefault();
-    axios.post('http://127.0.0.1:5000/api/v1/auth/login',{email,password})
+    axiosInstance.post('auth/login',{email,password})
     .then(response=>{
-        notify.show(response.data.message, 'success', 4000);
-        this.props.history.push('/dashboard');
         localStorage.setItem('accessToken', response.data.access_token);
-        console.log(response);
+        this.props.login();
+        notify.show(response.data.message, 'success', 4000);
     }).catch(error=>{
         if(error.response){
             alert(error.response.data.message)
@@ -37,6 +36,10 @@ handleLogin = (event)=>{
 }
   render() {
     const {password_field, email_field} = this.state;
+
+    if(this.props.loggedIn){
+        return (<Redirect to={ {pathname:'/dashboard'}}/>)
+    }
     return (
       <div className="background">
         <div id="logbar">

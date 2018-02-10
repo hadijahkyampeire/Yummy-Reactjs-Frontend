@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-notify-toast';
 import {notify} from 'react-notify-toast';
 import CreateRecipe from './CreateRecipes';
-import axios from 'axios';
+import axiosInstance from '../Apicalls';
 
 const Recipe = (props) => (
   <div class="card">
@@ -43,8 +43,8 @@ class ViewRecipes extends Component {
       Authorization: `Bearer ${localStorage.getItem('accessToken')}`
     }
     let category_id = this.props.match.params.id
-    axios
-      .get(`http://127.0.0.1:5000/api/v1/categories/${category_id}/recipes`, {headers})
+    axiosInstance
+      .get(`categories/${category_id}/recipes`, {headers})
       .then((response) => {
         console.log(response.data.recipes)
         this.setState({recipes: response.data.recipes});
@@ -68,7 +68,7 @@ class ViewRecipes extends Component {
   deleteRecipe(value){
     const headers={Authorization:`Bearer ${localStorage.getItem('accessToken')}`}
     let category_id = this.props.match.params.id
-    axios.delete(`http://127.0.0.1:5000/api/v1/categories/${category_id}/recipes/${value}`,{headers})
+    axiosInstance.delete(`categories/${category_id}/recipes/${value}`,{headers})
     .then(response=>{
       notify.show(response.data.message, 'success', 4000);
       this.getRecipes();
