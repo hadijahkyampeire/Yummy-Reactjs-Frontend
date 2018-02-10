@@ -36,6 +36,11 @@ class Clock extends React.Component {
   setTimer() {
     setTimeout(this.updateClock.bind(this), 1000);
   }
+  componentWillUnmount() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+  }
   updateClock() {
     const currentTime = new Date();
     this.setState({
@@ -68,14 +73,15 @@ class Clock extends React.Component {
 }
 export const Nav = () => (
   <div id="header">
+    <div className="container">
     <div className="logo" />
-    <div id="author"><h3>React Yummy Recipes by KH</h3></div>
+    <div id="author"><h3>Recipes by KH</h3></div>
     <div id="menu">
       <Link to="/login" id="signin" className="btn btn-nav">Login</Link>
       <Link to="/register" id="signup" className="btn btn-nav"> Signup</Link>
       <div className="dropdown">
         <span
-          className="btn btn-secondary dropdown-toggle"
+          className="btn btn-primary dropdown-toggle"
           href="#"
           role="button"
           id="dropdownMenuLink"
@@ -83,14 +89,16 @@ export const Nav = () => (
           aria-haspopup="true"
           aria-expanded="false"
         >
-          Account:
+          Options:
         </span>
         <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a className="dropdown-item" href="/">Logout</a>
           <a className="dropdown-item" href="/about">About</a>
+          <a className="dropdown-item" href="/dashboard"> View categories</a>
         </div>
       </div>
     </div>
+  </div>
   </div>
 
 );

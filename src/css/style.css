@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette|Petit+Formal+Script|Tillana:400,500,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Patua+One');
 .section{
 	background-color:grey;
 	height:575px;
@@ -12,20 +13,22 @@
     padding:0 0 19% 0;
 }
 .background{
-    background: url("images/dashboard.jpeg") repeat;
+    background: url("images/dashboard.jpeg");
     /* padding:0 0 32% 0; */
     background-repeat: no-repeat;
-    height: 100%;
+    background-position: center;
+    height: 100vh;
     background-size: cover;
     padding: 10% 0 4% 0;
 }
 .logo{
     background: url("images/images.png");
-    background-size: 100px 100px;
+    background-size: 3em 3em;
     display:block;
-    width: 100px;
-    height: 100px;
+    width: 3em;
+    height: 3em;
     float: left;
+    margin-top: 0.8em;
 }
 #updatebar{
     text-align: left;
@@ -37,16 +40,15 @@
     text-align: center; 
 }
 #header {
-   padding: 5px;
-   background-color: rgb(59, 61, 50);
-   height: 110px;  
+   background-color: #999999;
+   height: 60px;  
 }
 #menu{
     float: right;
     padding-top: 15px;
 }  
 #recipebar{
-    background: lightgrey;
+    background: whitesmoke;
     padding: 20px;
 }
 #recipesbar{
@@ -54,10 +56,27 @@
     padding: 20px;
 }
 #signup {
-    background-color:rgb(32, 178, 32);
+    background-color: royalblue;
+    border: 1px solid royalblue;
+    color: white;
+    font-weight: bold;
 }
+#signup:hover {
+    background-color: #c6d2f6;
+    border: 1px solid #6687e7;
+    color: royalblue;
+}
+
 #signin{
-    background-color:lightskyblue;
+    background-color:white;
+    border: 1px solid royalblue;
+    color: royalblue;
+    font-weight: bold;
+}
+#signin:hover {
+    background-color: #6687e7;
+    border: 1px solid #6687e7;
+    color: white;
 }
 
 .btn-nav {
@@ -105,9 +124,9 @@
     float:left;
 }
 #author{
-    color: aqua;
+    color: royalblue;
     float: left;
-    font-family: 'Suranna', serif;
+    font-family: 'Lobster', cursive;
 }
 #signbar{
 font-family: 'Tillana', cursive;
@@ -168,10 +187,12 @@ background: lightgrey;
     height: 20px;
 }
 .footer{
+    height: 45px;
+    bottom: 0;
+    color: white;
+    position: absolute;
+    width: 100%;
     text-align: center;
-    background: lightblue;
-    padding-bottom: 5px;
-    height: 40px;
 
 }
 #words{
@@ -204,6 +225,17 @@ text-align: center;
 .dropdown{
     float: right;
 }
+#dropdownMenuLink{
+    border-radius: 10px;
+}
 .description{
     height:80px;
+}
+.viewcategories{
+    background-color: #c6d2f6;
+    height:100vh;
+}
+.viewrecipes{
+    background-color: bisque;
+    height:100vh;
 }

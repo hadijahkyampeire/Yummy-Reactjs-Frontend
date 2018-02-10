@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
-import {notify} from 'react-notify-toast'
+import {notify} from 'react-notify-toast';
 import { Link } from 'react-router-dom';
 
 class Login extends Component {
@@ -77,27 +77,27 @@ handleLogin = (event)=>{
 								</div>
         </div>
         <a href="#" data-toggle="modal" data-target="#forgot_password">ForgotPassword?</a>
-        <div class="modal fade" id="forgot_password" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Reset password</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div className="modal fade" id="forgot_password" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog" role="document">
+                <div className="modal-content">
+                <div className="modal-header">
+                    <h5 className="modal-title">Reset password</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div className="modal-body">
                 <input
                     type="email"
-                    id="emailsignup"
+                    id="email"
                     name="email_field"
                     aria-describedby="email"
                     className="form-control"
                     placeholder="example@gmail.com"/>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Send Email</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <div className="modal-footer">
+                    <button type="button" className="btn btn-primary">Send Email</button>
+                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>

@@ -49,7 +49,6 @@ class Signup extends Component {
                         <div className="input-group">
                             <span className="input-group-addon" id="email"><i className='fa fa-envelope'/></span>
                             <input
-                                type="email"
                                 id="emailsignup"
                                 name="email_field"
                                 aria-describedby="email"
@@ -70,12 +69,16 @@ class Signup extends Component {
                                 placeholder="Password"/>
                         </div>
                         <br/>
-                        <div className="buttons">
-                        <input name="signup" id="signup" value="Signup" type="submit"/>
-                        <Link to="/"><input name="signup" className="btn-btn-default" value="Cancel" type="button"/></Link>
+                        <div className="row">
+                            <div className="col-sm-6 text-left">
+                                <Link to="/"><input className="btn-btn-default" value="Cancel" type="button"/></Link>
+                            </div>
+                            <div className="col-sm-6 text-right">
+                                <input name="signup" id="signup" value="Signup" className="btn btn-nav" type="submit"/>
+                            </div>
                         </div>
 
-                        <div class="change_link">
+                        <div className="change_link">
                             Already a member ?
                             <Link to="/login">log in
                             </Link>
