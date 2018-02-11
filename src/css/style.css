@@ -239,3 +239,7 @@ text-align: center;
     background-color: bisque;
     height:100vh;
 }
+
+.mb-0 .btn {
+    font-size: 20px;
+}
