@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {notify} from 'react-notify-toast';
 import axiosInstance from '../Apicalls';
 import CreateCategory from './CreateCategory';
+import Pagination from '../pagination';
 class EditCategory extends Component {
     state = {
         name:''
@@ -79,17 +80,24 @@ const Category = (props) => (
 
 class Categories extends Component {
     state = {
-        categories: []
+        categories: [],
+        Next_page: null,
+        Previous_page: null,
+        current_page: null,
+        total_pages: null,
+        total_Items: null,
     }
     getCategories = () => {
         const headers = {
             Authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
+        const page = this.state.current_page || 1;
+
         axiosInstance
-            .get('categories/', {headers})
+            .get('categories/', {headers, params:{page}})
             .then(response => {
-                this.setState({categories: response.data.categories});
-                console.log(this.state.categories)
+                this.setState(response.data);
+                console.log(response.data)
 
             })
             .catch(error => {
@@ -132,7 +140,18 @@ class Categories extends Component {
                 this.getCategories();
             })
     }
+
+    changePage = (selectedPage)=>{
+        this.setState(previousState=>({
+            current_page: selectedPage
+        }),()=>{
+            this.getCategories()
+        })
+
+    }
+
     render() {
+        const {current_page, total_Items, total_pages, Next_page, Previous_page} = this.state;
         const categoryitems = this
             .state
             .categories
@@ -153,25 +172,12 @@ class Categories extends Component {
                             : <div className="col-sm-2 offset-sm-5">No categories </div>}
 
                     </div>
-                    <div id="pagination">
-                        <ul className="pagination">
-                            <li className="active">
-                                <a href="#">1</a>
-                            </li>
-                            <li >
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li>
-                                <a href="#">4</a>
-                            </li>
-                            <li>
-                                <a href="#">5</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <Pagination 
+                        activePage={current_page}
+                        previousPage={Previous_page}
+                        nextPage={Next_page}
+                        totalPages={total_pages}
+                        changePage={this.changePage} />
                 </div>
             </div>
         );
