@@ -91,6 +91,7 @@ class Categories extends Component {
         const headers = {
             Authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
+        // create a variable for page to be current page
         const page = this.state.current_page || 1;
 
         axiosInstance
