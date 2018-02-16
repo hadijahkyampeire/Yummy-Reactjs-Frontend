@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-notify-toast';
 import {notify} from 'react-notify-toast';
 import CreateRecipe from './CreateRecipes';
+import Pagination from '../pagination';
 import axiosInstance from '../Apicalls';
 
 class EditRecipe extends Component{
@@ -66,9 +67,9 @@ class EditRecipe extends Component{
   }
 }
 const Recipe = (props) => (
-  <div class="card">
-    <div class="card-header" role="tab" id={`recipe-${props.id}`}>
-      <h3 class="mb-0">
+  <div className="card">
+    <div className="card-header" role="tab" id={`recipe-${props.id}`}>
+      <h3 className="mb-0">
         <button className="btn btn-link"
           data-toggle="collapse"
           href={`#recipeDetails${props.id}`}
@@ -81,10 +82,10 @@ const Recipe = (props) => (
 
     <div
       id={`recipeDetails${props.id}`}
-      class="collapse"
+      className="collapse"
       role="tabpanel"
       aria-labelledby={`recipe-${props.id}`}>
-      <div class="card-block">
+      <div className="card-block">
         {props.description}
       </div>
       <button className="btn btn-lg " data-toggle="modal" data-target={`#edit_recipe${props.id}`} to="#"><i className="fa fa-edit"/></button>
@@ -96,7 +97,12 @@ const Recipe = (props) => (
 
 class ViewRecipes extends Component {
   state = {
-    recipes: []
+    recipes: [],
+    Next_page: null,
+    Previous_page: null,
+    current_page: null,
+    total_pages: null,
+    total_Items: null,
   }
 
   getRecipes = () => {
@@ -107,9 +113,8 @@ class ViewRecipes extends Component {
     axiosInstance
       .get(`categories/${category_id}/recipes`, {headers})
       .then((response) => {
-        console.log(response.data.recipes)
-        this.setState({recipes: response.data.recipes});
-        console.log(this.state.recipes)
+        this.setState(response.data);
+        console.log(response.data)
 
       })
       .catch((error) => {
@@ -153,6 +158,7 @@ class ViewRecipes extends Component {
   }
 
   render() {
+    const {current_page, total_Items, total_pages, Next_page, Previous_page} = this.state;
     const recipeitems = this
       .state
       .recipes
@@ -169,6 +175,12 @@ class ViewRecipes extends Component {
             {recipeitems}
           </div>
         </div>
+        <Pagination 
+        activePage={current_page}
+        previousPage={Previous_page}
+        nextPage={Next_page}
+        totalPages={total_pages}
+        changePage={this.changePage} />
       </div>
       </div>
 
