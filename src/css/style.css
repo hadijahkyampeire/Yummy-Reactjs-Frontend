@@ -52,7 +52,7 @@
     padding: 20px;
 }
 #recipesbar{
-    background: peru;
+    background: whitesmoke;
     padding: 20px;
 }
 #signup {
@@ -236,7 +236,7 @@ text-align: center;
     height:100vh;
 }
 .viewrecipes{
-    background-color: bisque;
+    background-color: #c6d2f6;
     height:100vh;
 }
 
