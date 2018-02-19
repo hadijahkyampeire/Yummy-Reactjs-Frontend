@@ -43,9 +43,10 @@ handleLogin = (event)=>{
 }
   render() {
     const {password_field, email_field} = this.state;
+    const { from } = this.props.location.state || {from: {pathname:'/dashboard'}}
 
     if(this.props.loggedIn){
-        return (<Redirect to={ {pathname:'/dashboard'}}/>)
+        return (<Redirect to={from }/>)
     }
     return (
       <div className="background">

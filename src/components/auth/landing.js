@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Landing extends React.Component {
   render() {
@@ -60,8 +61,8 @@ class Clock extends React.Component {
 
   render() {
     const {
- hours, minutes, seconds, ampm 
-} = this.state;
+      hours, minutes, seconds, ampm,
+    } = this.state;
     return (
       <div className="clock">
         {hours === 0
@@ -99,30 +100,24 @@ export const Nav = props => (
             </Fragment>
           )
           : (
-            <div className="dropdown">
-              <span
-                className="btn btn-primary dropdown-toggle"
-                href="#"
-                role="button"
-                id="dropdownMenuLink"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Options:
-              </span>
-              <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <Link className="dropdown-item" to="/" onClick={e => props.logout(e)}>Logout</Link>
-                <a className="dropdown-item" href="/about">About</a>
-                <a className="dropdown-item" href="/dashboard">
-                  View categories
-                </a>
-              </div>
+            <div>
+              <Link className="btn btn-primary" to="/dashboard">
+                  Categories
+              </Link>
+              <Link className="btn btn-success" to="/about">About</Link>
+              <Link className="btn btn-danger" to="/" onClick={e => props.logout(e)}>Logout</Link>
             </div>
+
           )}
       </div>
     </div>
   </div>
 
 );
+
+Nav.propTypes = {
+  loggedIn: PropTypes.bool.isRequired,
+  logout: PropTypes.func.isRequired,
+};
+
 export default Landing;
