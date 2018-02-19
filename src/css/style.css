@@ -218,9 +218,12 @@ text-align: center;
  margin-top:10px;
 
 }
-#pagination{
-    padding-top:180px;
-    margin-right: 5px;
+.pagination{
+    width: 600px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    margin-left: -100px;
 }
 .dropdown{
     float: right;
@@ -242,4 +245,8 @@ text-align: center;
 
 .mb-0 .btn {
     font-size: 20px;
+}
+
+li:disabled {
+    cursor: not-allowed !important;
 }
