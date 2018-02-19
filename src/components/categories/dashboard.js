@@ -4,6 +4,7 @@ import {notify} from 'react-notify-toast';
 import axiosInstance from '../Apicalls';
 import CreateCategory from './CreateCategory';
 import Pagination from '../pagination';
+import Search from '../searchQuery';
 class EditCategory extends Component {
     state = {
         name:''
@@ -44,7 +45,7 @@ class EditCategory extends Component {
                         </div>
                         <div className="modal-footer">
                             <button type="submit" className="btn btn-primary" >Update</button>
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal" id={`close${this.props.id}`}>Cancel</button>
                         </div>
                         </form>
                     </div>
@@ -86,18 +87,20 @@ class Categories extends Component {
         current_page: null,
         total_pages: null,
         total_Items: null,
+        searching: false,
     }
+
     getCategories = () => {
-        const headers = {
-            Authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        if(this.state.searching){
+            return;
         }
         // create a variable for page to be current page
         const page = this.state.current_page || 1;
 
         axiosInstance
-            .get('categories/', {headers, params:{page}})
+            .get('categories/', {params:{page}})
             .then(response => {
-                this.setState(response.data);
+                this.setState({...response.data, searching: false});
                 console.log(response.data)
 
             })
@@ -119,25 +122,22 @@ class Categories extends Component {
     componentWillMount() {
         this.getCategories();
     }
+
     deleteCategory(value) {
-        const headers = {
-            Authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        }
         axiosInstance
-            .delete(`categories/${value}`, {headers})
+            .delete(`categories/${value}`)
             .then(response => {
                 notify.show(response.data.message, 'success', 4000);
                 this.getCategories();
             })
     }
+
     editCategory=  (id, name)=>{
-        const headers = {
-            Authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        }
         axiosInstance
-            .put(`categories/${id}`,{name} ,{headers})
+            .put(`categories/${id}`,{name})
             .then(response => {
                 notify.show(response.data.message, 'success', 4000);
+                document.getElementById(`close${id}`).click();
                 this.getCategories();
             })
     }
@@ -146,10 +146,27 @@ class Categories extends Component {
         this.setState(previousState=>({
             current_page: selectedPage
         }),()=>{
-            this.getCategories()
+            console.log(this.state.searching)
+            if(this.state.searching){
+                this.searchCategories(this.state.q);
+            }else{
+                this.getCategories()
+            }
         })
 
     }
+
+    searchCategories =(q)=>{
+        const page = !this.state.searching ? 1 : (this.state.current_page || 1);
+        this.setState({q})
+        axiosInstance.get(`categories/`,{
+            params:{ q,page}
+        }).then(response =>{
+            this.setState({...response.data, searching: true});
+        }).catch(error =>{
+
+        })
+    } 
 
     render() {
         const {current_page, total_Items, total_pages, Next_page, Previous_page} = this.state;
@@ -167,6 +184,7 @@ class Categories extends Component {
             <div >
                 <CreateCategory getCategories={this.getCategories}/>
                 <div className="viewcategories">
+                <Search handleSearch={this.searchCategories}/>
                     <div className="row categories">
                         {this.state.categories.length
                             ? categoryitems

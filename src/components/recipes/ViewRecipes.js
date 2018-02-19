@@ -3,6 +3,7 @@ import {Link} from 'react-notify-toast';
 import {notify} from 'react-notify-toast';
 import CreateRecipe from './CreateRecipes';
 import Pagination from '../pagination';
+import Search from '../searchQuery';
 import axiosInstance from '../Apicalls';
 
 class EditRecipe extends Component{
@@ -57,7 +58,7 @@ class EditRecipe extends Component{
                   </div>
                   <div className="modal-footer">
                       <button type="submit" className="btn btn-primary" >Update</button>
-                      <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                      <button type="button" className="btn btn-secondary" data-dismiss="modal" id ={`close${this.props.id}`}>Cancel</button>
                   </div>
                   </form>
               </div>
@@ -88,7 +89,7 @@ const Recipe = (props) => (
       <div className="card-block">
         {props.description}
       </div>
-      <button className="btn btn-lg " data-toggle="modal" data-target={`#edit_recipe${props.id}`} to="#"><i className="fa fa-edit"/></button>
+      <button className="btn btn-lg " data-toggle="modal" data-target={`#edit_recipe${props.id}`} to="#" ><i className="fa fa-edit"/></button>
     <button className="btn btn-lg " onClick={props.deleteRecipe} to={`#`}><i className="fa fa-trash" to="#"/></button>
     <EditRecipe title={props.title} description={props.description} id={props.id} editRecipe={props.editRecipe}/>
     </div>
@@ -106,12 +107,9 @@ class ViewRecipes extends Component {
   }
 
   getRecipes = () => {
-    const headers = {
-      Authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    }
     let category_id = this.props.match.params.id
     axiosInstance
-      .get(`categories/${category_id}/recipes`, {headers})
+      .get(`categories/${category_id}/recipes`)
       .then((response) => {
         this.setState(response.data);
         console.log(response.data)
@@ -137,26 +135,23 @@ class ViewRecipes extends Component {
     this.getRecipes();
   }
   deleteRecipe(value){
-    const headers={Authorization:`Bearer ${localStorage.getItem('accessToken')}`}
     let category_id = this.props.match.params.id
-    axiosInstance.delete(`categories/${category_id}/recipes/${value}`,{headers})
+    axiosInstance.delete(`categories/${category_id}/recipes/${value}`)
     .then(response=>{
       notify.show(response.data.message, 'success', 4000);
       this.getRecipes();
   })
   }
   editRecipe =(id,title,description)=>{
-    const headers = {
-      Authorization: `Bearer ${localStorage.getItem('accessToken')}`
-  }
       let category_id = this.props.match.params.id
-      axiosInstance.put(`categories/${category_id}/recipes/${id}`,{title,description},{headers})
+      axiosInstance.put(`categories/${category_id}/recipes/${id}`,{title,description})
       .then(response =>{
+        document.getElementById(`close${id}`).click();
         this.getRecipes();
       })
 
   }
-
+  
   render() {
     const {current_page, total_Items, total_pages, Next_page, Previous_page} = this.state;
     const recipeitems = this

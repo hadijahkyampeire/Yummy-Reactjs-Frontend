@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {notify} from 'react-notify-toast';
 import axiosInstance from '../Apicalls';
 
 class CreateCategory extends Component {
@@ -12,22 +13,19 @@ class CreateCategory extends Component {
     }
     handleAddCategories = (event) => {
         const {title: name} = this.state;
-        const headers = {
-            Authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        }
-
         event.preventDefault();
-        axiosInstance.post('categories/', {name}, {headers})
+        axiosInstance.post('categories/', {name})
         .then(response => {
             this
                 .props
                 .getCategories()
+            this.setState({title: ''})
 
         }).catch(error => {
             if (error.response) {
-                alert(error.response.data.message)
+                notify.show(error.response.data.message, 'error', 4000)
             } else if (error.request) {
-                alert("Request not made")
+                notify.show("Request not made")
             }
         });
     }
@@ -59,16 +57,6 @@ class CreateCategory extends Component {
                         </div>
                     </div>
                     <br/>
-                    
-                    <form className="form-group" role="search">
-                        <div className="input-group add-on col-sm-3 pull-right">
-                            <input type="text" className="form-control" placeholder="Search for a category..." name="srch-term"/>
-                            <div className="input-group-btn">
-                                <button className="btn btn-default" type="submit">
-                                    <i className="glyphicon glyphicon-search"></i></button>
-                            </div>
-                        </div>
-                    </form>
                     
                 </div>
             </div>
