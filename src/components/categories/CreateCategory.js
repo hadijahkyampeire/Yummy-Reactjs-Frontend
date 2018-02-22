@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import {notify} from 'react-notify-toast';
 import axiosInstance from '../Apicalls';
 
