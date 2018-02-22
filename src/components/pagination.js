@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 class Pagination extends Component {
     static propTypes = {
-        totalPages: PropTypes.number.isRequired,
-        activePage: PropTypes.number.isRequired,
+        totalPages: PropTypes.number,
+        activePage: PropTypes.number,
         nextPage: PropTypes.number,
         previousPage: PropTypes.number,
         changePage: PropTypes.func.isRequired,
@@ -13,6 +13,8 @@ class Pagination extends Component {
     static defaultProps = {
     nextPage: null,
     previousPage: null,
+    totalPages: null,
+    activePage: null,
     };
 
     changePage = (event)=>{
