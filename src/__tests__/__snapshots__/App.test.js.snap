@@ -1,0 +1,294 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component fully renders properly 1`] = `
+<App>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <div>
+        <Component
+          loggedIn={false}
+          logout={[Function]}
+        >
+          <div
+            id="header"
+          >
+            <div
+              className="container"
+            >
+              <div
+                className="logo"
+              />
+              <div
+                id="author"
+              >
+                <h3>
+                  Recipes by KH
+                </h3>
+              </div>
+              <div
+                id="menu"
+              >
+                <Link
+                  className="btn btn-nav"
+                  id="signin"
+                  replace={false}
+                  to="/login"
+                >
+                  <a
+                    className="btn btn-nav"
+                    href="/login"
+                    id="signin"
+                    onClick={[Function]}
+                  >
+                    Login
+                  </a>
+                </Link>
+                <Link
+                  className="btn btn-nav"
+                  id="signup"
+                  replace={false}
+                  to="/register"
+                >
+                  <a
+                    className="btn btn-nav"
+                    href="/register"
+                    id="signup"
+                    onClick={[Function]}
+                  >
+                    Signup
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Component>
+        <_class
+          options={Object {}}
+        >
+          <div
+            id="notification-wrapper"
+          />
+        </_class>
+        <Switch>
+          <Route
+            component={[Function]}
+            computedMatch={
+              Object {
+                "isExact": true,
+                "params": Object {},
+                "path": "/",
+                "url": "/",
+              }
+            }
+            exact={true}
+            location={
+              Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              }
+            }
+            path="/"
+          >
+            <component
+              history={
+                Object {
+                  "action": "POP",
+                  "block": [Function],
+                  "createHref": [Function],
+                  "go": [Function],
+                  "goBack": [Function],
+                  "goForward": [Function],
+                  "length": 1,
+                  "listen": [Function],
+                  "location": Object {
+                    "hash": "",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  },
+                  "push": [Function],
+                  "replace": [Function],
+                }
+              }
+              location={
+                Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                }
+              }
+              match={
+                Object {
+                  "isExact": true,
+                  "params": Object {},
+                  "path": "/",
+                  "url": "/",
+                }
+              }
+            >
+              <Landing
+                history={
+                  Object {
+                    "action": "POP",
+                    "block": [Function],
+                    "createHref": [Function],
+                    "go": [Function],
+                    "goBack": [Function],
+                    "goForward": [Function],
+                    "length": 1,
+                    "listen": [Function],
+                    "location": Object {
+                      "hash": "",
+                      "pathname": "/",
+                      "search": "",
+                      "state": undefined,
+                    },
+                    "push": [Function],
+                    "replace": [Function],
+                  }
+                }
+                location={
+                  Object {
+                    "hash": "",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  }
+                }
+                loggedIn={false}
+                match={
+                  Object {
+                    "isExact": true,
+                    "params": Object {},
+                    "path": "/",
+                    "url": "/",
+                  }
+                }
+              >
+                <div
+                  className="background-image"
+                >
+                  <div
+                    id="welcome"
+                  >
+                    <h4>
+                      You love cooking! then
+                    </h4>
+                    <h3>
+                      <span>
+                        WELCOME TO YUMMY RECIPES
+                      </span>
+                    </h3>
+                    <h4>
+                      Go ahead and signup to expore
+                    </h4>
+                    <div>
+                      <h2>
+                        It is
+                        <Clock>
+                          <div
+                            className="clock"
+                          >
+                            12
+                            :
+                            34
+                            :
+                            15
+                             
+                            am
+                          </div>
+                        </Clock>
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </Landing>
+            </component>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  </BrowserRouter>
+</App>
+`;
+
+exports[`App component renders properly 1`] = `
+<BrowserRouter>
+  <div>
+    <Component
+      loggedIn={false}
+      logout={[Function]}
+    />
+    <_class
+      options={Object {}}
+    />
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/register"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/reset"
+      />
+      <PrivateRoute
+        component={[Function]}
+        exact={true}
+        loggedIn={false}
+        path="/about"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/login"
+      />
+      <PrivateRoute
+        component={[Function]}
+        exact={true}
+        loggedIn={false}
+        path="/dashboard"
+      />
+      <PrivateRoute
+        component={[Function]}
+        exact={true}
+        loggedIn={false}
+        path="/category/:id/recipes"
+      />
+      <Route
+        component={[Function]}
+      />
+    </Switch>
+  </div>
+</BrowserRouter>
+`;

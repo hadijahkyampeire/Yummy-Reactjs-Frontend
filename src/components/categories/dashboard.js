@@ -131,7 +131,7 @@ class Categories extends Component {
     } 
 
     render() {
-        const {current_page, total_pages, Next_page, Previous_page} = this.state;
+        const {current_page, total_pages, Next_page, Previous_page9} = this.state;
         let categoryitems = this
             .state
             .categories
