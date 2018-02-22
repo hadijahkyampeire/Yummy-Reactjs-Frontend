@@ -8,6 +8,11 @@ class Search extends Component {
 
     static propTypes = {
         handleSearch: PropTypes.func.isRequired,
+        placeholder: PropTypes.string,
+    }
+    
+    static defaultProps = {
+        placeholder: 'categories '
     }
     
     handleSearchInput = (event) => {
@@ -34,7 +39,7 @@ class Search extends Component {
                             name="q"
                             className="form-control"
                             onChange={this.handleInputChange}
-                            placeholder="Search for a category..."/>
+                            placeholder={`Search for ${this.props.placeholder}`}/>
                         <div className="input-group-btn">
                             <button className="btn btn-default" type="submit">
                                 <i className="glyphicon glyphicon-search"></i>
