@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {notify} from 'react-notify-toast';
 import axiosInstance from '../Apicalls';
 
 class CreateRecipe extends Component {
@@ -23,12 +24,13 @@ class CreateRecipe extends Component {
             this
                 .props
                 .getRecipes();
-                console.log(response)
+                this.setState({title: '', description: ''})
+               
         }).catch(error => {
             if (error.response) {
-                alert(error.response.data.message)
+                notify.show(error.response.data.message,'error', 3000)
             } else if (error.request) {
-                alert("Request not made")
+                notify.show("Request not made", 4000)
             }
         });
     }
@@ -72,17 +74,6 @@ class CreateRecipe extends Component {
                       </div>
                   </div>
                 <br />
-
-                <form className="form-group" role="search">
-                    <div className="input-group add-on col-sm-3 pull-right">
-                        <input type="text" className="form-control" placeholder="Search for a recipe..." name="srch-term" />
-                        <div className="input-group-btn">
-                            <button className="btn btn-default" type="submit">
-                                <i className="glyphicon glyphicon-search" />
-                              </button>
-                          </div>
-                      </div>
-                  </form>
 
               </div>
               <div>
