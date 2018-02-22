@@ -3,57 +3,12 @@ import {Link} from 'react-router-dom';
 import {notify} from 'react-notify-toast';
 import axiosInstance from '../Apicalls';
 import CreateCategory from './CreateCategory';
+import EditCategory from './editCategory';
 import Pagination from '../pagination';
 import Search from '../searchQuery';
-class EditCategory extends Component {
-    state = {
-        name:''
-    }
-    handleEditCategory =(event) =>{
-        event.preventDefault();
-        this.props.editCategory(this.props.id, this.state.name)
-    }
-    handleInput =(event) =>{
-        const {name, value} = event.target;
-        this.setState({[name]:value});
-    }
-    componentDidMount(){
-        this.setState({name:this.props.name})
-    }
-    render() {
-        return (
-            <div
-                className="modal fade"
-                id={`edit_category${this.props.id}`}
-                role="dialog"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div className="modal-dialog" role="document">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title">Edit category name</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <form onSubmit={this.handleEditCategory}>
-                        <div className="modal-body">
-                            <div className="form-group">
-                                <input type="text" name="name" onChange={this.handleInput} className='form-control' value={this.state.name}/>
-                            </div>
+import Loader from '../loader';
+import PropTypes from 'prop-types';
 
-                        </div>
-                        <div className="modal-footer">
-                            <button type="submit" className="btn btn-primary" >Update</button>
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal" id={`close${this.props.id}`}>Cancel</button>
-                        </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
 
 const Category = (props) => (
     <div className="col-md-3 col-sm-6 category-card">
@@ -79,6 +34,11 @@ const Category = (props) => (
 
 )
 
+Category.propTypes = {
+    name: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    editCategory:PropTypes.func.isRequired,
+}
 class Categories extends Component {
     state = {
         categories: [],
@@ -88,6 +48,7 @@ class Categories extends Component {
         total_pages: null,
         total_Items: null,
         searching: false,
+        loadingCategories: true,
     }
 
     getCategories = () => {
@@ -96,20 +57,18 @@ class Categories extends Component {
         }
         // create a variable for page to be current page
         const page = this.state.current_page || 1;
-
         axiosInstance
             .get('categories/', {params:{page}})
             .then(response => {
-                this.setState({...response.data, searching: false});
-                console.log(response.data)
-
+                this.setState({...response.data, searching: false, loadingCategories:false});
             })
             .catch(error => {
                 if (error.response) {
                     const {status} = error.response;
                     if(status === 404){
                         this.setState({
-                            categories: []
+                            categories: [],
+                            loadingCategories:false
                         });
                     }
                 } else if (error.request) {
@@ -164,13 +123,18 @@ class Categories extends Component {
         }).then(response =>{
             this.setState({...response.data, searching: true});
         }).catch(error =>{
-
+            if(error.response){
+                notify.show(error.response.data.message,'error', 3000)
+            }else if(error.request){
+                notify.show("Request not made", 'error' , 3000)
+            }
+        
         })
     } 
 
     render() {
-        const {current_page, total_Items, total_pages, Next_page, Previous_page} = this.state;
-        const categoryitems = this
+        const {current_page, total_pages, Next_page, Previous_page, loadingCategories} = this.state;
+        let categoryitems = this
             .state
             .categories
             .map(category => (<Category
@@ -179,14 +143,17 @@ class Categories extends Component {
                 deleteCategory={() => this.deleteCategory(category.cat.id)}
                 editCategory={this.editCategory}
                 key={category.cat.id}/>))
-        console.log(categoryitems)
+        
+        if(loadingCategories){
+            categoryitems = <Loader message="loading categories"/>
+        }
         return (
             <div >
                 <CreateCategory getCategories={this.getCategories}/>
                 <div className="viewcategories">
                 <Search handleSearch={this.searchCategories}/>
                     <div className="row categories">
-                        {this.state.categories.length
+                        {this.state.categories.length || loadingCategories
                             ? categoryitems
                             : <div className="col-sm-2 offset-sm-5">No categories </div>}
 

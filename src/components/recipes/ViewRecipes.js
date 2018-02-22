@@ -1,72 +1,12 @@
 import React, {Component} from 'react';
-import {Link} from 'react-notify-toast';
 import {notify} from 'react-notify-toast';
 import CreateRecipe from './CreateRecipes';
+import EditRecipe from './editRecipe'
 import Pagination from '../pagination';
 import Search from '../searchQuery';
 import axiosInstance from '../Apicalls';
 
-class EditRecipe extends Component{
-  state ={
-    title:'',
-    description:''
-  }
-  handleInput =(event) =>{
-    const {name, value} = event.target;
-    this.setState({[name]:value})
-  }
-  handleEditRecipe =(event) =>{
-    event.preventDefault();
-    this.props.editRecipe(this.props.id,this.state.title,this.state.description)
-  }
-  componentDidMount(){
-    this.setState({title:this.props.title, description:this.props.description})
-}
-  render(){
-    return(
-      <div
-          className="modal fade"
-          id={`edit_recipe${this.props.id}`}
-          role="dialog"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
-          <div className="modal-dialog" role="document">
-              <div className="modal-content">
-                  <div className="modal-header">
-                      <h5 className="modal-title">Edit a recipe</h5>
-                      <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                  </div>
-                  <form onSubmit={this.handleEditRecipe}>
-                  <div className="modal-body">
-                      <div className="form-group">
-                          <input type="text" name="title" onChange={this.handleInput} className='form-control' value={this.state.title}/>
-                      </div>
-                      <div className="form-group">
-                              <textarea
-                                  rows="4"
-                                  cols="50"
-                                  name="description"
-                                  className="form-control description"
-                                  placeholder="description or instructions"
-                                  onChange={this.handleInput}
-                                  value={this.state.description}
-                                >
-                                </textarea>
-                            </div>
-                  </div>
-                  <div className="modal-footer">
-                      <button type="submit" className="btn btn-primary" >Update</button>
-                      <button type="button" className="btn btn-secondary" data-dismiss="modal" id ={`close${this.props.id}`}>Cancel</button>
-                  </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-    );
-  }
-}
+
 const Recipe = (props) => (
   <div className="card">
     <div className="card-header" role="tab" id={`recipe-${props.id}`}>
@@ -104,14 +44,19 @@ class ViewRecipes extends Component {
     current_page: null,
     total_pages: null,
     total_Items: null,
+    searching: false,
   }
 
   getRecipes = () => {
+    // if a search is being made, don't make this call
+    if(this.state.searching){
+      return;
+    }
+    const page = this.state.current_page || 1;
     let category_id = this.props.match.params.id
-    axiosInstance
-      .get(`categories/${category_id}/recipes`)
+    axiosInstance.get(`categories/${category_id}/recipes`,{params:{page}})
       .then((response) => {
-        this.setState(response.data);
+        this.setState({...response.data, searching:false});
         console.log(response.data)
 
       })
@@ -151,9 +96,35 @@ class ViewRecipes extends Component {
       })
 
   }
-  
+  changePage = (selectedPage)=>{
+    this.setState(previousState=>({
+        current_page: selectedPage
+    }),()=>{
+        console.log(this.state.searching)
+        if(this.state.searching){
+            this.searchRecipes(this.state.q);
+        }else{
+            this.getRecipes()
+        }
+    })
+
+}
+  searchRecipes =(q) =>{
+    const page = !this.state.searching ? 1 :(this.state.current_page || 1);
+    console.log(q);
+    this.setState({q})
+    let category_id = this.props.match.params.id
+    axiosInstance.get(`categories/${category_id}/recipes`,{params:{q,page}})
+    .then(response=>{
+      this.setState({...response.data, searching: true});
+    }).catch(error=>{
+      notify.show(error.response.data.message, 'error' , 3000)
+
+    })
+
+  }
   render() {
-    const {current_page, total_Items, total_pages, Next_page, Previous_page} = this.state;
+    const {current_page, total_pages, Next_page, Previous_page} = this.state;
     const recipeitems = this
       .state
       .recipes
@@ -165,6 +136,7 @@ class ViewRecipes extends Component {
       <div >
         <CreateRecipe getRecipes={this.getRecipes} {...this.props}/>
         <div className="viewrecipes">
+        <Search handleSearch={this.searchRecipes} placeholder="recipes"/>
         <div className="col-md-6 offset-md-3">
           <div id="accordion" role="tablist" aria-multiselectable="true">
             {recipeitems}
