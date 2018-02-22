@@ -6,7 +6,6 @@ import CreateCategory from './CreateCategory';
 import EditCategory from './editCategory';
 import Pagination from '../pagination';
 import Search from '../searchQuery';
-import Loader from '../loader';
 import PropTypes from 'prop-types';
 
 
@@ -48,7 +47,6 @@ class Categories extends Component {
         total_pages: null,
         total_Items: null,
         searching: false,
-        loadingCategories: true,
     }
 
     getCategories = () => {
@@ -60,7 +58,7 @@ class Categories extends Component {
         axiosInstance
             .get('categories/', {params:{page}})
             .then(response => {
-                this.setState({...response.data, searching: false, loadingCategories:false});
+                this.setState({...response.data, searching: false});
             })
             .catch(error => {
                 if (error.response) {
@@ -133,7 +131,7 @@ class Categories extends Component {
     } 
 
     render() {
-        const {current_page, total_pages, Next_page, Previous_page, loadingCategories} = this.state;
+        const {current_page, total_pages, Next_page, Previous_page} = this.state;
         let categoryitems = this
             .state
             .categories
@@ -143,17 +141,14 @@ class Categories extends Component {
                 deleteCategory={() => this.deleteCategory(category.cat.id)}
                 editCategory={this.editCategory}
                 key={category.cat.id}/>))
-        
-        if(loadingCategories){
-            categoryitems = <Loader message="loading categories"/>
-        }
+
         return (
             <div >
                 <CreateCategory getCategories={this.getCategories}/>
                 <div className="viewcategories">
                 <Search handleSearch={this.searchCategories}/>
                     <div className="row categories">
-                        {this.state.categories.length || loadingCategories
+                        {this.state.categories.length
                             ? categoryitems
                             : <div className="col-sm-2 offset-sm-5">No categories </div>}
 

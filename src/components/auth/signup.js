@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axiosInstance from '../Apicalls';
 import {notify} from 'react-notify-toast'
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 
 class Signup extends Component {
     state = {
@@ -39,6 +39,10 @@ class Signup extends Component {
 
     render() {
         const {password_field, email_field} = this.state;
+        
+        if(this.props.loggedIn){
+            return(<Redirect to='/dashboard'/>)
+        }
 
         return (
             <div className="background">

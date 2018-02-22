@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class Landing extends React.Component {
+  static propTypes = {
+    loggedIn:PropTypes.bool.isRequired,
+  }
+  componentDidMount() {
+    if (this.props.loggedIn) {
+      this.props.history.push('/dashboard');
+    }
+  }
   render() {
     return (
       <div className="background-image">
@@ -105,7 +113,7 @@ export const Nav = props => (
                   Categories
               </Link>
               <Link className="btn btn-success" to="/about">About</Link>
-              <Link className="btn btn-danger" to="/" onClick={e => props.logout(e)}>Logout</Link>
+              <Link className="btn btn-danger" to="/" onClick={(e) => { props.logout(e); }}>Logout</Link>
             </div>
 
           )}

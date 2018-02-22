@@ -27,12 +27,11 @@ class App extends Component {
 
   logoutUser = (event) => {
     event.preventDefault();
-    const headers={Authorization:`Bearer ${localStorage.getItem('accessToken')}`}
     axiosInstance
-      .post(`auth/logout`,null,{headers})
+      .post(`auth/logout`,null)
       .then(response => {
         this.setState({loggedin: false})
-        localStorage.clear()
+        localStorage.clear();
         notify.show(response.data.message, 'success', 4000);
       })
       .catch(e => {
@@ -59,8 +58,8 @@ class App extends Component {
           <Nav logout={this.logoutUser} loggedIn={this.state.loggedin}/>
           <Notifications/>
           <Switch>
-            <Route exact path="/" component={Landing}/>
-            <Route exact path="/register" component={Signup}/>
+            <Route exact path="/" component={props=>(<Landing {...props} loggedIn={this.state.loggedin}/>)}/>
+            <Route exact path="/register" component={props=>(<Signup {...props} loggedIn={this.state.loggedin}/>)}/>
             <Route exact path="/reset" component={ResetPassword}/>
             <PrivateRoute exact path="/about" component={About} loggedIn={this.state.loggedin} />
             <Route exact path="/login" component={props => (<Login {...props} login={this.loginUser} loggedIn={this.state.loggedin} />)}/>
