@@ -1,6 +1,6 @@
 # [React](https://reactjs.org/) &middot; 
 [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react)
-[![Build Status](https://travis-ci.org/hadijahkyampeire/Yummy_Reactjs_frontend.svg?branch=ft-user-authentications)](https://travis-ci.org/hadijahkyampeire/Yummy_Reactjs_frontend)
+[![Build Status](https://travis-ci.org/hadijahkyampeire/Yummy_Reactjs_frontend.svg?branch=ft-tests-app-155121666)](https://travis-ci.org/hadijahkyampeire/Yummy_Reactjs_frontend)
 [![Coverage Status](https://coveralls.io/repos/github/hadijahkyampeire/Yummy-front-end-improved/badge.svg?branch=master)](https://coveralls.io/github/hadijahkyampeire/Yummy-front-end-improved?branch=master)
 # yummy-recipes-react
 
