@@ -1,5 +1,5 @@
-React 
-(https://github.com/facebook/react/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)]
+# [React](https://reactjs.org/) &middot; 
+[![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react)
 # yummy-recipes-react
 
 This is the yummy recipes react frontend implementation. It consumes the newyummy-api. it uses Reactjs, enzyme
