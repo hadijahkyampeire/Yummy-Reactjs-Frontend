@@ -1,10 +1,11 @@
 # yummy-recipes-react
 
 This is the yummy recipes react frontend implementation. It consumes the newyummy-api. it uses Reactjs, enzyme
-
+Yummy recipes app is an application that allows users to create, save and share meeting the needs of keeping track of awesome food recipes.
 ## Installation and Running
 ### Requirements
-- You first need to have the newyummy-api installed. See installation details [here](https://github.com/hadijahkyampeire/newyummy_api) 
+- You first need to have the newyummy-api installed. See installation details [here](https://github.com/hadijahkyampeire/newyummy_api) and API documentation and Live production follow this [Link](https://hadijahyummyrecipe-api.herokuapp.com/apidocs/)*
+
 - NodeJs 
 - A package manager e.g. yarn or npm
 
@@ -18,7 +19,7 @@ $ cd yummyrecipes-react
 
 - If you have yarn installed
 ```
-$ yarn
+$ yarn install
 ```
 
 - If you are using npm
@@ -53,3 +54,9 @@ $ npm test
 ```
 $ yarn test
 
+```
+## For test coverage
+```
+$ npm test -- -coverage or
+$yarn test -- coverage -u
+```
