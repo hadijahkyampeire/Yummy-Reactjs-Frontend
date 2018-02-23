@@ -218,6 +218,10 @@ text-align: center;
  margin-top:10px;
 
 }
+.recipe-card{
+    margin-top: 10px;
+    
+}
 .pagination{
     width: 600px;
     position: fixed;
@@ -235,11 +239,13 @@ text-align: center;
     height:80px;
 }
 .viewcategories{
-    background-color: #c6d2f6;
+    background: url("images/green.jpg") no-repeat; 
+    background-size: cover;
     height:100vh;
 }
 .viewrecipes{
-    background-color: #c6d2f6;
+    background: url("images/green.jpg") no-repeat; 
+    background-size: cover;
     height:100vh;
 }
 
@@ -271,3 +277,22 @@ li:disabled {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+  .color{
+      background-color: rgb(146, 199, 197);
+      font-family: 'Tillana', cursive;
+      
+  }
+  .color:hover{
+      background-color: rgb(226, 236, 227);
+  }
+  .recipe{
+      background-color:  rgb(146, 199, 197);
+      font-family: 'Tillana', cursive;
+
+  }
+  .recipe:hover{
+      background-color: rgb(226, 236, 227);
+  }
+.word-font{
+    font-family: 'Tillana', cursive;
+}

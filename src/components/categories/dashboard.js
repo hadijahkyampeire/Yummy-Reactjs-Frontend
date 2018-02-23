@@ -12,8 +12,9 @@ import PropTypes from 'prop-types';
 const Category = (props) => (
     <div className="col-md-3 col-sm-6 category-card">
         <div className="card ">
-            <div className="card-block">
-                <h5 className="card-title">{props.name}</h5>
+            <div className="card-block color" >
+                <h3 className="card-title">{props.name}</h3>
+                <h5 className="card-block">
                 <Link
                     className="btn btn-sm btn-success card-link"
                     data-toggle="modal"
@@ -23,8 +24,10 @@ const Category = (props) => (
                     className="btn btn-sm btn-danger card-link"
                     onClick={props.deleteCategory}
                     to={`#`}><i className="fa fa-trash"/></Link>
+                    </h5>
                 <Link to={`/category/${props.id}/recipes`}>
-                    <h5 className="card-footer">View Recipes</h5>
+                
+                    <h4 className="card-footer">View Recipes</h4>
                 </Link>
                 <EditCategory name={props.name} id={props.id} editCategory={props.editCategory}/>
             </div> 
@@ -131,7 +134,7 @@ class Categories extends Component {
     } 
 
     render() {
-        const {current_page, total_pages, Next_page, Previous_page9} = this.state;
+        const {current_page, total_pages, Next_page, Previous_page} = this.state;
         let categoryitems = this
             .state
             .categories

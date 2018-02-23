@@ -1,43 +1,109 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Login component renders properly without crashing 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "canGo": [Function],
-      "createHref": [Function],
-      "entries": Array [
-        Object {
-          "hash": "",
-          "key": "n16ank",
-          "pathname": "/",
-          "search": "",
-          "state": undefined,
-        },
-      ],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "index": 0,
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "key": "n16ank",
-        "pathname": "/",
-        "search": "",
-        "state": undefined,
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
+<div
+  className="background"
 >
-  <Login
-    loggedIn={false}
-    login={[Function]}
-  />
-</Router>
+  <div
+    id="logbar"
+  >
+    <div
+      className="form-group"
+    >
+      <h1>
+        LOGIN
+      </h1>
+      <form
+        onSubmit={[Function]}
+      >
+        <div
+          className="input-group"
+        >
+          <span
+            className="input-group-addon"
+            id="email"
+          >
+            <i
+              className="fa fa-envelope"
+            />
+          </span>
+          <input
+            aria-describedby="email"
+            className="form-control"
+            id="emailsignup"
+            name="email_field"
+            onChange={[Function]}
+            placeholder="example@gmail.com"
+            type="email"
+            value=""
+          />
+        </div>
+        <br />
+        <div
+          className="input-group"
+        >
+          <span
+            className="input-group-addon"
+            id="email"
+          >
+            <i
+              className="fa fa-lock"
+            />
+          </span>
+          <input
+            className="form-control"
+            name="password_field"
+            onChange={[Function]}
+            placeholder="Password"
+            type="password"
+            value=""
+          />
+        </div>
+        <br />
+        <button
+          className="btn btn-default"
+          id="signin"
+          name="signin"
+          type="submit"
+        >
+          <i
+            className="glyphicon glyphicon-log-in"
+          >
+            LOGIN
+          </i>
+        </button>
+      </form>
+      <div
+        className="change_link"
+      >
+        Not a member yet ?
+        <Link
+          replace={false}
+          to="/register"
+        >
+          <h4
+            className="toregister"
+          >
+            Register Here
+          </h4>
+        </Link>
+      </div>
+    </div>
+    <a
+      data-target="#forgot_password"
+      data-toggle="modal"
+      href="#"
+    >
+      ForgotPassword?
+    </a>
+    <PasswordResetEmail />
+  </div>
+  <footer
+    className="footer"
+  >
+    <p>
+      © Hadijah 2018
+    </p>
+  </footer>
+</div>
 `;

@@ -8,13 +8,14 @@ import Login from '../components/auth/login';
 
 describe('Login component', () => {
   const login = jest.fn();
-  const wrapper = shallow(<MemoryRouter><Login login={login} loggedIn={false} /></MemoryRouter>);
+  const wrapper = shallow(<Login login={login} loggedIn={false} location={{}} />);
 
   it('renders properly without crashing', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
-  // it('it renders state initially', () => {
-  //   expect(wrapper.state().password_field, email_field).toEqual(true);
-  // });
+  it('it renders state initially', () => {
+    expect(wrapper.state().email_field).toEqual('');
+    expect(wrapper.state().password_field).toEqual('');
+  });
 });
