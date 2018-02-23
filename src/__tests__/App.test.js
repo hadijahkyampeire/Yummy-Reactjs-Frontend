@@ -57,5 +57,6 @@ describe('App component', () => {
   it('fully renders properly', () => {
     const fullWrapper = mount(<App />);
     expect(toJson(fullWrapper)).toMatchSnapshot();
+    expect(fullWrapper.find('Landing')).toHaveLength(1);
   });
 });

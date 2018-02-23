@@ -213,13 +213,13 @@ exports[`App component fully renders properly 1`] = `
                           <div
                             className="clock"
                           >
-                            12
+                            10
                             :
-                            34
+                            30
                             :
-                            15
+                            00
                              
-                            am
+                            pm
                           </div>
                         </Clock>
                       </h2>
