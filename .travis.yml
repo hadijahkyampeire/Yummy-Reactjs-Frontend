@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "8.9.4"
+
+script:
+  - yarn test -- -u --coverage 
+
+after_success:
+  - coveralls < coverage/lcov.info
