@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 
 class Landing extends React.Component {
   static propTypes = {
-    loggedIn:PropTypes.bool.isRequired,
+    loggedIn:PropTypes.bool,
+  }
+
+  static defaultProps = {
+    loggedIn:false,
   }
   componentDidMount() {
     if (this.props.loggedIn) {
