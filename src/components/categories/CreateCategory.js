@@ -32,15 +32,15 @@ class CreateCategory extends Component {
     render() {
         return (
             <div >
-                <div id="recipebar">
-                    <div className="container text-center">
+                <div id="recipebar ">
+                    <div className="container text-center word-font">
                         <div className='row'>
                             <div
                                 className='col-xs-8  col-sm-6 offset-xs-2 offset-sm-3 col-md-4 offset-md-4'>
-                                <h2>Create Your Recipe Category</h2>
+                                <h2 className="word-font">Create a category</h2>
 
                                 <form onSubmit={this.handleAddCategories}>
-                                    <div className="form-group">
+                                    <div className="form-group ">
                                         <input
                                             type="text"
                                             name="title"

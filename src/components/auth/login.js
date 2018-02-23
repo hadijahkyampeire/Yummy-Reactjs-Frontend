@@ -6,14 +6,13 @@ import PasswordResetEmail from './resetEmail';
 import PropTypes from 'prop-types'
 
 class Login extends Component {
-
-    static propTypes = {
-        login: PropTypes.func.isRequired
-    }
-
     state = {
         password_field: '',
         email_field: ''
+    }
+
+    static propTypes = {
+        login: PropTypes.func.isRequired
     }
 
     handleInputChange = (event) => {

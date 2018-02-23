@@ -8,6 +8,16 @@ import App from '../App';
 import { Nav } from '../components/auth/landing';
 import PrivateRoute from '../components/auth/PrivateRoute';
 
+const constantDate = new Date('2018-02-13T12:41:20');
+
+Date = class extends Date {
+  constructor() {
+    return constantDate;
+  }
+};
+
+global.Date = Date;
+
 describe('App component', () => {
   const wrapper = shallow(<App />);
 
@@ -44,7 +54,8 @@ describe('App component', () => {
   });
 
   it('has the right initial state', () => {
-    expect(wrapper.state().loggedin).toBeFalsy();
+    console.log(wrapper.state());
+    expect(wrapper.state().loggedin).toBe(false);
   });
 
   it('calls component did mount', () => {

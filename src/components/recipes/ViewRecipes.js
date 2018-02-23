@@ -8,8 +8,9 @@ import axiosInstance from '../Apicalls';
 
 
 const Recipe = (props) => (
-  <div className="card">
-    <div className="card-header" role="tab" id={`recipe-${props.id}`}>
+  <div className="col-md-5 col-sm-6 recipe-card">
+  <div className="card ">
+    <div className="card-header recipe" role="tab" id={`recipe-${props.id}`}>
       <h3 className="mb-0">
         <button className="btn btn-link"
           data-toggle="collapse"
@@ -33,6 +34,7 @@ const Recipe = (props) => (
     <button className="btn btn-lg " onClick={props.deleteRecipe} to={`#`}><i className="fa fa-trash" to="#"/></button>
     <EditRecipe title={props.title} description={props.description} id={props.id} editRecipe={props.editRecipe}/>
     </div>
+  </div>
   </div>
 )
 
