@@ -8,8 +8,10 @@ import axiosInstance from '../Apicalls';
 
 
 const Recipe = (props) => (
+ 
   <div className="col-md-5 col-sm-6 recipe-card">
   <div className="card ">
+  <img class="card-img-top recipeimg" />
     <div className="card-header recipe" role="tab" id={`recipe-${props.id}`}>
       <h3 className="mb-0">
         <button className="btn btn-link"
@@ -59,7 +61,6 @@ class ViewRecipes extends Component {
     axiosInstance.get(`categories/${category_id}/recipes`,{params:{page}})
       .then((response) => {
         this.setState({...response.data, searching:false});
-        console.log(response.data)
 
       })
       .catch((error) => {
@@ -73,7 +74,6 @@ class ViewRecipes extends Component {
         } else if (error.request) {
           alert("Request not made")
         }
-        console.log(error)
       });
 
   }

@@ -62,7 +62,7 @@ class Login extends Component {
                         </h1>
                         <form onSubmit={this.handleLogin}>
                             <div className="input-group">
-                                <span className="input-group-addon" id="email"><i className='fa fa-envelope'/></span>
+                                <span className="input-group-addon" ><i className='fa fa-envelope'/></span>
                                 <input
                                     type="email"
                                     id="emailsignup"
@@ -75,7 +75,7 @@ class Login extends Component {
                             </div>
                             <br/>
                             <div className="input-group">
-                                <span className="input-group-addon" id="email"><i className='fa fa-lock'/></span>
+                                <span className="input-group-addon" ><i className='fa fa-lock'/></span>
                                 <input
                                     type="password"
                                     name="password_field"
@@ -87,8 +87,8 @@ class Login extends Component {
                             <br/>
 
                             <button name="signin" className="btn btn-default" id="signin" type="submit">
-                                <i className="glyphicon glyphicon-log-in">
-                                    LOGIN</i>
+                               
+                                    LOGIN
                             </button>
                         </form>
                         <div className="change_link">

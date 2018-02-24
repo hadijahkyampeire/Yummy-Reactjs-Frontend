@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class About extends Component {
   render() {
     return (
-      <div>
+      <div id="about">
         <h1>About Yummy Recipes</h1>
         <h4>It is a web app, built in React and it consumes a Flask API, It is a platform for,
                   people who care about their nutrition go ahead and note down their recipes so as to keep practicing

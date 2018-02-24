@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup component renders properly 1`] = `
+<div>
+  <CreateCategory
+    getCategories={[Function]}
+  />
+  <div
+    className="viewcategories"
+  >
+    <Search
+      handleSearch={[Function]}
+      placeholder="categories "
+    />
+    <div
+      className="row categories"
+    >
+      <div
+        className="col-sm-5 offset-sm-6"
+      >
+        <div
+          class="alert alert-info"
+          role="alert"
+        >
+          <strong>
+            Ooops!
+          </strong>
+           No categories , go a head and add some
+        </div>
+      </div>
+    </div>
+    <Pagination
+      activePage={null}
+      changePage={[Function]}
+      nextPage={null}
+      previousPage={null}
+      totalPages={null}
+    />
+  </div>
+</div>
+`;

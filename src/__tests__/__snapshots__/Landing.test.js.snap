@@ -1,29 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Landing component reanders properly 1`] = `
-<div
-  className="background-image"
->
-  <div
-    id="welcome"
-  >
-    <h4>
-      You love cooking! then
-    </h4>
-    <h3>
-      <span>
-        WELCOME TO YUMMY RECIPES
-      </span>
-    </h3>
-    <h4>
-      Go ahead and signup to expore
-    </h4>
-    <div>
-      <h2>
-        It is
-        <Clock />
-      </h2>
-    </div>
-  </div>
-</div>
-`;
+exports[`Landing component reanders properly 1`] = `<Slideshow />`;

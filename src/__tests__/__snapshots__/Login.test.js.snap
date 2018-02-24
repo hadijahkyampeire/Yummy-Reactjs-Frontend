@@ -21,7 +21,6 @@ exports[`Login component renders properly without crashing 1`] = `
         >
           <span
             className="input-group-addon"
-            id="email"
           >
             <i
               className="fa fa-envelope"
@@ -44,7 +43,6 @@ exports[`Login component renders properly without crashing 1`] = `
         >
           <span
             className="input-group-addon"
-            id="email"
           >
             <i
               className="fa fa-lock"
@@ -66,11 +64,7 @@ exports[`Login component renders properly without crashing 1`] = `
           name="signin"
           type="submit"
         >
-          <i
-            className="glyphicon glyphicon-log-in"
-          >
-            LOGIN
-          </i>
+          LOGIN
         </button>
       </form>
       <div

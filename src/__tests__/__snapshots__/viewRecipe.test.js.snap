@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewRecipes component renders properly 1`] = `
+<div>
+  <CreateRecipe
+    getRecipes={[Function]}
+    match={
+      Object {
+        "params": Object {},
+      }
+    }
+  />
+  <div
+    className="viewrecipes"
+  >
+    <Search
+      handleSearch={[Function]}
+      placeholder="recipes"
+    />
+    <div
+      className="col-md-6 offset-md-3"
+    >
+      <div
+        aria-multiselectable="true"
+        id="accordion"
+        role="tablist"
+      />
+    </div>
+    <Pagination
+      activePage={null}
+      changePage={[Function]}
+      nextPage={null}
+      previousPage={null}
+      totalPages={null}
+    />
+  </div>
+</div>
+`;

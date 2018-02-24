@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`About component renders properly 1`] = `
-<div>
+<div
+  id="about"
+>
   <h1>
     About Yummy Recipes
   </h1>

@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup component renders properly 1`] = `
+<div
+  className="background"
+>
+  <div
+    id="signbar"
+  >
+    <h1>
+      CREATE AN ACCOUNT TO GET STARTED
+    </h1>
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="input-group"
+      >
+        <span
+          className="input-group-addon"
+          id="email"
+        >
+          <i
+            className="fa fa-envelope"
+          />
+        </span>
+        <input
+          aria-describedby="email"
+          className="form-control"
+          id="emailsignup"
+          name="email_field"
+          onChange={[Function]}
+          placeholder="example@gmail.com"
+          value=""
+        />
+      </div>
+      <br />
+      <div
+        className="input-group"
+      >
+        <span
+          className="input-group-addon"
+          id="email"
+        >
+          <i
+            className="fa fa-lock"
+          />
+        </span>
+        <input
+          className="form-control"
+          name="password_field"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+      </div>
+      <br />
+      <div
+        className="row"
+      >
+        <div
+          className="col-sm-6 text-left"
+        >
+          <Link
+            replace={false}
+            to="/"
+          >
+            <input
+              className="btn-btn-default"
+              type="button"
+              value="Cancel"
+            />
+          </Link>
+        </div>
+        <div
+          className="col-sm-6 text-right"
+        >
+          <input
+            className="btn btn-nav"
+            id="signup"
+            name="signup"
+            type="submit"
+            value="Signup"
+          />
+        </div>
+      </div>
+      <div
+        className="change_link"
+      >
+        Already a member ?
+        <Link
+          replace={false}
+          to="/login"
+        >
+          log in
+        </Link>
+      </div>
+    </form>
+  </div>
+</div>
+`;

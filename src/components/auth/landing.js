@@ -2,6 +2,9 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import Slideshow from '../slideshow';
+
+
 class Landing extends React.Component {
   static propTypes = {
     loggedIn:PropTypes.bool,
@@ -17,26 +20,12 @@ class Landing extends React.Component {
   }
   render() {
     return (
-      <div className="background-image">
-        <div id="welcome">
-          <h4>You love cooking! then</h4>
-          <h3 >
-            <span>WELCOME TO YUMMY RECIPES
-            </span>
-          </h3>
-          <h4>Go ahead and signup to expore</h4>
-          <div>
-            <h2>It is
-              <Clock />
-            </h2>
-          </div>
-        </div>
-      </div>
+      <Slideshow />
     );
   }
 }
 
-class Clock extends React.Component {
+export class Clock extends React.Component {
   constructor(props) {
     super(props);
     const currentTime = new Date();
@@ -105,19 +94,26 @@ export const Nav = props => (
         {!props.loggedIn
           ? (
             <Fragment>
-              <Link to="/login" id="signin" className="btn btn-nav">Login</Link>
+              <Link to="/login" id="signin" className="btn btn-nav">
+              <i className="fa fa-sign-in "/>Login</Link>
               <Link to="/register" id="signup" className="btn btn-nav">
+              <i className="fa fa-user-plus "/>
                 Signup
               </Link>
+              <Link to="/" id="homebtn" className="btn btn-nav">
+              <i className="fa fa-home "/>Home</Link>
             </Fragment>
           )
           : (
             <div>
-              <Link className="btn btn-primary" to="/dashboard">
+              <Link  to="/dashboard" className="btn btn-primary">
                   Categories
+                  <i className="glyphicon glyphicon-cutlery"/>
               </Link>
-              <Link className="btn btn-success" to="/about">About</Link>
-              <Link className="btn btn-danger" to="/" onClick={(e) => { props.logout(e); }}>Logout</Link>
+              <Link className="btn btn-success" to="/about">About Us <i className="glyphicon glyphicon-tags"/></Link>
+              
+              <Link className="btn btn-danger" to="/" onClick={(e) => { props.logout(e); }}>
+              Logout <i className="fa fa-sign-out"/></Link>
             </div>
 
           )}
