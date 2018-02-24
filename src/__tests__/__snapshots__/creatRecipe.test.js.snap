@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup component renders properly 1`] = `
+<div>
+  <div
+    id="recipesbar"
+  >
+    <div
+      className="container text-center"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-xs-8  col-sm-6 offset-xs-2 offset-sm-3 col-md-4 offset-md-4"
+        >
+          <h2>
+            Create Your Recipes
+          </h2>
+          <form
+            onSubmit={[Function]}
+          >
+            <div
+              className="input-group"
+            >
+              <span
+                class="input-group-addon"
+              >
+                <i
+                  class="glyphicon glyphicon-pencil"
+                />
+              </span>
+              <input
+                className="form-control"
+                name="title"
+                onChange={[Function]}
+                placeholder="recipe title"
+                type="text"
+                value=""
+              />
+            </div>
+            <br />
+            <div
+              className="input-group"
+            >
+              <span
+                class="input-group-addon"
+              >
+                <i
+                  class="glyphicon glyphicon-list-alt"
+                />
+              </span>
+              <textarea
+                className="form-control description"
+                cols="50"
+                name="description"
+                onChange={[Function]}
+                placeholder="description or instructions"
+                rows="4"
+                value=""
+              />
+            </div>
+            <br />
+            <input
+              className="btn btn-primary"
+              type="submit"
+              value="Add Recipe"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+  <div>
+    <div />
+  </div>
+</div>
+`;

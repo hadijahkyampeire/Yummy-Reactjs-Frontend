@@ -54,7 +54,6 @@ describe('App component', () => {
   });
 
   it('has the right initial state', () => {
-    console.log(wrapper.state());
     expect(wrapper.state().loggedin).toBe(false);
   });
 

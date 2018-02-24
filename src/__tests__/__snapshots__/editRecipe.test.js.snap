@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup component renders properly 1`] = `
+<div
+  aria-hidden="true"
+  aria-labelledby="exampleModalLabel"
+  className="modal fade"
+  id="edit_recipeundefined"
+  role="dialog"
+>
+  <div
+    className="modal-dialog"
+    role="document"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h5
+          className="modal-title"
+        >
+          Edit a recipe
+        </h5>
+        <button
+          aria-label="Close"
+          className="close"
+          data-dismiss="modal"
+          type="button"
+        >
+          <span
+            aria-hidden="true"
+          >
+            ×
+          </span>
+        </button>
+      </div>
+      <form
+        onSubmit={[Function]}
+      >
+        <div
+          className="modal-body"
+        >
+          <div
+            className="form-group"
+          >
+            <input
+              className="form-control"
+              name="title"
+              onChange={[Function]}
+              type="text"
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <textarea
+              className="form-control description"
+              cols="50"
+              name="description"
+              onChange={[Function]}
+              placeholder="description or instructions"
+              rows="4"
+            />
+          </div>
+        </div>
+        <div
+          className="modal-footer"
+        >
+          <button
+            className="btn btn-primary"
+            type="submit"
+          >
+            Update
+          </button>
+          <button
+            className="btn btn-secondary"
+            data-dismiss="modal"
+            id="closeundefined"
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

@@ -61,6 +61,9 @@ exports[`App component fully renders properly 1`] = `
                     id="signin"
                     onClick={[Function]}
                   >
+                    <i
+                      className="fa fa-sign-in "
+                    />
                     Login
                   </a>
                 </Link>
@@ -76,7 +79,28 @@ exports[`App component fully renders properly 1`] = `
                     id="signup"
                     onClick={[Function]}
                   >
+                    <i
+                      className="fa fa-user-plus "
+                    />
                     Signup
+                  </a>
+                </Link>
+                <Link
+                  className="btn btn-nav"
+                  id="homebtn"
+                  replace={false}
+                  to="/"
+                >
+                  <a
+                    className="btn btn-nav"
+                    href="/"
+                    id="homebtn"
+                    onClick={[Function]}
+                  >
+                    <i
+                      className="fa fa-home "
+                    />
+                    Home
                   </a>
                 </Link>
               </div>
@@ -189,43 +213,390 @@ exports[`App component fully renders properly 1`] = `
                   }
                 }
               >
-                <div
-                  className="background-image"
-                >
+                <Slideshow>
                   <div
-                    id="welcome"
+                    className="container-fluid"
                   >
-                    <h4>
-                      You love cooking! then
-                    </h4>
-                    <h3>
-                      <span>
-                        WELCOME TO YUMMY RECIPES
-                      </span>
-                    </h3>
-                    <h4>
-                      Go ahead and signup to expore
-                    </h4>
-                    <div>
-                      <h2>
-                        It is
-                        <Clock>
+                    <div
+                      className="carousel slide"
+                      data-ride="carousel"
+                      id="myCarousel"
+                    >
+                      <ol
+                        className="carousel-indicators"
+                      >
+                        <li
+                          className="active"
+                          data-slide-to="0"
+                          data-target="#myCarousel"
+                        />
+                        <li
+                          data-slide-to="1"
+                          data-target="#myCarousel"
+                        />
+                        <li
+                          data-slide-to="2"
+                          data-target="#myCarousel"
+                        />
+                        <li
+                          data-slide-to="3"
+                          data-target="#myCarousel"
+                        />
+                        <li
+                          data-slide-to="4"
+                          data-target="#myCarousel"
+                        />
+                      </ol>
+                      <div
+                        className="carousel-inner"
+                        style={
+                          Object {
+                            "height": "100%",
+                          }
+                        }
+                      >
+                        <FoodImages
+                          image="food4.jpg"
+                          status="active"
+                          text="family meal"
+                        >
                           <div
-                            className="clock"
+                            className="item active"
+                            style={
+                              Object {
+                                "height": -50,
+                              }
+                            }
                           >
-                            12
-                            :
-                            41
-                            :
-                            20
-                             
-                            pm
+                            <img
+                              alt="family meal"
+                              src="food4.jpg"
+                              style={
+                                Object {
+                                  "height": "100%",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                            <div
+                              className="carousel-caption"
+                            >
+                              <div
+                                id="welcome"
+                              >
+                                <h3>
+                                  YOU LOVE COOKING?
+                                </h3>
+                                <h3>
+                                  <span>
+                                    WELCOME TO YUMMY RECIPES
+                                  </span>
+                                </h3>
+                                <h4>
+                                  SIGNUP AND GET STARTED
+                                </h4>
+                                <div>
+                                  <h2>
+                                    It is
+                                    <Clock>
+                                      <div
+                                        className="clock"
+                                      >
+                                        12
+                                        :
+                                        41
+                                        :
+                                        20
+                                         
+                                        pm
+                                      </div>
+                                    </Clock>
+                                  </h2>
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                        </Clock>
-                      </h2>
+                        </FoodImages>
+                        <FoodImages
+                          image="img1.jpg"
+                          status=""
+                          text="rolex"
+                        >
+                          <div
+                            className="item "
+                            style={
+                              Object {
+                                "height": -50,
+                              }
+                            }
+                          >
+                            <img
+                              alt="rolex"
+                              src="img1.jpg"
+                              style={
+                                Object {
+                                  "height": "100%",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                            <div
+                              className="carousel-caption"
+                            >
+                              <div
+                                id="welcome"
+                              >
+                                <h3>
+                                  YOU LOVE COOKING?
+                                </h3>
+                                <h3>
+                                  <span>
+                                    WELCOME TO YUMMY RECIPES
+                                  </span>
+                                </h3>
+                                <h4>
+                                  SIGNUP AND GET STARTED
+                                </h4>
+                                <div>
+                                  <h2>
+                                    It is
+                                    <Clock>
+                                      <div
+                                        className="clock"
+                                      >
+                                        12
+                                        :
+                                        41
+                                        :
+                                        20
+                                         
+                                        pm
+                                      </div>
+                                    </Clock>
+                                  </h2>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </FoodImages>
+                        <FoodImages
+                          image="food3.jpg"
+                          status=""
+                          text="proteins"
+                        >
+                          <div
+                            className="item "
+                            style={
+                              Object {
+                                "height": -50,
+                              }
+                            }
+                          >
+                            <img
+                              alt="proteins"
+                              src="food3.jpg"
+                              style={
+                                Object {
+                                  "height": "100%",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                            <div
+                              className="carousel-caption"
+                            >
+                              <div
+                                id="welcome"
+                              >
+                                <h3>
+                                  YOU LOVE COOKING?
+                                </h3>
+                                <h3>
+                                  <span>
+                                    WELCOME TO YUMMY RECIPES
+                                  </span>
+                                </h3>
+                                <h4>
+                                  SIGNUP AND GET STARTED
+                                </h4>
+                                <div>
+                                  <h2>
+                                    It is
+                                    <Clock>
+                                      <div
+                                        className="clock"
+                                      >
+                                        12
+                                        :
+                                        41
+                                        :
+                                        20
+                                         
+                                        pm
+                                      </div>
+                                    </Clock>
+                                  </h2>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </FoodImages>
+                        <FoodImages
+                          image="new1.jpg"
+                          status=""
+                          text="proteins"
+                        >
+                          <div
+                            className="item "
+                            style={
+                              Object {
+                                "height": -50,
+                              }
+                            }
+                          >
+                            <img
+                              alt="proteins"
+                              src="new1.jpg"
+                              style={
+                                Object {
+                                  "height": "100%",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                            <div
+                              className="carousel-caption"
+                            >
+                              <div
+                                id="welcome"
+                              >
+                                <h3>
+                                  YOU LOVE COOKING?
+                                </h3>
+                                <h3>
+                                  <span>
+                                    WELCOME TO YUMMY RECIPES
+                                  </span>
+                                </h3>
+                                <h4>
+                                  SIGNUP AND GET STARTED
+                                </h4>
+                                <div>
+                                  <h2>
+                                    It is
+                                    <Clock>
+                                      <div
+                                        className="clock"
+                                      >
+                                        12
+                                        :
+                                        41
+                                        :
+                                        20
+                                         
+                                        pm
+                                      </div>
+                                    </Clock>
+                                  </h2>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </FoodImages>
+                        <FoodImages
+                          image="new2.jpg"
+                          status=""
+                          text="proteins"
+                        >
+                          <div
+                            className="item "
+                            style={
+                              Object {
+                                "height": -50,
+                              }
+                            }
+                          >
+                            <img
+                              alt="proteins"
+                              src="new2.jpg"
+                              style={
+                                Object {
+                                  "height": "100%",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                            <div
+                              className="carousel-caption"
+                            >
+                              <div
+                                id="welcome"
+                              >
+                                <h3>
+                                  YOU LOVE COOKING?
+                                </h3>
+                                <h3>
+                                  <span>
+                                    WELCOME TO YUMMY RECIPES
+                                  </span>
+                                </h3>
+                                <h4>
+                                  SIGNUP AND GET STARTED
+                                </h4>
+                                <div>
+                                  <h2>
+                                    It is
+                                    <Clock>
+                                      <div
+                                        className="clock"
+                                      >
+                                        12
+                                        :
+                                        41
+                                        :
+                                        20
+                                         
+                                        pm
+                                      </div>
+                                    </Clock>
+                                  </h2>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </FoodImages>
+                      </div>
+                      <a
+                        className="left carousel-control"
+                        data-slide="prev"
+                        href="#myCarousel"
+                      >
+                        <span
+                          className="glyphicon glyphicon-chevron-left"
+                        />
+                        <span
+                          className="sr-only"
+                        >
+                          Previous
+                        </span>
+                      </a>
+                      <a
+                        className="right carousel-control"
+                        data-slide="next"
+                        href="#myCarousel"
+                      >
+                        <span
+                          className="glyphicon glyphicon-chevron-right"
+                        />
+                        <span
+                          className="sr-only"
+                        >
+                          Next
+                        </span>
+                      </a>
                     </div>
                   </div>
-                </div>
+                </Slideshow>
               </Landing>
             </component>
           </Route>

@@ -32,7 +32,7 @@ class CreateCategory extends Component {
     render() {
         return (
             <div >
-                <div id="recipebar ">
+                <div id="recipebar">
                     <div className="container text-center word-font">
                         <div className='row'>
                             <div
@@ -40,7 +40,8 @@ class CreateCategory extends Component {
                                 <h2 className="word-font">Create a category</h2>
 
                                 <form onSubmit={this.handleAddCategories}>
-                                    <div className="form-group ">
+                                    <div className="input-group ">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
                                         <input
                                             type="text"
                                             name="title"
@@ -49,7 +50,7 @@ class CreateCategory extends Component {
                                             onChange={this.handleInputChange}
                                             value={this.state.title}/>
                                     </div>
-
+                                    <br/>
                                     <input type="submit" className='btn btn-primary' value="Add Category"/>
                                 </form>
                             </div>

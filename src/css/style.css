@@ -48,11 +48,11 @@
     padding-top: 15px;
 }  
 #recipebar{
-    background: whitesmoke;
+    background: url("images/restaurant_icons.png");
     padding: 20px;
 }
 #recipesbar{
-    background: whitesmoke;
+    background: url("images/restaurant_icons.png");
     padding: 20px;
 }
 #signup {
@@ -71,6 +71,18 @@
     background-color:white;
     border: 1px solid royalblue;
     color: royalblue;
+    font-weight: bold;
+}
+#homebtn{
+    background-color:white;
+    border: 1px solid rgb(65, 225, 126);
+    color: rgb(65, 225, 113);
+    font-weight: bold;
+}
+#homebtn:hover{
+    background-color:rgb(95, 223, 180);
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
     font-weight: bold;
 }
 #signin:hover {
@@ -111,8 +123,7 @@
 #welcome{
    text-align: center; 
    padding-top: 341px; 
-   color: #000;
-   background: #ffffff3d;
+   color: black;
    font-family: 'Tillana', cursive;
    font-size:800px;
 
@@ -130,7 +141,7 @@
 }
 #signbar{
 font-family: 'Tillana', cursive;
-background: #e0ffffb3;
+background: url("images/restaurant_icons.png");
 text-align: center;
 height: 500px;
 width: 500px;
@@ -147,7 +158,8 @@ background: lightgrey;
 }
 #logbar{
     font-family: 'Tillana', cursive;
-    background: #d3dadab3;;
+    background: url("images/restaurant_icons.png");
+    /* background: #d3dadab3;; */
     text-align: center;
     height: 500px;
     width: 500px;
@@ -158,7 +170,7 @@ background: lightgrey;
 }
 #changepassword{
     font-family: 'Tillana', cursive;
-    background: #8adadab3;;
+    background: url("images/restaurant_icons.png");
     text-align: center;
     height: 500px;
     width: 500px;
@@ -239,12 +251,12 @@ text-align: center;
     height:80px;
 }
 .viewcategories{
-    background: url("images/green.jpg") no-repeat; 
+    background: url("images/restaurant_icons.png") no-repeat; 
     background-size: cover;
     height:100vh;
 }
 .viewrecipes{
-    background: url("images/green.jpg") no-repeat; 
+    background: url("images/restaurant_icons.png") no-repeat; 
     background-size: cover;
     height:100vh;
 }
@@ -295,4 +307,12 @@ li:disabled {
   }
 .word-font{
     font-family: 'Tillana', cursive;
+}
+#about{
+    background: url("images/restaurant_icons.png");
+    height: 100vh;
+}
+.recipeimg{
+    background: url("images/image1.jpg");
+    height:130px;
 }

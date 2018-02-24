@@ -75,7 +75,6 @@ class Categories extends Component {
                 } else if (error.request) {
                     alert("Request not made")
                 }
-                console.log(error)
             });
     }
 
@@ -153,7 +152,10 @@ class Categories extends Component {
                     <div className="row categories">
                         {this.state.categories.length
                             ? categoryitems
-                            : <div className="col-sm-2 offset-sm-5">No categories </div>}
+                            : <div className="col-sm-5 offset-sm-6">
+                            <div class="alert alert-info" role="alert">
+                    <strong>Ooops!</strong> No categories , go a head and add some
+                    </div></div>}
 
                     </div>
                     <Pagination 
