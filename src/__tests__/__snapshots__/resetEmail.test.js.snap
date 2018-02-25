@@ -58,6 +58,7 @@ exports[`Signup component renders properly 1`] = `
         >
           <button
             className="btn btn-primary"
+            id="sendemail"
             type="submit"
           >
             Send Email

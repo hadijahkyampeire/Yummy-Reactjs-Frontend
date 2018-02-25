@@ -20,6 +20,18 @@ describe('Login component', () => {
     expect(wrapper.state().password_field).toEqual('');
   });
 
+  it('has the correct form fields', () => {
+    expect(wrapper.find('#emailsignup')).toHaveLength(1);
+    expect(wrapper.find('[name="password_field"]')).toHaveLength(1);
+    expect(wrapper.find('#signin')).toHaveLength(1);
+  });
+
+  it('Form fields update when state changes', () => {
+    wrapper.setState({ password_field: 'hi', email_field: 'mail' });
+    expect(wrapper.find('#emailsignup').props().value).toEqual('mail');
+    expect(wrapper.find('[name="password_field"]').props().value).toEqual('hi');
+  });
+
   it('renders component in div', () => {
     expect(wrapper.find('div').length).toBe(6);
   });
@@ -30,6 +42,22 @@ describe('Login component', () => {
 
   it('renders inputs', () => {
     expect(wrapper.find('input').length).toBe(2);
+  });
+
+  it('renders buttons', () => {
+    expect(wrapper.find('button').length).toBe(1);
+  });
+
+  it('it has br', () => {
+    expect(wrapper.find('br').length).toBe(2);
+  });
+
+  it('renders h1', () => {
+    expect(wrapper.find('h1').length).toBe(1);
+  });
+
+  it('renders component in span', () => {
+    expect(wrapper.find('span').length).toBe(2);
   });
 
   it('submits data', () => {

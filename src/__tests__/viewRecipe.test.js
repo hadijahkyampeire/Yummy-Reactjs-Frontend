@@ -1,6 +1,5 @@
 import React from 'react';
-import { shallow, enzyme } from 'enzyme';
-import { StaticRouter } from 'react-router-dom';
+import { shallow, mount } from 'enzyme';
 import toJson, { shallowToJson } from 'enzyme-to-json';
 import sinon from 'sinon';
 
@@ -11,5 +10,48 @@ describe('ViewRecipes component', () => {
 
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
+  });
+
+  it('renders other components', () => {
+    expect(wrapper.find('CreateRecipe')).toHaveLength(1);
+    expect(wrapper.find('Pagination')).toHaveLength(1);
+    expect(wrapper.find('Search')).toHaveLength(1);
+  });
+
+  it('has a div', () => {
+    expect(wrapper.find('div')).toHaveLength(4);
+  });
+
+  it('has initial states', () => {
+    expect(wrapper.state().recipes).toEqual([]);
+    expect(wrapper.state().Next_page).toEqual(null);
+    expect(wrapper.state().Previous_page).toEqual(null);
+    expect(wrapper.state().current_page).toEqual(null);
+    expect(wrapper.state().total_pages).toEqual(null);
+    expect(wrapper.state().total_Items).toEqual(null);
+    expect(wrapper.state().searching).toEqual(false);
+  });
+
+  it('renders get recipes functions', () => {
+    expect(wrapper.find('getRecipes')).toBeTruthy();
+  });
+
+  it('renders delete recipes functions', () => {
+    expect(wrapper.find('deleteRecipes')).toBeTruthy();
+  });
+
+  it('renders delete recipes functions', () => {
+    expect(wrapper.find('editRecipes')).toBeTruthy();
+  });
+
+  it('renders change page functions', () => {
+    expect(wrapper.find('changePage')).toBeTruthy();
+  });
+
+  it('calls component did mount', () => {
+    sinon.spy(ViewRecipes.prototype, 'componentDidMount');
+    const fullWrapper = mount(<ViewRecipes match={{ params: {} }} />);
+    expect(ViewRecipes.prototype.componentDidMount).toHaveProperty('callCount', 1);
+    ViewRecipes.prototype.componentDidMount.restore();
   });
 });

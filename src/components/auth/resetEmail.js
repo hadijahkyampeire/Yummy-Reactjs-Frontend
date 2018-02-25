@@ -49,7 +49,7 @@ class PasswordResetEmail extends Component {
               />
             </div>
             <div className="modal-footer">
-              <button type="submit" className="btn btn-primary">Send Email</button>
+              <button type="submit" id="sendemail" className="btn btn-primary">Send Email</button>
               <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
 
             </div>
