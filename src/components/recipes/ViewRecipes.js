@@ -32,8 +32,8 @@ const Recipe = (props) => (
       <div className="card-block">
         {props.description}
       </div>
-      <button className="btn btn-lg " data-toggle="modal" data-target={`#edit_recipe${props.id}`} to="#" ><i className="fa fa-edit"/></button>
-    <button className="btn btn-lg " onClick={props.deleteRecipe} to={`#`}><i className="fa fa-trash" to="#"/></button>
+      <button className="btn btn-sm btn-primary" data-toggle="modal" data-target={`#edit_recipe${props.id}`} to="#" ><i className="fa fa-edit"/></button>
+    <button className="btn btn-sm btn-danger " onClick={props.deleteRecipe} to={`#`}><i className="fa fa-trash" to="#"/></button>
     <EditRecipe title={props.title} description={props.description} id={props.id} editRecipe={props.editRecipe}/>
     </div>
   </div>
