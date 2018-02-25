@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slideshow component renders properly 1`] = `
+<div
+  className="container-fluid"
+>
+  <div
+    className="carousel slide"
+    data-ride="carousel"
+    id="myCarousel"
+  >
+    <ol
+      className="carousel-indicators"
+    >
+      <li
+        className="active"
+        data-slide-to="0"
+        data-target="#myCarousel"
+      />
+      <li
+        data-slide-to="1"
+        data-target="#myCarousel"
+      />
+      <li
+        data-slide-to="2"
+        data-target="#myCarousel"
+      />
+      <li
+        data-slide-to="3"
+        data-target="#myCarousel"
+      />
+      <li
+        data-slide-to="4"
+        data-target="#myCarousel"
+      />
+    </ol>
+    <div
+      className="carousel-inner"
+      style={
+        Object {
+          "height": "100%",
+        }
+      }
+    >
+      <FoodImages
+        image="food4.jpg"
+        status="active"
+        text="family meal"
+      />
+      <FoodImages
+        image="img1.jpg"
+        status=""
+        text="rolex"
+      />
+      <FoodImages
+        image="food3.jpg"
+        status=""
+        text="proteins"
+      />
+      <FoodImages
+        image="new1.jpg"
+        status=""
+        text="proteins"
+      />
+      <FoodImages
+        image="new2.jpg"
+        status=""
+        text="proteins"
+      />
+    </div>
+    <a
+      className="left carousel-control"
+      data-slide="prev"
+      href="#myCarousel"
+    >
+      <span
+        className="glyphicon glyphicon-chevron-left"
+      />
+      <span
+        className="sr-only"
+      >
+        Previous
+      </span>
+    </a>
+    <a
+      className="right carousel-control"
+      data-slide="next"
+      href="#myCarousel"
+    >
+      <span
+        className="glyphicon glyphicon-chevron-right"
+      />
+      <span
+        className="sr-only"
+      >
+        Next
+      </span>
+    </a>
+  </div>
+</div>
+`;

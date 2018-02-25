@@ -1,15 +1,52 @@
 import React from 'react';
-import { shallow, enzyme } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
 import toJson, { shallowToJson } from 'enzyme-to-json';
 import sinon from 'sinon';
 
 import Categories from '../components/categories/dashboard';
+import CreateCategory from '../components/categories/CreateCategory';
 
-describe('Signup component', () => {
+describe('ViewCategories component', () => {
   const wrapper = shallow(<Categories />);
 
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
+  });
+
+  it('renders other components', () => {
+    expect(wrapper.find(CreateCategory)).toHaveLength(1);
+    expect(wrapper.find('Pagination')).toHaveLength(1);
+    expect(wrapper.find('Search')).toHaveLength(1);
+  });
+
+  it('has a div', () => {
+    expect(wrapper.find('div')).toHaveLength(5);
+  });
+
+  it('renders get categories functions', () => {
+    expect(wrapper.find('getCategories')).toBeTruthy();
+  });
+
+  it('renders delete categpries functions', () => {
+    expect(wrapper.find('deleteCategory')).toBeTruthy();
+  });
+
+  it('renders delete categories functions', () => {
+    expect(wrapper.find('editCategory')).toBeTruthy();
+  });
+
+  it('renders change page functions', () => {
+    expect(wrapper.find('changePage')).toBeTruthy();
+  });
+
+  it('has initial states', () => {
+    expect(wrapper.state().categories).toEqual([]);
+    expect(wrapper.state().Next_page).toEqual(null);
+    expect(wrapper.state().Previous_page).toEqual(null);
+    expect(wrapper.state().current_page).toEqual(null);
+    expect(wrapper.state().total_pages).toEqual(null);
+    expect(wrapper.state().total_Items).toEqual(null);
+    expect(wrapper.state().searching).toEqual(false);
   });
 });

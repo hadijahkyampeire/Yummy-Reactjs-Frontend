@@ -12,4 +12,38 @@ describe('ResetPassword component', () => {
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
+
+  it('renders initial states', () => {
+    expect(wrapper.state().email).toEqual('');
+    expect(wrapper.state().password).toEqual('');
+    expect(wrapper.state().retyped_password).toEqual('');
+  });
+
+  it('renders a form', () => {
+    expect(wrapper.find('form')).toHaveLength(1);
+  });
+
+  it('renders a button', () => {
+    expect(wrapper.find('button')).toHaveLength(1);
+  });
+
+  it('has divs', () => {
+    expect(wrapper.find('div')).toHaveLength(6);
+  });
+
+  it('has span', () => {
+    expect(wrapper.find('span')).toHaveLength(3);
+  });
+
+  it('has icon h3', () => {
+    expect(wrapper.find('h3')).toHaveLength(1);
+  });
+
+  it('has inputs', () => {
+    expect(wrapper.find('input')).toHaveLength(3);
+  });
+
+  it('has br', () => {
+    expect(wrapper.find('br')).toHaveLength(3);
+  });
 });

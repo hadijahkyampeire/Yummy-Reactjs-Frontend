@@ -15,6 +15,25 @@ describe('Signup component', () => {
   it('has a form', () => {
     expect(wrapper.find('form').length).toBe(1);
   });
+  it('renders h1', () => {
+    expect(wrapper.find('h1').length).toBe(1);
+  });
+
+  it('renders inputs', () => {
+    expect(wrapper.find('input').length).toBe(4);
+  });
+
+  it('it has br', () => {
+    expect(wrapper.find('br').length).toBe(2);
+  });
+
+  it('renders component in div', () => {
+    expect(wrapper.find('div').length).toBe(8);
+  });
+
+  it('renders component in span', () => {
+    expect(wrapper.find('span').length).toBe(2);
+  });
 
   it('has the correct form fields', () => {
     expect(wrapper.find('#emailsignup')).toHaveLength(1);

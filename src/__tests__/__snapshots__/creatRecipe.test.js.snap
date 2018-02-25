@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Signup component renders properly 1`] = `
+exports[`CreateRecipe component renders properly 1`] = `
 <div>
   <div
     id="recipesbar"

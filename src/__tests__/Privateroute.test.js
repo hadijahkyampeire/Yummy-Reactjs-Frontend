@@ -15,4 +15,5 @@ describe('PrivateRoute component', () => {
   it('renders the routes', () => {
     expect(wrapper.find('Route').length).toEqual(1);
   });
+  
 });
