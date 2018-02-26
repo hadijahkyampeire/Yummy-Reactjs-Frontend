@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: ' https://hadijahyummyrecipe-api.herokuapp.com/api/v1/',
+  baseURL: 'https://hadijahyummyrecipe-api.herokuapp.com/api/v1/',
   headers: { Authorization: `Bearer ${localStorage.getItem('accessToken')}` },
 });
 
