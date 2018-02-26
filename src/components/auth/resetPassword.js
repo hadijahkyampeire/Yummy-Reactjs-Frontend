@@ -47,7 +47,7 @@ class ResetPassword extends Component {
 
       <div id="form-group">
       <h3>Password Reset</h3>
-        <form onClick={this.handleResetPassword}>
+        <form onSubmit={this.handleResetPassword}>
           <div className="input-group">
             <span className="input-group-addon" id="email"><i className="fa fa-envelope" /></span>
             <input
