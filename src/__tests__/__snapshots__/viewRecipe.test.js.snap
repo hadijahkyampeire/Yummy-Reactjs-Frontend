@@ -1,5 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Recipe renders correctly 1`] = `
+<div
+  className="col-md-5 col-sm-6 recipe-card"
+>
+  <div
+    className="card "
+  >
+    <img
+      class="card-img-top recipeimg"
+    />
+    <div
+      className="card-header recipe"
+      id="recipe-1"
+      role="tab"
+    >
+      <h3
+        className="mb-0"
+      >
+        <button
+          aria-controls="collapseOne"
+          aria-expanded="true"
+          className="btn btn-link"
+          data-toggle="collapse"
+          href="#recipeDetails1"
+        >
+          mockTitle
+        </button>
+      </h3>
+    </div>
+    <div
+      aria-labelledby="recipe-1"
+      className="collapse"
+      id="recipeDetails1"
+      role="tabpanel"
+    >
+      <div
+        className="card-block"
+      >
+        mockDesc
+      </div>
+      <button
+        className="btn btn-sm btn-primary"
+        data-target="#edit_recipe1"
+        data-toggle="modal"
+        to="#"
+      >
+        <i
+          className="fa fa-edit"
+        />
+      </button>
+      <button
+        className="btn btn-sm btn-danger "
+        onClick={[Function]}
+        to="#"
+      >
+        <i
+          className="fa fa-trash"
+          to="#"
+        />
+      </button>
+      <EditRecipe
+        description="mockDesc"
+        editRecipe={[Function]}
+        id={1}
+        title="mockTitle"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ViewRecipes component renders properly 1`] = `
 <div>
   <CreateRecipe

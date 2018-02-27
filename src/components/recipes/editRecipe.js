@@ -13,7 +13,7 @@ class EditRecipe extends Component{
       event.preventDefault();
       this.props.editRecipe(this.props.id,this.state.title,this.state.description)
     }
-    componentDidMount(){
+    componentWillMount(){
       this.setState({title:this.props.title, description:this.props.description})
   }
     render(){

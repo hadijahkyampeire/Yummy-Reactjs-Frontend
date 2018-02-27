@@ -7,7 +7,8 @@ import sinon from 'sinon';
 import CreateRecipe from '../components/recipes/CreateRecipes';
 
 describe('CreateRecipe component', () => {
-  const wrapper = shallow(<CreateRecipe />);
+  const wrapper = shallow(<CreateRecipe match={{params:{id:1}}} />);
+  const preventDefault = jest.fn();
 
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
@@ -51,5 +52,8 @@ describe('CreateRecipe component', () => {
 
   it('renders a form', () => {
     expect(wrapper.find('form')).toHaveLength(1);
+    expect(wrapper.find('form').simulate('submit', {preventDefault}))
+    expect(preventDefault).toBeCalled();
+    expect(wrapper.find('[name="title"]').simulate('change', {target:{name:'title', value:'hi'}}))
   });
 });

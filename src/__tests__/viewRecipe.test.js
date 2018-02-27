@@ -3,10 +3,11 @@ import { shallow, mount } from 'enzyme';
 import toJson, { shallowToJson } from 'enzyme-to-json';
 import sinon from 'sinon';
 
-import ViewRecipes from '../components/recipes/ViewRecipes';
+import ViewRecipes, {Recipe} from '../components/recipes/ViewRecipes';
 
 describe('ViewRecipes component', () => {
   const wrapper = shallow(<ViewRecipes match={{ params: {} }} />);
+  const recipe = {id: 1, title:'mockTitle', description:'mockDesc'}
 
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
@@ -48,6 +49,11 @@ describe('ViewRecipes component', () => {
     expect(wrapper.find('changePage')).toBeTruthy();
   });
 
+  it('renders recipes', ()=>{
+    wrapper.setState({recipes: Array.from({length: 5}).fill({recipe})});
+    expect(wrapper.find('#accordion').props().children).toHaveLength(5);
+  })
+
   it('calls component did mount', () => {
     sinon.spy(ViewRecipes.prototype, 'componentDidMount');
     const fullWrapper = mount(<ViewRecipes match={{ params: {} }} />);
@@ -55,3 +61,13 @@ describe('ViewRecipes component', () => {
     ViewRecipes.prototype.componentDidMount.restore();
   });
 });
+
+describe('Recipe', ()=>{
+  const recipe = {id: 1, title:'mockTitle', description:'mockDesc'}
+  const wrapper = shallow(<Recipe {...recipe} editRecipe={jest.fn()} deleteRecipe={jest.fn()} />)
+
+  it('renders correctly', ()=>{
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    wrapper.find('.btn .btn-link').simulate('click')
+  })
+})

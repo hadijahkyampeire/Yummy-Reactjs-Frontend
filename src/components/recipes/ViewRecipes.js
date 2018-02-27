@@ -7,7 +7,7 @@ import Search from '../searchQuery';
 import axiosInstance from '../Apicalls';
 
 
-const Recipe = (props) => (
+export const Recipe = (props) => (
  
   <div className="col-md-5 col-sm-6 recipe-card">
   <div className="card ">
