@@ -1,5 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Category component renders correctly 1`] = `
+<div
+  className="col-md-3 col-sm-6 category-card"
+>
+  <div
+    className="card "
+  >
+    <div
+      className="card-block color"
+    >
+      <h3
+        className="card-title"
+      >
+        lunch
+      </h3>
+      <h5
+        className="card-block"
+      >
+        <Link
+          className="btn btn-sm btn-success card-link"
+          data-target="#edit_category1"
+          data-toggle="modal"
+          replace={false}
+          to="#"
+        >
+          <i
+            className="fa fa-edit"
+          />
+        </Link>
+        <Link
+          className="btn btn-sm btn-danger card-link"
+          onClick={[Function]}
+          replace={false}
+          to="#"
+        >
+          <i
+            className="fa fa-trash"
+          />
+        </Link>
+      </h5>
+      <Link
+        replace={false}
+        to="/category/1/recipes"
+      >
+        <h4
+          className="card-footer"
+        >
+          View Recipes
+        </h4>
+      </Link>
+      <EditCategory
+        editCategory={[Function]}
+        id={1}
+        name="lunch"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ViewCategories component renders properly 1`] = `
 <div>
   <CreateCategory

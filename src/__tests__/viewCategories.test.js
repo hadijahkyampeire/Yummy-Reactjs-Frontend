@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import toJson, { shallowToJson } from 'enzyme-to-json';
 import sinon from 'sinon';
 
-import Categories from '../components/categories/dashboard';
+import Categories ,{Category} from '../components/categories/dashboard';
 import CreateCategory from '../components/categories/CreateCategory';
 
 describe('ViewCategories component', () => {
@@ -50,3 +50,13 @@ describe('ViewCategories component', () => {
     expect(wrapper.state().searching).toEqual(false);
   });
 });
+
+describe('Category component', ()=>{
+  const category ={id:1 , name: "lunch"}
+  const wrapper = shallow(<Category {...category} editCategory={jest.fn()} deleteCategory={jest.fn()} />)
+
+  it('renders correctly', ()=>{
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
+    wrapper.find('.card-footer').simulate('click')
+  })
+})

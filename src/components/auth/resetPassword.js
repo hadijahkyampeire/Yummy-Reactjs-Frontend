@@ -29,14 +29,12 @@ class ResetPassword extends Component {
         .then(response=>{
             notify.show(response.data.message, 'success', 4000)
             this.props.history.push('/login')
-            console.log(response)
         }).catch(error=>{
             if (error.response){
                 notify.show(error.response.data.message, 'error', 3000)
             }else if(error.request){
                 notify.show("Request not made", 'error', 3000)
             }
-            console.log(error)
         })
     }
     

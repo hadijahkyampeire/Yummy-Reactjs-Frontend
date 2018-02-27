@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search component renders properly 1`] = `
+<nav
+  aria-label="Page navigation example"
+>
+  <ul
+    className="pagination"
+  >
+    <li
+      className="page-item disabled"
+    >
+      <a
+        className="page-link"
+        data-page={null}
+        href="!#"
+        onClick={[Function]}
+      >
+        Previous
+      </a>
+    </li>
+    <li
+      className="page-item disabled"
+    >
+      <a
+        className="page-link"
+        data-page={null}
+        href="!#"
+        onClick={[Function]}
+      >
+        Next
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

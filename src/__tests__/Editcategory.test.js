@@ -7,7 +7,8 @@ import sinon from 'sinon';
 import EditCategory from '../components/categories/editCategory';
 
 describe('EditCategory component', () => {
-  const wrapper = shallow(<EditCategory />);
+  const wrapper = shallow(<EditCategory editCategory={jest.fn()}/>);
+  const preventDefault = jest.fn();
 
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
@@ -23,6 +24,9 @@ describe('EditCategory component', () => {
 
   it('has inputs in a modal', () => {
     expect(wrapper.find('input')).toHaveLength(1);
+    expect(wrapper.find('form').simulate('submit', {preventDefault}))
+    expect(preventDefault).toBeCalled();
+    expect(wrapper.find('[name="name"]').simulate('change', {target:{name:'name', value:'lunch'}}))
   });
 
   it('has a form in a modal', () => {

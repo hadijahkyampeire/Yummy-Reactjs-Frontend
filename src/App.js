@@ -35,7 +35,6 @@ class App extends Component {
         notify.show(response.data.message, 'success', 4000);
       })
       .catch(e => {
-        console.log(e)
       })
   }
 
