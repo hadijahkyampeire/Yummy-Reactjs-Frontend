@@ -9,7 +9,7 @@ import Search from '../searchQuery';
 import PropTypes from 'prop-types';
 
 
-const Category = (props) => (
+export const Category = (props) => (
     <div className="col-md-3 col-sm-6 category-card">
         <div className="card ">
             <div className="card-block color" >

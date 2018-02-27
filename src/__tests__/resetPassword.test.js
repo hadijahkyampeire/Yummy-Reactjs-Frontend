@@ -8,6 +8,8 @@ import ResetPassword from '../components/auth/resetPassword';
 
 describe('ResetPassword component', () => {
   const wrapper = shallow(<ResetPassword location={{ search: 'testUrl' }} />);
+  const preventDefault = jest.fn();
+  
 
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
@@ -21,6 +23,9 @@ describe('ResetPassword component', () => {
 
   it('renders a form', () => {
     expect(wrapper.find('form')).toHaveLength(1);
+    expect(wrapper.find('form').simulate('submit', {preventDefault}))
+    expect(preventDefault).toBeCalled();
+    expect(wrapper.find('[name="email"]').simulate('change', {target:{name:'email', value:'had@hmail.com'}}))
   });
 
   it('renders a button', () => {

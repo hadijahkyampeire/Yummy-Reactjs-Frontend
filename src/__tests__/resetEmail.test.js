@@ -8,6 +8,7 @@ import PasswordResetEmail from '../components/auth/resetEmail';
 
 describe('Signup component', () => {
   const wrapper = shallow(<PasswordResetEmail />);
+  const preventDefault = jest.fn();
 
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
@@ -20,6 +21,9 @@ describe('Signup component', () => {
   });
   it('renders a form', () => {
     expect(wrapper.find('form')).toHaveLength(1);
+    expect(wrapper.find('form').simulate('submit', {preventDefault}))
+    expect(preventDefault).toBeCalled();
+    expect(wrapper.find('[name="email"]').simulate('change', {target:{name:'email', value:'had@hmail.com'}}))
   });
 
   it('has form fields', () => {

@@ -8,12 +8,16 @@ import Signup from '../components/auth/signup';
 
 describe('Signup component', () => {
   const wrapper = shallow(<Signup />);
+  const preventDefault = jest.fn();
 
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
   it('has a form', () => {
     expect(wrapper.find('form').length).toBe(1);
+    expect(wrapper.find('form').simulate('submit', {preventDefault}))
+    expect(preventDefault).toBeCalled();
+    // expect(wrapper.find('[name="email_field"]').simulate('change', {target:{name:'email_field', value:'had@hmail.com'}}))
   });
   it('renders h1', () => {
     expect(wrapper.find('h1').length).toBe(1);

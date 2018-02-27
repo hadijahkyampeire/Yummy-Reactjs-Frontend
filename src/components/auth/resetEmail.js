@@ -20,6 +20,11 @@ class PasswordResetEmail extends Component {
             document.getElementById("close-email-modal").click()
             notify.show(response.data.message, 'success', 4000);
         }).catch(error=>{
+          if(error.response){
+            notify.show(response.error.data.message, 'error', 4000)
+          }else if(error.request){
+            notify.show("Request not made", 'error', 3000)
+          }
 
         })
 

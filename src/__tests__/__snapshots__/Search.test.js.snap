@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search component renders properly 1`] = `
+<div>
+  <form
+    className="form-group"
+    onSubmit={[Function]}
+    role="search"
+  >
+    <div
+      className="input-group add-on col-sm-3 pull-right"
+    >
+      <input
+        className="form-control"
+        name="q"
+        onChange={[Function]}
+        placeholder="Search for categories "
+        type="search"
+        value=""
+      />
+      <div
+        className="input-group-btn"
+      >
+        <button
+          className="btn btn-default"
+          type="submit"
+        >
+          <i
+            className="glyphicon glyphicon-search"
+          />
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;
