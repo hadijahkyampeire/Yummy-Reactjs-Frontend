@@ -7,7 +7,8 @@ import sinon from 'sinon';
 import EditRecipe from '../components/recipes/editRecipe';
 
 describe('Signup component', () => {
-  const wrapper = shallow(<EditRecipe />);
+  const wrapper = shallow(<EditRecipe  editRecipe={jest.fn()}/>);
+  const preventDefault = jest.fn();
 
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
@@ -34,12 +35,15 @@ describe('Signup component', () => {
 
   it('has inputs in a modal', () => {
     expect(wrapper.find('input')).toHaveLength(1);
+    expect(wrapper.find('form').simulate('submit', {preventDefault}))
+    expect(preventDefault).toBeCalled();
+    expect(wrapper.find('[name="title"]').simulate('change', {target:{name:'title', value:'hi'}}))
   });
 
   it('calls component did mount', () => {
-    sinon.spy(EditRecipe.prototype, 'componentDidMount');
+    sinon.spy(EditRecipe.prototype, 'componentWillMount');
     const fullWrapper = mount(<EditRecipe />);
-    expect(EditRecipe.prototype.componentDidMount).toHaveProperty('callCount', 1);
-    EditRecipe.prototype.componentDidMount.restore();
+    expect(EditRecipe.prototype.componentWillMount).toHaveProperty('callCount', 1);
+    EditRecipe.prototype.componentWillMount.restore();
   });
 });

@@ -12,7 +12,7 @@ class EditCategory extends Component {
         const {name, value} = event.target;
         this.setState({[name]:value});
     }
-    componentDidMount(){
+    componentWillMount(){
         this.setState({name:this.props.name})
     }
     render() {

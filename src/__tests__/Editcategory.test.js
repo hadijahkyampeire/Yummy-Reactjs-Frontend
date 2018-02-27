@@ -38,9 +38,9 @@ describe('EditCategory component', () => {
   });
 
   it('calls component did mount', () => {
-    sinon.spy(EditCategory.prototype, 'componentDidMount');
+    sinon.spy(EditCategory.prototype, 'componentWillMount');
     const fullWrapper = mount(<EditCategory />);
-    expect(EditCategory.prototype.componentDidMount).toHaveProperty('callCount', 1);
-    EditCategory.prototype.componentDidMount.restore();
+    expect(EditCategory.prototype.componentWillMount).toHaveProperty('callCount', 1);
+    EditCategory.prototype.componentWillMount.restore();
   });
 });

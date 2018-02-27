@@ -24,10 +24,10 @@ exports[`CreateRecipe component renders properly 1`] = `
               className="input-group"
             >
               <span
-                class="input-group-addon"
+                className="input-group-addon"
               >
                 <i
-                  class="glyphicon glyphicon-pencil"
+                  className="glyphicon glyphicon-pencil"
                 />
               </span>
               <input
@@ -44,10 +44,10 @@ exports[`CreateRecipe component renders properly 1`] = `
               className="input-group"
             >
               <span
-                class="input-group-addon"
+                className="input-group-addon"
               >
                 <i
-                  class="glyphicon glyphicon-list-alt"
+                  className="glyphicon glyphicon-list-alt"
                 />
               </span>
               <textarea
