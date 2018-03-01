@@ -5,7 +5,12 @@ import {Link, Redirect} from 'react-router-dom';
 import PasswordResetEmail from './resetEmail';
 import PropTypes from 'prop-types'
 
+/**
+ * Component for handling login.
+ * @author [Hadijah kyampeire](https://github.com/hadijahkyampeire/Yummy_Reactjs_frontend)
+ */
 class Login extends Component {
+    // initial states
     state = {
         password_field: '',
         email_field: ''
@@ -14,12 +19,12 @@ class Login extends Component {
     static propTypes = {
         login: PropTypes.func.isRequired
     }
-
+    // handles changes and updates state
     handleInputChange = (event) => {
         const {name, value} = event.target;
         this.setState({[name]: value});
     }
-
+    // function to make an API call on submit
     handleLogin = (event) => {
         const {email_field: email, password_field: password} = this.state;
 
@@ -33,6 +38,7 @@ class Login extends Component {
                     .login();
                 notify.show(response.data.message, 'success', 4000);
             })
+            // error handling
             .catch(error => {
                 if (error.response) {
                     alert(error.response.data.message)

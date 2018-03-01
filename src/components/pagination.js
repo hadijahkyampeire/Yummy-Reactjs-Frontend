@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Pagination component to be reused in other components where pagination is needed.
+ * @author [Hadijah kyampeire](https://github.com/hadijahkyampeire/Yummy_Reactjs_frontend)
+ */
 class Pagination extends Component {
     static propTypes = {
         totalPages: PropTypes.number,

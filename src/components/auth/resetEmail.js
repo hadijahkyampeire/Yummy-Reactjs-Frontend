@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import {notify} from 'react-notify-toast';
 import axiosInstance from '../Apicalls';
 
+/**
+ * Component for handling emails when resetting password.
+ * @author [Hadijah kyampeire](https://github.com/hadijahkyampeire/Yummy_Reactjs_frontend)
+ */
 class PasswordResetEmail extends Component {
     state = {
         email:'',

@@ -1,7 +1,6 @@
 import React from 'react';
 import food4 from '../css/images/food4.jpg';
-import img1 from '../css/images/img1.jpg';
-import food3 from '../css/images/food3.jpg';
+import bg from '../css/images/bg.jpg';
 import new1 from '../css/images/new1.jpg';
 import new2 from '../css/images/new2.jpg';
 import { Clock } from './auth/landing';
@@ -27,6 +26,9 @@ const FoodImages = props => (
   </div>
 );
 
+/**
+ * Component for executing image slide show on the landing page.
+ */
 const Slideshow = () => (
   <div className="container-fluid">
     <div id="myCarousel" className="carousel slide" data-ride="carousel">
@@ -35,12 +37,10 @@ const Slideshow = () => (
         <li data-target="#myCarousel" data-slide-to="1" />
         <li data-target="#myCarousel" data-slide-to="2" />
         <li data-target="#myCarousel" data-slide-to="3" />
-        <li data-target="#myCarousel" data-slide-to="4" />
       </ol>
       <div className="carousel-inner" style={{ height: '100%' }} >
         <FoodImages status="active" image={food4} text="family meal" />
-        <FoodImages status="" image={img1} text="rolex" />
-        <FoodImages status="" image={food3} text="proteins" />
+        <FoodImages status="" image={bg} text="rolex" />
         <FoodImages status="" image={new1} text="proteins" />
         <FoodImages status="" image={new2} text="proteins" />
       </div>

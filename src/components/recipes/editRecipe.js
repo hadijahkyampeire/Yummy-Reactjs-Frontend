@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+/**
+ * Component for editing recipes.
+ * @author [Hadijah kyampeire](https://github.com/hadijahkyampeire/Yummy_Reactjs_frontend)
+ */
 class EditRecipe extends Component{
     state ={
       title:'',

@@ -41,6 +41,7 @@ class Signup extends Component {
         const {password_field, email_field} = this.state;
         
         if(this.props.loggedIn){
+            // if one is loggedin it should not show signup anymore
             return(<Redirect to='/dashboard'/>)
         }
 

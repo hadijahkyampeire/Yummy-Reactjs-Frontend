@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+/**
+ * Component rendering some info about good feeding.
+ * @author [Hadijah kyampeire](https://github.com/hadijahkyampeire/Yummy_Reactjs_frontend)
+ */
 class About extends Component {
   render() {
     return (

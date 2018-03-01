@@ -8,7 +8,7 @@ import Pagination from '../pagination';
 import Search from '../searchQuery';
 import PropTypes from 'prop-types';
 
-
+// Reusable component to render a single category in a card
 export const Category = (props) => (
     <div className="col-md-3 col-sm-6 category-card">
         <div className="card ">
@@ -41,6 +41,10 @@ Category.propTypes = {
     id: PropTypes.number.isRequired,
     editCategory:PropTypes.func.isRequired,
 }
+/**
+ * Component for rendered categories.
+ * @author [Hadijah kyampeire](https://github.com/hadijahkyampeire/Yummy_Reactjs_frontend)
+ */
 class Categories extends Component {
     state = {
         categories: [],
@@ -62,14 +66,16 @@ class Categories extends Component {
             .get('categories/', {params:{page}})
             .then(response => {
                 this.setState({...response.data, searching: false});
+                console.log(response)
             })
             .catch(error => {
                 if (error.response) {
                     const {status} = error.response;
+                    //send data and error to a higher order method to signal occurance of an error 
+                    //and that no category is created yet
                     if(status === 404){
                         this.setState({
                             categories: [],
-                            loadingCategories:false
                         });
                     }
                 } else if (error.request) {
@@ -77,7 +83,8 @@ class Categories extends Component {
                 }
             });
     }
-
+    // called always before the component's first render
+    // fectches categories
     componentWillMount() {
         this.getCategories();
     }
@@ -87,6 +94,7 @@ class Categories extends Component {
             .delete(`categories/${value}`)
             .then(response => {
                 notify.show(response.data.message, 'success', 4000);
+                // updates the categories list after delete
                 this.getCategories();
             })
     }
@@ -100,12 +108,11 @@ class Categories extends Component {
                 this.getCategories();
             })
     }
-
+    // pagination with search and normal request
     changePage = (selectedPage)=>{
         this.setState(previousState=>({
             current_page: selectedPage
         }),()=>{
-            console.log(this.state.searching)
             if(this.state.searching){
                 this.searchCategories(this.state.q);
             }else{
@@ -114,7 +121,7 @@ class Categories extends Component {
         })
 
     }
-
+    // handles call when searching for a category
     searchCategories =(q)=>{
         const page = !this.state.searching ? 1 : (this.state.current_page || 1);
         this.setState({q})
@@ -124,6 +131,7 @@ class Categories extends Component {
             this.setState({...response.data, searching: true});
         }).catch(error =>{
             if(error.response){
+                // notify users incase of an error from response
                 notify.show(error.response.data.message,'error', 3000)
             }else if(error.request){
                 notify.show("Request not made", 'error' , 3000)
@@ -134,6 +142,7 @@ class Categories extends Component {
 
     render() {
         const {current_page, total_pages, Next_page, Previous_page} = this.state;
+        // create a list of categories with props
         let categoryitems = this
             .state
             .categories

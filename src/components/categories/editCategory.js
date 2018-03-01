@@ -1,5 +1,9 @@
 import React ,{Component}from 'react';
 
+/**
+ * Component for handling editing categories.
+ * @author [Hadijah kyampeire](https://github.com/hadijahkyampeire/Yummy_Reactjs_frontend)
+ */
 class EditCategory extends Component {
     state = {
         name:''
@@ -12,6 +16,7 @@ class EditCategory extends Component {
         const {name, value} = event.target;
         this.setState({[name]:value});
     }
+    // updates the state before rendering the component
     componentWillMount(){
         this.setState({name:this.props.name})
     }
