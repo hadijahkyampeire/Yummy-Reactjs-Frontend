@@ -1,6 +1,5 @@
 import React from 'react';
 import food4 from '../css/images/food4.jpg';
-import bg from '../css/images/bg.jpg';
 import new1 from '../css/images/new1.jpg';
 import new2 from '../css/images/new2.jpg';
 import { Clock } from './auth/landing';
@@ -36,12 +35,10 @@ const Slideshow = () => (
         <li data-target="#myCarousel" data-slide-to="0" className="active" />
         <li data-target="#myCarousel" data-slide-to="1" />
         <li data-target="#myCarousel" data-slide-to="2" />
-        <li data-target="#myCarousel" data-slide-to="3" />
       </ol>
       <div className="carousel-inner" style={{ height: '100%' }} >
         <FoodImages status="active" image={food4} text="family meal" />
-        <FoodImages status="" image={bg} text="rolex" />
-        <FoodImages status="" image={new1} text="proteins" />
+        <FoodImages status="" image={new1} text="proteins one" />
         <FoodImages status="" image={new2} text="proteins" />
       </div>
 
