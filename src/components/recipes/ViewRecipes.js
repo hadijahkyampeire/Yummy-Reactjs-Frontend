@@ -40,6 +40,10 @@ export const Recipe = (props) => (
   </div>
 )
 
+/**
+ * Component for rendering/viewing recipes.
+ * @author [Hadijah kyampeire](https://github.com/hadijahkyampeire/Yummy_Reactjs_frontend)
+ */
 class ViewRecipes extends Component {
   state = {
     recipes: [],
@@ -81,6 +85,7 @@ class ViewRecipes extends Component {
   componentDidMount() {
     this.getRecipes();
   }
+  // call for deleting recipes
   deleteRecipe(value){
     let category_id = this.props.match.params.id
     axiosInstance.delete(`categories/${category_id}/recipes/${value}`)
@@ -89,6 +94,7 @@ class ViewRecipes extends Component {
       this.getRecipes();
   })
   }
+  // call for editing recipes
   editRecipe =(id,title,description)=>{
       let category_id = this.props.match.params.id
       axiosInstance.put(`categories/${category_id}/recipes/${id}`,{title,description})
@@ -111,6 +117,7 @@ class ViewRecipes extends Component {
     })
 
 }
+  // call to handle search query
   searchRecipes =(q) =>{
     const page = !this.state.searching ? 1 :(this.state.current_page || 1);
     console.log(q);
@@ -127,6 +134,7 @@ class ViewRecipes extends Component {
   }
   render() {
     const {current_page, total_pages, Next_page, Previous_page} = this.state;
+    // create recipe list to be rendered
     const recipeitems = this
       .state
       .recipes

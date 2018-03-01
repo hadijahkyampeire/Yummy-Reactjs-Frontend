@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import {notify} from 'react-notify-toast';
 import axiosInstance from '../Apicalls';
 
+/**
+ * Component for allowing users to add categories.
+ * @author [Hadijah kyampeire](https://github.com/hadijahkyampeire/Yummy_Reactjs_frontend)
+ */
 class CreateCategory extends Component {
     state = {
         title: ''

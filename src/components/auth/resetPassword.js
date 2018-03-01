@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import {notify} from 'react-notify-toast';
 import  axiosInstance from "../Apicalls";
 
+/**
+ * Component for resetting password.
+ * @author [Hadijah kyampeire](https://github.com/hadijahkyampeire/Yummy_Reactjs_frontend)
+ */
 class ResetPassword extends Component {
     state = {
         email:'',
@@ -10,7 +14,7 @@ class ResetPassword extends Component {
         token: null,
 
     }
-
+    // called when the component has been rendered
     componentDidMount = () => {
         const search = this.props.location.search;
         const token = decodeURIComponent(search.substring(4, search.length));
@@ -21,18 +25,23 @@ class ResetPassword extends Component {
         const {name, value } =event.target;
         this.setState({[name]:value});
     }
+
     handleResetPassword = (e)=>{
+      // prevent the default action of the event to be triggered
         e.preventDefault();
         const headers = {Authorization: `Bearer ${this.state.token}`}
         const {email, password, retyped_password} =this.state; 
         axiosInstance.put(`auth/reset_password`, {email, password, retyped_password},{headers})
         .then(response=>{
+            // success message once the Api call is successful
             notify.show(response.data.message, 'success', 4000)
             this.props.history.push('/login')
         }).catch(error=>{
             if (error.response){
+              // notify about errors due to response
                 notify.show(error.response.data.message, 'error', 3000)
             }else if(error.request){
+              // error message due to request
                 notify.show("Request not made", 'error', 3000)
             }
         })

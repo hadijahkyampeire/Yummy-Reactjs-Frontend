@@ -4,8 +4,12 @@ import PropTypes from 'prop-types';
 
 import Slideshow from '../slideshow';
 
-
+/**
+ * Component for landing page.
+ * @author [Hadijah kyampeire](https://github.com/hadijahkyampeire/Yummy_Reactjs_frontend)
+ */
 class Landing extends React.Component {
+  // prop validation
   static propTypes = {
     loggedIn:PropTypes.bool,
   }
