@@ -19,7 +19,7 @@ describe('Slideshow component', () => {
   });
 
   it('renders component in li', () => {
-    expect(wrapper.find('li')).toHaveLength(5);
+    expect(wrapper.find('li')).toHaveLength(4);
   });
 
   it('renders component in ol', () => {
