@@ -1,14 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search component renders properly 1`] = `
-<div>
+<div
+  className="col-sm-3 pull-right"
+  style={
+    Object {
+      "marginRight": 30,
+    }
+  }
+>
   <form
-    className="form-group"
     onSubmit={[Function]}
-    role="search"
   >
     <div
-      className="input-group add-on col-sm-3 pull-right"
+      className="input-group"
     >
       <input
         className="form-control"
@@ -18,18 +23,18 @@ exports[`Search component renders properly 1`] = `
         type="search"
         value=""
       />
-      <div
+      <span
         className="input-group-btn"
       >
         <button
-          className="btn btn-default"
+          className="btn btn-secondary pr-4"
           type="submit"
         >
           <i
-            className="glyphicon glyphicon-search"
+            className="fa fa-search"
           />
         </button>
-      </div>
+      </span>
     </div>
   </form>
 </div>

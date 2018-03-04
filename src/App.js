@@ -13,7 +13,7 @@ import {Nav} from './components/auth/landing';
 import ViewRecipes from './components/recipes/ViewRecipes';
 import PrivateRoute from './components/auth/PrivateRoute';
 import Landing from './components/auth/landing';
-import './css/style.css';
+
 import axiosInstance from './components/Apicalls';
 
 const NotFound = () => (
@@ -24,7 +24,9 @@ class App extends Component {
   state = {
     loggedin: false
   }
-
+  /**
+   * @param {Object} event - 
+   */
   logoutUser = (event) => {
     event.preventDefault();
     axiosInstance

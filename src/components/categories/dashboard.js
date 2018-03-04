@@ -10,11 +10,11 @@ import PropTypes from 'prop-types';
 
 // Reusable component to render a single category in a card
 export const Category = (props) => (
-    <div className="col-md-3 col-sm-6 category-card">
+    <div className="col-md-4 col-lg-3 col-sm-6 category-card">
         <div className="card ">
             <div className="card-block color" >
                 <h3 className="card-title">{props.name}</h3>
-                <h5 className="card-block">
+                <div className="card-block">
                 <Link
                     className="btn btn-sm btn-success card-link"
                     data-toggle="modal"
@@ -24,11 +24,13 @@ export const Category = (props) => (
                     className="btn btn-sm btn-danger card-link"
                     onClick={props.deleteCategory}
                     to={`#`}><i className="fa fa-trash"/></Link>
-                    </h5>
-                <Link to={`/category/${props.id}/recipes`}>
-                
-                    <h4 className="card-footer">View Recipes</h4>
+                    
+                <Link 
+                className="btn btn-sm btn-primary card-link"
+                to={`/category/${props.id}/recipes`}>
+                <i className="fa fa-eye"/>
                 </Link>
+                </div>
                 <EditCategory name={props.name} id={props.id} editCategory={props.editCategory}/>
             </div> 
         </div>

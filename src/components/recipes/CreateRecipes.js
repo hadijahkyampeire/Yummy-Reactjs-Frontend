@@ -48,7 +48,7 @@ class CreateRecipe extends Component {
 
                             <form onSubmit={this.handleAddRecipes}>
                                 <div className="input-group">
-                                <span className="input-group-addon"><i className="glyphicon glyphicon-pencil"></i></span>
+                                <span className="input-group-addon pr-4"><i className="glyphicon glyphicon-pencil"></i></span>
                                     <input
                                         type="text"
                                         name="title"
@@ -60,7 +60,7 @@ class CreateRecipe extends Component {
                                   </div>
                                   <br/>
                                 <div className="input-group">
-                                <span className="input-group-addon"><i className="glyphicon glyphicon-list-alt"></i></span>
+                                <span className="input-group-addon pr-4"><i className="glyphicon glyphicon-list-alt"></i></span>
                                     <textarea
                                         rows="4"
                                         cols="50"

@@ -56,7 +56,7 @@ class ResetPassword extends Component {
       <h3>Password Reset</h3>
         <form onSubmit={this.handleResetPassword}>
           <div className="input-group">
-            <span className="input-group-addon" id="email"><i className="fa fa-envelope" /></span>
+            <span className="input-group-addon pr-4" id="email"><i className="fa fa-envelope" /></span>
             <input
               type="email"
               id="emailsignup"
@@ -70,7 +70,7 @@ class ResetPassword extends Component {
           </div>
           <br />
           <div className="input-group">
-            <span className="input-group-addon" id="email"><i className="fa fa-lock" /></span>
+            <span className="input-group-addon pr-4" id="email"><i className="fa fa-lock" /></span>
             <input
               type="password"
               name="password"
@@ -82,7 +82,7 @@ class ResetPassword extends Component {
           </div>
           <br />
           <div className="input-group">
-            <span className="input-group-addon" id="email"><i className="fa fa-lock" /></span>
+            <span className="input-group-addon pr-4" id="email"><i className="fa fa-lock" /></span>
             <input
               type="password"
               name="retyped_password"

@@ -30,82 +30,238 @@ exports[`App component fully renders properly 1`] = `
           loggedIn={false}
           logout={[Function]}
         >
-          <div
-            id="header"
+          <nav
+            className="navbar navbar-toggleable-md navbar-light"
+            style={
+              Object {
+                "backgroundColor": "#009688",
+                "borderRadius": 0,
+                "marginBottom": 0,
+                "paddingBottom": 0,
+                "paddingTop": 0,
+              }
+            }
           >
-            <div
-              className="container"
+            <button
+              aria-controls="navbarTogglerDemo02"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              className="navbar-toggler navbar-toggler-right"
+              data-target="#navbarTogglerDemo02"
+              data-toggle="collapse"
+              type="button"
+            >
+              <span
+                className="navbar-toggler-icon"
+              />
+            </button>
+            <a
+              className="navbar-brand"
+              href="#"
             >
               <div
                 className="logo"
               />
-              <div
-                id="author"
+              Recipes by KH
+            </a>
+            <div
+              className="collapse navbar-collapse"
+              id="navbarTogglerDemo02"
+              style={
+                Object {
+                  "marginBottom": 0,
+                }
+              }
+            >
+              <ul
+                className="navbar-nav ml-auto"
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
               >
-                <h3>
-                  Recipes by KH
-                </h3>
-              </div>
-              <div
-                id="menu"
-              >
-                <Link
-                  className="btn btn-nav"
-                  id="signin"
-                  replace={false}
-                  to="/login"
+                <li
+                  className="nav-item"
                 >
-                  <a
-                    className="btn btn-nav"
-                    href="/login"
-                    id="signin"
-                    onClick={[Function]}
+                  <NavLink
+                    activeClassName="active"
+                    activeStyle={
+                      Object {
+                        "borderBottomColor": "white",
+                        "color": "white",
+                      }
+                    }
+                    ariaCurrent="true"
+                    className="nav-link"
+                    exact={true}
+                    style={
+                      Object {
+                        "color": "white",
+                      }
+                    }
+                    to="/"
                   >
-                    <i
-                      className="fa fa-sign-in "
-                    />
-                    Login
-                  </a>
-                </Link>
-                <Link
-                  className="btn btn-nav"
-                  id="signup"
-                  replace={false}
-                  to="/register"
+                    <Route
+                      exact={true}
+                      path="/"
+                    >
+                      <Link
+                        aria-current="true"
+                        className="nav-link active"
+                        replace={false}
+                        style={
+                          Object {
+                            "borderBottomColor": "white",
+                            "color": "white",
+                          }
+                        }
+                        to="/"
+                      >
+                        <a
+                          aria-current="true"
+                          className="nav-link active"
+                          href="/"
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "borderBottomColor": "white",
+                              "color": "white",
+                            }
+                          }
+                        >
+                          <i
+                            className="fa fa-home "
+                          />
+                           
+                           
+                          Home
+                        </a>
+                      </Link>
+                    </Route>
+                  </NavLink>
+                </li>
+                <li
+                  className="nav-item"
                 >
-                  <a
-                    className="btn btn-nav"
-                    href="/register"
-                    id="signup"
-                    onClick={[Function]}
+                  <NavLink
+                    activeClassName="active"
+                    activeStyle={
+                      Object {
+                        "borderBottomColor": "white",
+                        "color": "white",
+                      }
+                    }
+                    ariaCurrent="true"
+                    className="nav-link"
+                    id="signinh"
+                    style={
+                      Object {
+                        "color": "white",
+                      }
+                    }
+                    to="/login"
                   >
-                    <i
-                      className="fa fa-user-plus "
-                    />
-                    Signup
-                  </a>
-                </Link>
-                <Link
-                  className="btn btn-nav"
-                  id="homebtn"
-                  replace={false}
-                  to="/"
+                    <Route
+                      path="/login"
+                    >
+                      <Link
+                        aria-current={false}
+                        className="nav-link"
+                        id="signinh"
+                        replace={false}
+                        style={
+                          Object {
+                            "color": "white",
+                          }
+                        }
+                        to="/login"
+                      >
+                        <a
+                          aria-current={false}
+                          className="nav-link"
+                          href="/login"
+                          id="signinh"
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "color": "white",
+                            }
+                          }
+                        >
+                          <span>
+                            <i
+                              className="fa fa-sign-in "
+                            />
+                             Login
+                          </span>
+                        </a>
+                      </Link>
+                    </Route>
+                  </NavLink>
+                </li>
+                <li
+                  className="nav-item"
                 >
-                  <a
-                    className="btn btn-nav"
-                    href="/"
-                    id="homebtn"
-                    onClick={[Function]}
+                  <NavLink
+                    activeClassName="active"
+                    activeStyle={
+                      Object {
+                        "borderBottomColor": "white",
+                        "color": "white",
+                      }
+                    }
+                    ariaCurrent="true"
+                    className="nav-link"
+                    id="signupj"
+                    style={
+                      Object {
+                        "color": "white",
+                      }
+                    }
+                    to="/register"
                   >
-                    <i
-                      className="fa fa-home "
-                    />
-                    Home
-                  </a>
-                </Link>
-              </div>
+                    <Route
+                      path="/register"
+                    >
+                      <Link
+                        aria-current={false}
+                        className="nav-link"
+                        id="signupj"
+                        replace={false}
+                        style={
+                          Object {
+                            "color": "white",
+                          }
+                        }
+                        to="/register"
+                      >
+                        <a
+                          aria-current={false}
+                          className="nav-link"
+                          href="/register"
+                          id="signupj"
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "color": "white",
+                            }
+                          }
+                        >
+                          <i
+                            className="fa fa-user-plus "
+                          />
+                           
+                           
+                          Signup
+                        </a>
+                      </Link>
+                    </Route>
+                  </NavLink>
+                </li>
+              </ul>
             </div>
-          </div>
+          </nav>
         </Component>
         <_class
           options={Object {}}
@@ -238,17 +394,10 @@ exports[`App component fully renders properly 1`] = `
                           data-slide-to="2"
                           data-target="#myCarousel"
                         />
-                        <li
-                          data-slide-to="3"
-                          data-target="#myCarousel"
-                        />
-                        <li
-                          data-slide-to="4"
-                          data-target="#myCarousel"
-                        />
                       </ol>
                       <div
                         className="carousel-inner"
+                        role="listbox"
                         style={
                           Object {
                             "height": "100%",
@@ -261,7 +410,7 @@ exports[`App component fully renders properly 1`] = `
                           text="family meal"
                         >
                           <div
-                            className="item active"
+                            className="carousel-item active"
                             style={
                               Object {
                                 "height": -50,
@@ -270,131 +419,8 @@ exports[`App component fully renders properly 1`] = `
                           >
                             <img
                               alt="family meal"
+                              className="d-block img-fluid"
                               src="food4.jpg"
-                              style={
-                                Object {
-                                  "height": "100%",
-                                  "width": "100%",
-                                }
-                              }
-                            />
-                            <div
-                              className="carousel-caption"
-                            >
-                              <div
-                                id="welcome"
-                              >
-                                <h3>
-                                  YOU LOVE COOKING?
-                                </h3>
-                                <h3>
-                                  <span>
-                                    WELCOME TO YUMMY RECIPES
-                                  </span>
-                                </h3>
-                                <h4>
-                                  SIGNUP AND GET STARTED
-                                </h4>
-                                <div>
-                                  <h2>
-                                    It is
-                                    <Clock>
-                                      <div
-                                        className="clock"
-                                      >
-                                        12
-                                        :
-                                        41
-                                        :
-                                        20
-                                         
-                                        pm
-                                      </div>
-                                    </Clock>
-                                  </h2>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </FoodImages>
-                        <FoodImages
-                          image="img1.jpg"
-                          status=""
-                          text="rolex"
-                        >
-                          <div
-                            className="item "
-                            style={
-                              Object {
-                                "height": -50,
-                              }
-                            }
-                          >
-                            <img
-                              alt="rolex"
-                              src="img1.jpg"
-                              style={
-                                Object {
-                                  "height": "100%",
-                                  "width": "100%",
-                                }
-                              }
-                            />
-                            <div
-                              className="carousel-caption"
-                            >
-                              <div
-                                id="welcome"
-                              >
-                                <h3>
-                                  YOU LOVE COOKING?
-                                </h3>
-                                <h3>
-                                  <span>
-                                    WELCOME TO YUMMY RECIPES
-                                  </span>
-                                </h3>
-                                <h4>
-                                  SIGNUP AND GET STARTED
-                                </h4>
-                                <div>
-                                  <h2>
-                                    It is
-                                    <Clock>
-                                      <div
-                                        className="clock"
-                                      >
-                                        12
-                                        :
-                                        41
-                                        :
-                                        20
-                                         
-                                        pm
-                                      </div>
-                                    </Clock>
-                                  </h2>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </FoodImages>
-                        <FoodImages
-                          image="food3.jpg"
-                          status=""
-                          text="proteins"
-                        >
-                          <div
-                            className="item "
-                            style={
-                              Object {
-                                "height": -50,
-                              }
-                            }
-                          >
-                            <img
-                              alt="proteins"
-                              src="food3.jpg"
                               style={
                                 Object {
                                   "height": "100%",
@@ -444,10 +470,10 @@ exports[`App component fully renders properly 1`] = `
                         <FoodImages
                           image="new1.jpg"
                           status=""
-                          text="proteins"
+                          text="proteins one"
                         >
                           <div
-                            className="item "
+                            className="carousel-item "
                             style={
                               Object {
                                 "height": -50,
@@ -455,7 +481,8 @@ exports[`App component fully renders properly 1`] = `
                             }
                           >
                             <img
-                              alt="proteins"
+                              alt="proteins one"
+                              className="d-block img-fluid"
                               src="new1.jpg"
                               style={
                                 Object {
@@ -509,7 +536,7 @@ exports[`App component fully renders properly 1`] = `
                           text="proteins"
                         >
                           <div
-                            className="item "
+                            className="carousel-item "
                             style={
                               Object {
                                 "height": -50,
@@ -518,6 +545,7 @@ exports[`App component fully renders properly 1`] = `
                           >
                             <img
                               alt="proteins"
+                              className="d-block img-fluid"
                               src="new2.jpg"
                               style={
                                 Object {
@@ -567,12 +595,14 @@ exports[`App component fully renders properly 1`] = `
                         </FoodImages>
                       </div>
                       <a
-                        className="left carousel-control"
+                        className="carousel-control-prev"
                         data-slide="prev"
                         href="#myCarousel"
+                        role="button"
                       >
                         <span
-                          className="glyphicon glyphicon-chevron-left"
+                          aria-hidden="true"
+                          className="carousel-control-prev-icon"
                         />
                         <span
                           className="sr-only"
@@ -581,12 +611,14 @@ exports[`App component fully renders properly 1`] = `
                         </span>
                       </a>
                       <a
-                        className="right carousel-control"
+                        className="carousel-control-next"
                         data-slide="next"
                         href="#myCarousel"
+                        role="button"
                       >
                         <span
-                          className="glyphicon glyphicon-chevron-right"
+                          aria-hidden="true"
+                          className="carousel-control-next-icon"
                         />
                         <span
                           className="sr-only"

@@ -9,16 +9,15 @@ import axiosInstance from '../Apicalls';
 
 export const Recipe = (props) => (
  
-  <div className="col-md-5 col-sm-6 recipe-card">
+  // <div className="col-md-5 col-sm-6 recipe-card">
   <div className="card ">
-  <img class="card-img-top recipeimg" />
-    <div className="card-header recipe" role="tab" id={`recipe-${props.id}`}>
-      <h3 className="mb-0">
-        <button className="btn btn-link"
-          data-toggle="collapse"
+  {/* <img class="card-img-top recipeimg" /> */}
+    <div  className="card-header recipe" role="tab" id={`recipe-${props.id}`} data-toggle="collapse"
           href={`#recipeDetails${props.id}`}
           aria-expanded="true"
           aria-controls="collapseOne">
+      <h3 className="mb-0">
+        <button className="btn btn-link">
           {props.title}
         </button>
       </h3>
@@ -37,7 +36,7 @@ export const Recipe = (props) => (
     <EditRecipe title={props.title} description={props.description} id={props.id} editRecipe={props.editRecipe}/>
     </div>
   </div>
-  </div>
+  // </div>
 )
 
 /**
@@ -120,7 +119,6 @@ class ViewRecipes extends Component {
   // call to handle search query
   searchRecipes =(q) =>{
     const page = !this.state.searching ? 1 :(this.state.current_page || 1);
-    console.log(q);
     this.setState({q})
     let category_id = this.props.match.params.id
     axiosInstance.get(`categories/${category_id}/recipes`,{params:{q,page}})
@@ -132,6 +130,7 @@ class ViewRecipes extends Component {
     })
 
   }
+  
   render() {
     const {current_page, total_pages, Next_page, Previous_page} = this.state;
     // create recipe list to be rendered
@@ -140,7 +139,7 @@ class ViewRecipes extends Component {
       .recipes
       .map(recipe => (<Recipe {...recipe.recipe} key={recipe.recipe.id} 
         deleteRecipe={() => this.deleteRecipe(recipe.recipe.id)} 
-      editRecipe={this.editRecipe}/>));
+      editRecipe={this.editRecipe} viewDetails={this.viewDetails}/>));
 
     return (
       <div >

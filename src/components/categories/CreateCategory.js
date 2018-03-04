@@ -10,10 +10,16 @@ class CreateCategory extends Component {
     state = {
         title: ''
     }
+    
     handleInputChange = (event) => {
         const {name, value} = event.target;
         this.setState({[name]: value});
     }
+    /**
+     * handles addition of categories
+     * @param {object} event - Reference to the submit form component
+     * used to prevent default form behaviours on submission
+     */
     handleAddCategories = (event) => {
         const {title: name} = this.state;
         event.preventDefault();
@@ -45,7 +51,7 @@ class CreateCategory extends Component {
 
                                 <form onSubmit={this.handleAddCategories}>
                                     <div className="input-group ">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                    <span class="input-group-addon pr-4"><i class="glyphicon glyphicon-pencil"></i></span>
                                         <input
                                             type="text"
                                             name="title"

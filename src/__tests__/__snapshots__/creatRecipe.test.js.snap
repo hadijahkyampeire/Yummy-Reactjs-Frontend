@@ -24,7 +24,7 @@ exports[`CreateRecipe component renders properly 1`] = `
               className="input-group"
             >
               <span
-                className="input-group-addon"
+                className="input-group-addon pr-4"
               >
                 <i
                   className="glyphicon glyphicon-pencil"
@@ -44,7 +44,7 @@ exports[`CreateRecipe component renders properly 1`] = `
               className="input-group"
             >
               <span
-                className="input-group-addon"
+                className="input-group-addon pr-4"
               >
                 <i
                   className="glyphicon glyphicon-list-alt"

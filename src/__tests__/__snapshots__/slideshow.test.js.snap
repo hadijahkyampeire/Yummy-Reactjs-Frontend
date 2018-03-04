@@ -25,17 +25,10 @@ exports[`Slideshow component renders properly 1`] = `
         data-slide-to="2"
         data-target="#myCarousel"
       />
-      <li
-        data-slide-to="3"
-        data-target="#myCarousel"
-      />
-      <li
-        data-slide-to="4"
-        data-target="#myCarousel"
-      />
     </ol>
     <div
       className="carousel-inner"
+      role="listbox"
       style={
         Object {
           "height": "100%",
@@ -48,19 +41,9 @@ exports[`Slideshow component renders properly 1`] = `
         text="family meal"
       />
       <FoodImages
-        image="img1.jpg"
-        status=""
-        text="rolex"
-      />
-      <FoodImages
-        image="food3.jpg"
-        status=""
-        text="proteins"
-      />
-      <FoodImages
         image="new1.jpg"
         status=""
-        text="proteins"
+        text="proteins one"
       />
       <FoodImages
         image="new2.jpg"
@@ -69,12 +52,14 @@ exports[`Slideshow component renders properly 1`] = `
       />
     </div>
     <a
-      className="left carousel-control"
+      className="carousel-control-prev"
       data-slide="prev"
       href="#myCarousel"
+      role="button"
     >
       <span
-        className="glyphicon glyphicon-chevron-left"
+        aria-hidden="true"
+        className="carousel-control-prev-icon"
       />
       <span
         className="sr-only"
@@ -83,12 +68,14 @@ exports[`Slideshow component renders properly 1`] = `
       </span>
     </a>
     <a
-      className="right carousel-control"
+      className="carousel-control-next"
       data-slide="next"
       href="#myCarousel"
+      role="button"
     >
       <span
-        className="glyphicon glyphicon-chevron-right"
+        aria-hidden="true"
+        className="carousel-control-next-icon"
       />
       <span
         className="sr-only"

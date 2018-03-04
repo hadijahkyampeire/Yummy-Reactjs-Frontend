@@ -33,9 +33,9 @@ class Search extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSearchInput} className ="form-group" role="search">
-                    <div className="input-group add-on col-sm-3 pull-right">
+            <div className="col-sm-3 pull-right" style={{marginRight: 30,}}>
+                <form onSubmit={this.handleSearchInput}>
+                    <div className="input-group">
                         <input
                             type="search"
                             value
@@ -44,11 +44,11 @@ class Search extends Component {
                             className="form-control"
                             onChange={this.handleInputChange}
                             placeholder={`Search for ${this.props.placeholder}`}/>
-                        <div className="input-group-btn">
-                            <button className="btn btn-default" type="submit">
-                                <i className="glyphicon glyphicon-search"></i>
+                        <span className="input-group-btn">
+                            <button className="btn btn-secondary pr-4" type="submit">
+                                <i className="fa fa-search"></i>
                             </button>
-                        </div>
+                        </span>
                     </div>
                 </form>
             </div>

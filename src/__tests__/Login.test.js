@@ -33,7 +33,7 @@ describe('Login component', () => {
   });
 
   it('renders component in div', () => {
-    expect(wrapper.find('div').length).toBe(6);
+    expect(wrapper.find('div').length).toBe(8);
   });
 
   it('renders component in a form', () => {
@@ -54,10 +54,6 @@ describe('Login component', () => {
 
   it('renders h1', () => {
     expect(wrapper.find('h1').length).toBe(1);
-  });
-
-  it('renders component in span', () => {
-    expect(wrapper.find('span').length).toBe(2);
   });
 
   it('submits data', () => {
