@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import React, {Fragment} from 'react';
+import {Link, NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Slideshow from '../slideshow';
@@ -11,21 +11,22 @@ import Slideshow from '../slideshow';
 class Landing extends React.Component {
   // prop validation
   static propTypes = {
-    loggedIn:PropTypes.bool,
+    loggedIn: PropTypes.bool
   }
 
   static defaultProps = {
-    loggedIn:false,
+    loggedIn: false
   }
   componentDidMount() {
     if (this.props.loggedIn) {
-      this.props.history.push('/dashboard');
+      this
+        .props
+        .history
+        .push('/dashboard');
     }
   }
   render() {
-    return (
-      <Slideshow />
-    );
+    return (<Slideshow/>);
   }
 }
 
@@ -39,7 +40,7 @@ export class Clock extends React.Component {
       seconds: currentTime.getSeconds(),
       ampm: currentTime.getHours() >= 12
         ? 'pm'
-        : 'am',
+        : 'am'
     };
     this.setTimer();
   }
@@ -60,14 +61,12 @@ export class Clock extends React.Component {
       seconds: currentTime.getSeconds(),
       ampm: currentTime.getHours() >= 12
         ? 'pm'
-        : 'am',
+        : 'am'
     }, this.setTimer);
   }
 
   render() {
-    const {
-      hours, minutes, seconds, ampm,
-    } = this.state;
+    const {hours, minutes, seconds, ampm} = this.state;
     return (
       <div className="clock">
         {hours === 0
@@ -87,49 +86,114 @@ export class Clock extends React.Component {
   }
 }
 
+const linkTextStyles = {
+  color: 'white'
+}
+
+const activeLinkStyles ={
+color: 'white',
+borderBottomColor:'white'
+}
+/**
+ * Displays the navigation bar
+ * @param {object} props - Contains properties to pass to the Nav component
+ */
 export const Nav = props => (
-  <div id="header">
-    <div className="container">
-      <div className="logo" />
-      <div id="author">
-        <h3>Recipes by KH</h3>
-      </div>
-      <div id="menu">
-        {!props.loggedIn
-          ? (
-            <Fragment>
-              <Link to="/login" id="signin" className="btn btn-nav">
-              <i className="fa fa-sign-in "/>Login</Link>
-              <Link to="/register" id="signup" className="btn btn-nav">
-              <i className="fa fa-user-plus "/>
-                Signup
-              </Link>
-              <Link to="/" id="homebtn" className="btn btn-nav">
-              <i className="fa fa-home "/>Home</Link>
-            </Fragment>
-          )
-          : (
-            <div>
-              <Link  to="/dashboard" className="btn btn-primary">
-                  Categories
-                  <i className="glyphicon glyphicon-cutlery"/>
-              </Link>
-              <Link className="btn btn-success" to="/about">About Us <i className="glyphicon glyphicon-tags"/></Link>
-              
-              <Link className="btn btn-danger" to="/" onClick={(e) => { props.logout(e); }}>
-              Logout <i className="fa fa-sign-out"/></Link>
-            </div>
+  <nav
+    className="navbar navbar-toggleable-md navbar-light"
+    style={{
+    backgroundColor: "#009688",
+    borderRadius: 0,
+    marginBottom: 0,
+    paddingBottom: 0,
+    paddingTop: 0,
+  }}>
 
-          )}
-      </div>
+    <button
+      className="navbar-toggler navbar-toggler-right"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <a className="navbar-brand" href="#">
+    <div className="logo"/>
+    Recipes by KH
+  </a>
+    <div className="collapse navbar-collapse" id="navbarTogglerDemo02" style={{marginBottom:0}}>
+      {!props.loggedIn
+        ? (
+          <ul
+            className="navbar-nav ml-auto"
+            style={{
+            color: 'white'
+          }}>
+            <li className="nav-item">
+              <NavLink to="/" exact className="nav-link" style={linkTextStyles}
+              activeStyle={activeLinkStyles}>
+                <i className="fa fa-home "/> {' '}Home</NavLink>
+
+            </li>
+            <li className="nav-item">
+              <NavLink
+                style={linkTextStyles}
+                to="/login"
+                id="signinh"
+                className="nav-link"
+                activeStyle={activeLinkStyles} activeStyle={activeLinkStyles}>
+                <span><i className="fa fa-sign-in "/> Login</span></NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/register"
+                id="signupj"
+                className="nav-link"
+                style={linkTextStyles} activeStyle={activeLinkStyles}>
+                <i className="fa fa-user-plus "/> {' '}Signup
+              </NavLink>
+
+            </li>
+          </ul>
+        )
+        : (
+          <ul
+            className="navbar-nav ml-auto"
+            style={{
+            color: 'white'
+          }}>
+            <li className="nav-item">
+              <NavLink to="/dashboard" className="nav-link" style={linkTextStyles} activeStyle={activeLinkStyles}>
+                Categories {' '}<i className="fa fa-coffee"/>
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/about" style={linkTextStyles} activeStyle={activeLinkStyles}>About Us {' '}<i className="fa fa-tags"/></NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                style={linkTextStyles}
+                activeStyle={activeLinkStyles}
+                className="nav-link"
+                to="!#"
+                onClick={(e) => {
+                props.logout(e);
+              }}>
+                Logout{' '}
+                <i className="fa fa-sign-out"/></NavLink>
+            </li>
+          </ul>
+
+        )}
     </div>
-  </div>
-
+  </nav>
 );
 
 Nav.propTypes = {
   loggedIn: PropTypes.bool.isRequired,
-  logout: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired
 };
 
 export default Landing;

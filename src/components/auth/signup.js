@@ -49,10 +49,10 @@ class Signup extends Component {
             <div className="background">
                 <div id="signbar">
                     <h1>
-                        CREATE AN ACCOUNT TO GET STARTED</h1>
+                        CREATE AN ACCOUNT </h1>
                     <form onSubmit={this.handleRegister}>
                         <div className="input-group">
-                            <span className="input-group-addon" id="email"><i className='fa fa-envelope'/></span>
+                            <span className="input-group-addon pr-4" id="email"><i className='fa fa-envelope'/></span>
                             <input
                                 id="emailsignup"
                                 name="email_field"
@@ -64,7 +64,7 @@ class Signup extends Component {
                         </div>
                         <br/>
                         <div className="input-group">
-                            <span className="input-group-addon" id="email"><i className='fa fa-lock'/></span>
+                            <span className="input-group-addon pr-4" id="email"><i className='fa fa-lock'/></span>
                             <input
                                 type="password"
                                 name="password_field"

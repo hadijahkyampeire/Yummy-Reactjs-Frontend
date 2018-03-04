@@ -8,6 +8,9 @@ class EditCategory extends Component {
     state = {
         name:''
     }
+    /**
+     * @param {object} event - The element which handles edit category
+     */
     handleEditCategory =(event) =>{
         event.preventDefault();
         this.props.editCategory(this.props.id, this.state.name)
@@ -16,6 +19,7 @@ class EditCategory extends Component {
         const {name, value} = event.target;
         this.setState({[name]:value});
     }
+
     // updates the state before rendering the component
     componentWillMount(){
         this.setState({name:this.props.name})

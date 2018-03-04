@@ -2,71 +2,64 @@
 
 exports[`Recipe renders correctly 1`] = `
 <div
-  className="col-md-5 col-sm-6 recipe-card"
+  className="card "
 >
   <div
-    className="card "
+    aria-controls="collapseOne"
+    aria-expanded="true"
+    className="card-header recipe"
+    data-toggle="collapse"
+    href="#recipeDetails1"
+    id="recipe-1"
+    role="tab"
   >
-    <img
-      class="card-img-top recipeimg"
-    />
-    <div
-      className="card-header recipe"
-      id="recipe-1"
-      role="tab"
+    <h3
+      className="mb-0"
     >
-      <h3
-        className="mb-0"
+      <button
+        className="btn btn-link"
       >
-        <button
-          aria-controls="collapseOne"
-          aria-expanded="true"
-          className="btn btn-link"
-          data-toggle="collapse"
-          href="#recipeDetails1"
-        >
-          mockTitle
-        </button>
-      </h3>
+        mockTitle
+      </button>
+    </h3>
+  </div>
+  <div
+    aria-labelledby="recipe-1"
+    className="collapse"
+    id="recipeDetails1"
+    role="tabpanel"
+  >
+    <div
+      className="card-block"
+    >
+      mockDesc
     </div>
-    <div
-      aria-labelledby="recipe-1"
-      className="collapse"
-      id="recipeDetails1"
-      role="tabpanel"
+    <button
+      className="btn btn-sm btn-primary"
+      data-target="#edit_recipe1"
+      data-toggle="modal"
+      to="#"
     >
-      <div
-        className="card-block"
-      >
-        mockDesc
-      </div>
-      <button
-        className="btn btn-sm btn-primary"
-        data-target="#edit_recipe1"
-        data-toggle="modal"
-        to="#"
-      >
-        <i
-          className="fa fa-edit"
-        />
-      </button>
-      <button
-        className="btn btn-sm btn-danger "
-        onClick={[Function]}
-        to="#"
-      >
-        <i
-          className="fa fa-trash"
-          to="#"
-        />
-      </button>
-      <EditRecipe
-        description="mockDesc"
-        editRecipe={[Function]}
-        id={1}
-        title="mockTitle"
+      <i
+        className="fa fa-edit"
       />
-    </div>
+    </button>
+    <button
+      className="btn btn-sm btn-danger "
+      onClick={[Function]}
+      to="#"
+    >
+      <i
+        className="fa fa-trash"
+        to="#"
+      />
+    </button>
+    <EditRecipe
+      description="mockDesc"
+      editRecipe={[Function]}
+      id={1}
+      title="mockTitle"
+    />
   </div>
 </div>
 `;

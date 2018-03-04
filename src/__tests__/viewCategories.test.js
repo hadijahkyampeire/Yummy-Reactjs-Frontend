@@ -57,6 +57,7 @@ describe('Category component', ()=>{
 
   it('renders correctly', ()=>{
     expect(shallowToJson(wrapper)).toMatchSnapshot();
-    wrapper.find('.card-footer').simulate('click')
+    wrapper.find('.btn-primary .card-link').simulate('click')
+    wrapper.find('.btn-danger .card-link').simulate('click')
   })
 })

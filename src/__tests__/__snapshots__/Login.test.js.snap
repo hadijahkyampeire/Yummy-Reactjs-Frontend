@@ -19,13 +19,13 @@ exports[`Login component renders properly without crashing 1`] = `
         <div
           className="input-group"
         >
-          <span
-            className="input-group-addon"
+          <div
+            className="input-group-addon pr-4"
           >
             <i
               className="fa fa-envelope"
             />
-          </span>
+          </div>
           <input
             aria-describedby="email"
             className="form-control"
@@ -41,13 +41,13 @@ exports[`Login component renders properly without crashing 1`] = `
         <div
           className="input-group"
         >
-          <span
-            className="input-group-addon"
+          <div
+            className="input-group-addon pr-4"
           >
             <i
               className="fa fa-lock"
             />
-          </span>
+          </div>
           <input
             className="form-control"
             name="password_field"

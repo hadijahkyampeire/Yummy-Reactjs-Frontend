@@ -8,7 +8,7 @@ exports[`Signup component renders properly 1`] = `
     id="signbar"
   >
     <h1>
-      CREATE AN ACCOUNT TO GET STARTED
+      CREATE AN ACCOUNT 
     </h1>
     <form
       onSubmit={[Function]}
@@ -17,7 +17,7 @@ exports[`Signup component renders properly 1`] = `
         className="input-group"
       >
         <span
-          className="input-group-addon"
+          className="input-group-addon pr-4"
           id="email"
         >
           <i
@@ -39,7 +39,7 @@ exports[`Signup component renders properly 1`] = `
         className="input-group"
       >
         <span
-          className="input-group-addon"
+          className="input-group-addon pr-4"
           id="email"
         >
           <i

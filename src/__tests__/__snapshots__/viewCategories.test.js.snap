@@ -2,7 +2,7 @@
 
 exports[`Category component renders correctly 1`] = `
 <div
-  className="col-md-3 col-sm-6 category-card"
+  className="col-md-4 col-lg-3 col-sm-6 category-card"
 >
   <div
     className="card "
@@ -15,7 +15,7 @@ exports[`Category component renders correctly 1`] = `
       >
         lunch
       </h3>
-      <h5
+      <div
         className="card-block"
       >
         <Link
@@ -39,17 +39,16 @@ exports[`Category component renders correctly 1`] = `
             className="fa fa-trash"
           />
         </Link>
-      </h5>
-      <Link
-        replace={false}
-        to="/category/1/recipes"
-      >
-        <h4
-          className="card-footer"
+        <Link
+          className="btn btn-sm btn-primary card-link"
+          replace={false}
+          to="/category/1/recipes"
         >
-          View Recipes
-        </h4>
-      </Link>
+          <i
+            className="fa fa-eye"
+          />
+        </Link>
+      </div>
       <EditCategory
         editCategory={[Function]}
         id={1}

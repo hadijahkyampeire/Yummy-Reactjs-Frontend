@@ -68,7 +68,7 @@ class Login extends Component {
                         </h1>
                         <form onSubmit={this.handleLogin}>
                             <div className="input-group">
-                                <span className="input-group-addon" ><i className='fa fa-envelope'/></span>
+                                <div className="input-group-addon pr-4" ><i className='fa fa-envelope'/></div>
                                 <input
                                     type="email"
                                     id="emailsignup"
@@ -81,7 +81,7 @@ class Login extends Component {
                             </div>
                             <br/>
                             <div className="input-group">
-                                <span className="input-group-addon" ><i className='fa fa-lock'/></span>
+                                <div className="input-group-addon pr-4" ><i className='fa fa-lock'/></div>
                                 <input
                                     type="password"
                                     name="password_field"

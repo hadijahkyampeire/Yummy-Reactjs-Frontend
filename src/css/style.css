@@ -28,7 +28,7 @@
     width: 3em;
     height: 3em;
     float: left;
-    margin-top: 0.8em;
+    margin-top: -10px;
 }
 #updatebar{
     text-align: left;
@@ -316,3 +316,22 @@ li:disabled {
     background: url("images/image1.jpg");
     height:130px;
 }
+
+.btn .btn-link:hover{
+    text-decoration: none !important;
+}
+
+.navbar-custom .navbar-nav .nav-link.active{
+    color: 'red';
+}
+#navbar .navbar-text{
+    color: 'white';
+    /* background-color: 'red' !important;
+    border-bottom: 1px solid 'white' !important; */
+  
+  }
+  ul>li:hover, .nav-link:hover{
+      background-color: 'white'!important;
+
+  }
+
