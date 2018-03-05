@@ -49,28 +49,30 @@
 }  
 #recipebar{
     background: url("images/restaurant_icons.png");
+    font-family: 'Karma', serif;
     padding: 20px;
 }
 #recipesbar{
     background: url("images/restaurant_icons.png");
+    font-family: 'Karma', serif;
     padding: 20px;
 }
 #signup {
-    background-color: royalblue;
-    border: 1px solid royalblue;
+    background-color: #26A69A;
+    border: 1px solid #26A69A;
     color: white;
     font-weight: bold;
 }
 #signup:hover {
-    background-color: #c6d2f6;
-    border: 1px solid #6687e7;
-    color: royalblue;
+    background-color: white;
+    border: 1px solid #26A69A;
+    color: #26A69A;
 }
 
 #signin{
     background-color:white;
-    border: 1px solid royalblue;
-    color: royalblue;
+    border: 1px solid #26A69A;
+    color: #26A69A;
     font-weight: bold;
 }
 #homebtn{
@@ -86,45 +88,16 @@
     font-weight: bold;
 }
 #signin:hover {
-    background-color: #6687e7;
-    border: 1px solid #6687e7;
+    background-color: #26A69A;
+    border: 1px solid #26A69A;
     color: white;
 }
 
-.btn-nav {
-
-    border: solid 1px #000;
-    border-radius: 10px;
-}
-.btnrecipeedit{
-    width: 100px;
-    height: 30px;
-    background-color:rgb(102, 126, 139);
-    border: solid 1px #000;
-    border-radius: 10px
-    
-}
-.btnrecipeadd{
-    width: 100px;
-    height: 30px;
-    background-color:rgb(73, 167, 94);
-    border: solid 1px #000;
-    border-radius: 10px
-    
-}
-.btnrecipedel{
-    width: 100px;
-    height: 30px;
-    background-color:rgb(172, 66, 66);
-    border: solid 1px #000;
-    border-radius: 10px
-    
-}
 #welcome{
    text-align: center; 
    padding-top: 341px; 
    color: black;
-   font-family: 'Tillana', cursive;
+   font-family: 'Karma', serif;
    font-size:800px;
 
 }
@@ -140,7 +113,7 @@
     font-family: 'Lobster', cursive;
 }
 #signbar{
-font-family: 'Tillana', cursive;
+font-family: 'Karma', serif;
 background: url("images/restaurant_icons.png");
 text-align: center;
 height: 500px;
@@ -157,9 +130,8 @@ margin: 9px auto;
 background: lightgrey;
 }
 #logbar{
-    font-family: 'Tillana', cursive;
+    font-family: 'Karma', serif;
     background: url("images/restaurant_icons.png");
-    /* background: #d3dadab3;; */
     text-align: center;
     height: 500px;
     width: 500px;
@@ -198,15 +170,6 @@ background: lightgrey;
     width: 120px;
     height: 20px;
 }
-.footer{
-    height: 45px;
-    bottom: 0;
-    color: white;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-
-}
 #words{
 text-align: center;
 }
@@ -217,7 +180,7 @@ text-align: center;
     margin-top: 20px;
 }
 .toregister{
-    color:green;
+    color:#26A69A;
     font-size: 20px;
 }
 .btn{
@@ -228,10 +191,12 @@ text-align: center;
 }
 .category-card{
  margin-top:10px;
+ font-family: 'Karma', serif;
 
 }
 .recipe-card{
     margin-top: 10px;
+    font-family: 'Karma', serif;
     
 }
 .pagination{
@@ -306,7 +271,7 @@ li:disabled {
       background-color: rgb(226, 236, 227);
   }
 .word-font{
-    font-family: 'Tillana', cursive;
+    font-family: 'Karma', serif;
 }
 #about{
     background: url("images/restaurant_icons.png");
@@ -334,4 +299,6 @@ li:disabled {
       background-color: 'white'!important;
 
   }
+  .error-template {padding: 40px 15px;text-align: center;}
+  .error-actions {margin-top:15px;margin-bottom:15px;}
 

@@ -41,9 +41,9 @@ class Login extends Component {
             // error handling
             .catch(error => {
                 if (error.response) {
-                    alert(error.response.data.message)
+                    notify.show(error.response.data.message, 'error', 3000)
                 } else if (error.request) {
-                    alert("Request not made")
+                    notify.show("Request not made", 'error', 3000)
                 }
             });
     }
@@ -63,9 +63,10 @@ class Login extends Component {
             <div className="background">
                 <div id="logbar">
                     <div className="form-group">
-                        <h1>
+                    <i className="fa fa-user-circle fa-5x" style={{color:"#26A69A"}}></i>
+                        <div>
                             LOGIN
-                        </h1>
+                        </div>
                         <form onSubmit={this.handleLogin}>
                             <div className="input-group">
                                 <div className="input-group-addon pr-4" ><i className='fa fa-envelope'/></div>
@@ -92,7 +93,7 @@ class Login extends Component {
                             </div>
                             <br/>
 
-                            <button name="signin" className="btn btn-default" id="signin" type="submit">
+                            <button name="signin" className="btn btn-default btn-lg" id="signin" type="submit">
                                
                                     LOGIN
                             </button>

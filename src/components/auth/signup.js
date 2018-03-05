@@ -30,9 +30,9 @@ class Signup extends Component {
             })
             .catch(error => {
                 if (error.response) {
-                    alert(error.response.data.message)
+                    notify.show(error.response.data.message, 'error', 3000)
                 } else if (error.request) {
-                    alert("Request not made")
+                    notify.show("Request not made", 'error', 3000)
                 }
             });
     }
@@ -48,8 +48,10 @@ class Signup extends Component {
         return (
             <div className="background">
                 <div id="signbar">
-                    <h1>
-                        CREATE AN ACCOUNT </h1>
+                        <div >
+                    <i className="fa fa-user-circle fa-5x" style={{color:"#26A69A"}}></i>
+                    <div> REGISTER </div>
+                </div>
                     <form onSubmit={this.handleRegister}>
                         <div className="input-group">
                             <span className="input-group-addon pr-4" id="email"><i className='fa fa-envelope'/></span>
@@ -74,18 +76,14 @@ class Signup extends Component {
                                 placeholder="Password"/>
                         </div>
                         <br/>
-                        <div className="row">
-                            <div className="col-sm-6 text-left">
-                                <Link to="/"><input className="btn-btn-default" value="Cancel" type="button"/></Link>
-                            </div>
-                            <div className="col-sm-6 text-right">
-                                <input name="signup" id="signup" value="Signup" className="btn btn-nav" type="submit"/>
-                            </div>
+                            <div className="text-center">
+                                <input name="signup" id="signup" value="Signup" className="btn btn-default btn-lg" type="submit"/>
+                            
                         </div>
 
                         <div className="change_link">
                             Already a member ?
-                            <Link to="/login">log in
+                            <Link to="/login"><h4 className="toregister">Login here</h4>
                             </Link>
                         </div>
 

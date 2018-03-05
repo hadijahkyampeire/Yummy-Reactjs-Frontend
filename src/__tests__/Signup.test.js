@@ -19,12 +19,9 @@ describe('Signup component', () => {
     expect(preventDefault).toBeCalled();
     // expect(wrapper.find('[name="email_field"]').simulate('change', {target:{name:'email_field', value:'had@hmail.com'}}))
   });
-  it('renders h1', () => {
-    expect(wrapper.find('h1').length).toBe(1);
-  });
 
   it('renders inputs', () => {
-    expect(wrapper.find('input').length).toBe(4);
+    expect(wrapper.find('input').length).toBe(3);
   });
 
   it('it has br', () => {

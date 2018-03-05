@@ -7,9 +7,19 @@ exports[`Signup component renders properly 1`] = `
   <div
     id="signbar"
   >
-    <h1>
-      CREATE AN ACCOUNT 
-    </h1>
+    <div>
+      <i
+        className="fa fa-user-circle fa-5x"
+        style={
+          Object {
+            "color": "#26A69A",
+          }
+        }
+      />
+      <div>
+         REGISTER 
+      </div>
+    </div>
     <form
       onSubmit={[Function]}
     >
@@ -57,33 +67,15 @@ exports[`Signup component renders properly 1`] = `
       </div>
       <br />
       <div
-        className="row"
+        className="text-center"
       >
-        <div
-          className="col-sm-6 text-left"
-        >
-          <Link
-            replace={false}
-            to="/"
-          >
-            <input
-              className="btn-btn-default"
-              type="button"
-              value="Cancel"
-            />
-          </Link>
-        </div>
-        <div
-          className="col-sm-6 text-right"
-        >
-          <input
-            className="btn btn-nav"
-            id="signup"
-            name="signup"
-            type="submit"
-            value="Signup"
-          />
-        </div>
+        <input
+          className="btn btn-default btn-lg"
+          id="signup"
+          name="signup"
+          type="submit"
+          value="Signup"
+        />
       </div>
       <div
         className="change_link"
@@ -93,7 +85,11 @@ exports[`Signup component renders properly 1`] = `
           replace={false}
           to="/login"
         >
-          log in
+          <h4
+            className="toregister"
+          >
+            Login here
+          </h4>
         </Link>
       </div>
     </form>

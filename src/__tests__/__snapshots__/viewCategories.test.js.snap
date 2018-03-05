@@ -8,7 +8,7 @@ exports[`Category component renders correctly 1`] = `
     className="card "
   >
     <div
-      className="card-block color"
+      className="card-block color word-font"
     >
       <h3
         className="card-title"

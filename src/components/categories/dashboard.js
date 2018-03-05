@@ -14,7 +14,7 @@ export const Category = (props) => (
    
     <div className="col-md-4 col-lg-3 col-sm-6 category-card">
         <div className="card ">
-            <div className="card-block color" >
+            <div className="card-block color word-font" >
                 <h3 className="card-title">{props.name}</h3>
                 <div className="card-block">
                 <Link
