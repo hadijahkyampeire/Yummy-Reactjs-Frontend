@@ -80,7 +80,7 @@ class ViewRecipes extends Component {
             });
           }
         } else if (error.request) {
-          alert("Request not made")
+          notify.show("Request not made", 'error', 3000)
         }
       });
 

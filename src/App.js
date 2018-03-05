@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Switch, Route, BrowserRouter} from 'react-router-dom';
+import {Switch, Route, BrowserRouter, Link} from 'react-router-dom';
 import Notifications from 'react-notify-toast';
 import {notify} from 'react-notify-toast';
 
@@ -17,7 +17,25 @@ import Landing from './components/auth/landing';
 import axiosInstance from './components/Apicalls';
 
 const NotFound = () => (
-  <div>Page Not found</div>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>
+                    Oops!</h1>
+                <h2>
+                    Page Not Found, 404</h2>
+                <div class="error-details">
+                    Sorry, an error has occured, Requested page can not be found!
+                </div>
+                <div class="error-actions">
+                    <Link to="/" class="btn btn-primary btn-lg" style={{backgroundColor:'#009688'}}><span class="fa fa-home"></span>
+                        Take Me Home </Link>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 );
 
 class App extends Component {
@@ -68,7 +86,6 @@ class App extends Component {
             <PrivateRoute exact path="/category/:id/recipes" component={ViewRecipes} loggedIn={this.state.loggedin}/>
             <Route component={NotFound}/>
           </Switch>
-          {/* <Footer/> */}
         </div>
       </BrowserRouter>
     );

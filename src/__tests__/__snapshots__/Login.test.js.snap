@@ -10,9 +10,17 @@ exports[`Login component renders properly without crashing 1`] = `
     <div
       className="form-group"
     >
-      <h1>
+      <i
+        className="fa fa-user-circle fa-5x"
+        style={
+          Object {
+            "color": "#26A69A",
+          }
+        }
+      />
+      <div>
         LOGIN
-      </h1>
+      </div>
       <form
         onSubmit={[Function]}
       >
@@ -59,7 +67,7 @@ exports[`Login component renders properly without crashing 1`] = `
         </div>
         <br />
         <button
-          className="btn btn-default"
+          className="btn btn-default btn-lg"
           id="signin"
           name="signin"
           type="submit"
