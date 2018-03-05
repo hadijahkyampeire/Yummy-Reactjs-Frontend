@@ -19,7 +19,7 @@ exports[`Category component renders correctly 1`] = `
         className="card-block"
       >
         <Link
-          className="btn btn-sm btn-success card-link"
+          className="btn btn-sm btn-primary card-link"
           data-target="#edit_category1"
           data-toggle="modal"
           replace={false}
@@ -31,7 +31,8 @@ exports[`Category component renders correctly 1`] = `
         </Link>
         <Link
           className="btn btn-sm btn-danger card-link"
-          onClick={[Function]}
+          data-target="#delete_category1"
+          data-toggle="modal"
           replace={false}
           to="#"
         >
@@ -40,7 +41,7 @@ exports[`Category component renders correctly 1`] = `
           />
         </Link>
         <Link
-          className="btn btn-sm btn-primary card-link"
+          className="btn btn-sm btn-success card-link"
           replace={false}
           to="/category/1/recipes"
         >
@@ -51,6 +52,11 @@ exports[`Category component renders correctly 1`] = `
       </div>
       <EditCategory
         editCategory={[Function]}
+        id={1}
+        name="lunch"
+      />
+      <DeleteCategory
+        deleteCategory={[Function]}
         id={1}
         name="lunch"
       />
@@ -78,7 +84,7 @@ exports[`ViewCategories component renders properly 1`] = `
         className="col-sm-5 offset-sm-6"
       >
         <div
-          class="alert alert-info"
+          className="alert alert-info"
           role="alert"
         >
           <strong>

@@ -32,31 +32,59 @@ exports[`Recipe renders correctly 1`] = `
     <div
       className="card-block"
     >
+      <h4>
+        Description:
+      </h4>
       mockDesc
     </div>
-    <button
-      className="btn btn-sm btn-primary"
-      data-target="#edit_recipe1"
-      data-toggle="modal"
-      to="#"
+    <hr
+      style={
+        Object {
+          "backgroundColor": "#26A69A",
+          "height": 2,
+        }
+      }
+    />
+    <div
+      className="text-center"
+      style={
+        Object {
+          "marginBottom": 4,
+        }
+      }
     >
-      <i
-        className="fa fa-edit"
-      />
-    </button>
-    <button
-      className="btn btn-sm btn-danger "
-      onClick={[Function]}
-      to="#"
-    >
-      <i
-        className="fa fa-trash"
+      <button
+        className="btn btn-sm btn-primary"
+        data-target="#edit_recipe1"
+        data-toggle="modal"
         to="#"
-      />
-    </button>
+      >
+        <i
+          className="fa fa-edit"
+        />
+         Edit
+      </button>
+      <button
+        className="btn btn-sm btn-danger "
+        data-target="#delete_recipe1"
+        data-toggle="modal"
+        to="#"
+      >
+        <i
+          className="fa fa-trash"
+        />
+         Delete
+      </button>
+    </div>
     <EditRecipe
       description="mockDesc"
       editRecipe={[Function]}
+      id={1}
+      title="mockTitle"
+    />
+    <DeleteRecipe
+      deleteRecipe={[Function]}
+      description="mockDesc"
       id={1}
       title="mockTitle"
     />
@@ -88,7 +116,21 @@ exports[`ViewRecipes component renders properly 1`] = `
         aria-multiselectable="true"
         id="accordion"
         role="tablist"
-      />
+      >
+        <div
+          className="col-sm-5 offset-sm-6"
+        >
+          <div
+            className="alert alert-info"
+            role="alert"
+          >
+            <strong>
+              Ooops!
+            </strong>
+             No recipes ,add some
+          </div>
+        </div>
+      </div>
     </div>
     <Pagination
       activePage={null}

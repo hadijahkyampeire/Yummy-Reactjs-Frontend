@@ -290,7 +290,7 @@ li:disabled {
     100% { transform: rotate(360deg); }
   }
   .color{
-      background-color: rgb(146, 199, 197);
+      background-color: #26A69A;
       font-family: 'Tillana', cursive;
       
   }
@@ -298,7 +298,7 @@ li:disabled {
       background-color: rgb(226, 236, 227);
   }
   .recipe{
-      background-color:  rgb(146, 199, 197);
+      background-color:  #26A69A;
       font-family: 'Tillana', cursive;
 
   }
