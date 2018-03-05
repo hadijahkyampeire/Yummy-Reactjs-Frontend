@@ -51,7 +51,7 @@ class CreateCategory extends Component {
 
                                 <form onSubmit={this.handleAddCategories}>
                                     <div className="input-group ">
-                                    <span class="input-group-addon pr-4"><i class="glyphicon glyphicon-pencil"></i></span>
+                                    <span className="input-group-addon pr-4"><i className="glyphicon glyphicon-pencil"></i></span>
                                         <input
                                             type="text"
                                             name="title"

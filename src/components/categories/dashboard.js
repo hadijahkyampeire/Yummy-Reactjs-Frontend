@@ -4,38 +4,41 @@ import {notify} from 'react-notify-toast';
 import axiosInstance from '../Apicalls';
 import CreateCategory from './CreateCategory';
 import EditCategory from './editCategory';
+import DeleteCategory from './deleteCategory';
 import Pagination from '../pagination';
 import Search from '../searchQuery';
 import PropTypes from 'prop-types';
 
 // Reusable component to render a single category in a card
 export const Category = (props) => (
+   
     <div className="col-md-4 col-lg-3 col-sm-6 category-card">
         <div className="card ">
             <div className="card-block color" >
                 <h3 className="card-title">{props.name}</h3>
                 <div className="card-block">
                 <Link
-                    className="btn btn-sm btn-success card-link"
+                    className="btn btn-sm btn-primary card-link"
                     data-toggle="modal"
                     data-target={`#edit_category${props.id}`}
                     to="#"><i className="fa fa-edit"/></Link>
                 <Link
                     className="btn btn-sm btn-danger card-link"
-                    onClick={props.deleteCategory}
-                    to={`#`}><i className="fa fa-trash"/></Link>
+                    data-toggle="modal"
+                    data-target={`#delete_category${props.id}`}
+                    to="#"><i className="fa fa-trash"/></Link>
                     
                 <Link 
-                className="btn btn-sm btn-primary card-link"
+                className="btn btn-sm btn-success card-link"
                 to={`/category/${props.id}/recipes`}>
                 <i className="fa fa-eye"/>
                 </Link>
                 </div>
                 <EditCategory name={props.name} id={props.id} editCategory={props.editCategory}/>
+                <DeleteCategory id={props.id} name={props.name} deleteCategory={props.deleteCategory}/>
             </div> 
         </div>
     </div>
-
 )
 
 Category.propTypes = {
@@ -91,12 +94,12 @@ class Categories extends Component {
         this.getCategories();
     }
 
-    deleteCategory(value) {
+    deleteCategory(id) {
         axiosInstance
-            .delete(`categories/${value}`)
+            .delete(`categories/${id}`)
             .then(response => {
                 notify.show(response.data.message, 'success', 4000);
-                // updates the categories list after delete
+                document.getElementById(`closeModel${id}`).click();
                 this.getCategories();
             })
     }
@@ -164,7 +167,7 @@ class Categories extends Component {
                         {this.state.categories.length
                             ? categoryitems
                             : <div className="col-sm-5 offset-sm-6">
-                            <div class="alert alert-info" role="alert">
+                            <div className="alert alert-info" role="alert">
                     <strong>Ooops!</strong> No categories , go a head and add some
                     </div></div>}
 

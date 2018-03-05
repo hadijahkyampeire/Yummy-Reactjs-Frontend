@@ -1,17 +1,16 @@
 import React, {Component} from 'react';
 import {notify} from 'react-notify-toast';
+import {Link} from 'react-router-dom';
 import CreateRecipe from './CreateRecipes';
-import EditRecipe from './editRecipe'
+import EditRecipe from './editRecipe';
+import DeleteRecipe from './deleteRecipe';
 import Pagination from '../pagination';
 import Search from '../searchQuery';
 import axiosInstance from '../Apicalls';
 
 
 export const Recipe = (props) => (
- 
-  // <div className="col-md-5 col-sm-6 recipe-card">
   <div className="card ">
-  {/* <img class="card-img-top recipeimg" /> */}
     <div  className="card-header recipe" role="tab" id={`recipe-${props.id}`} data-toggle="collapse"
           href={`#recipeDetails${props.id}`}
           aria-expanded="true"
@@ -29,14 +28,20 @@ export const Recipe = (props) => (
       role="tabpanel"
       aria-labelledby={`recipe-${props.id}`}>
       <div className="card-block">
+      <h4>Description:</h4>
         {props.description}
       </div>
-      <button className="btn btn-sm btn-primary" data-toggle="modal" data-target={`#edit_recipe${props.id}`} to="#" ><i className="fa fa-edit"/></button>
-    <button className="btn btn-sm btn-danger " onClick={props.deleteRecipe} to={`#`}><i className="fa fa-trash" to="#"/></button>
+      <hr style={{backgroundColor:'#26A69A', height:2}}/>
+      <div className="text-center" style={{marginBottom:4}}>
+      <button className="btn btn-sm btn-primary" data-toggle="modal" 
+      data-target={`#edit_recipe${props.id}`} to="#" ><i className="fa fa-edit"/> Edit</button>
+    <button className="btn btn-sm btn-danger " data-toggle="modal" 
+    data-target={`#delete_recipe${props.id}`} to="#"><i className="fa fa-trash"/> Delete</button>
+    </div>
     <EditRecipe title={props.title} description={props.description} id={props.id} editRecipe={props.editRecipe}/>
+    <DeleteRecipe title={props.title} description={props.description} id={props.id} deleteRecipe={props.deleteRecipe}/>
     </div>
   </div>
-  // </div>
 )
 
 /**
@@ -85,11 +90,12 @@ class ViewRecipes extends Component {
     this.getRecipes();
   }
   // call for deleting recipes
-  deleteRecipe(value){
+  deleteRecipe(id){
     let category_id = this.props.match.params.id
-    axiosInstance.delete(`categories/${category_id}/recipes/${value}`)
+    axiosInstance.delete(`categories/${category_id}/recipes/${id}`)
     .then(response=>{
       notify.show(response.data.message, 'success', 4000);
+      document.getElementById(`closeModal${id}`).click()
       this.getRecipes();
   })
   }
@@ -148,7 +154,13 @@ class ViewRecipes extends Component {
         <Search handleSearch={this.searchRecipes} placeholder="recipes"/>
         <div className="col-md-6 offset-md-3">
           <div id="accordion" role="tablist" aria-multiselectable="true">
-            {recipeitems}
+          {this.state.recipes.length
+          ?recipeitems
+          :
+         < div className="col-sm-5 offset-sm-6">
+          <div className="alert alert-info" role="alert">
+        <strong>Ooops!</strong> No recipes ,add some
+        </div></div>}
           </div>
         </div>
         <Pagination 

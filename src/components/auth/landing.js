@@ -170,7 +170,8 @@ export const Nav = props => (
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/about" style={linkTextStyles} activeStyle={activeLinkStyles}>About Us {' '}<i className="fa fa-tags"/></NavLink>
+              <NavLink className="nav-link" to="/about" style={linkTextStyles} 
+              activeStyle={activeLinkStyles}>About Us {' '}<i className="fa fa-info-circle"/></NavLink>
             </li>
             <li className="nav-item">
               <NavLink

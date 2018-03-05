@@ -20,7 +20,7 @@ describe('ViewRecipes component', () => {
   });
 
   it('has a div', () => {
-    expect(wrapper.find('div')).toHaveLength(4);
+    expect(wrapper.find('div')).toHaveLength(6);
   });
 
   it('has initial states', () => {

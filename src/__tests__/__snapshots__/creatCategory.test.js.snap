@@ -26,10 +26,10 @@ exports[`CreateCategory component renders properly 1`] = `
               className="input-group "
             >
               <span
-                class="input-group-addon pr-4"
+                className="input-group-addon pr-4"
               >
                 <i
-                  class="glyphicon glyphicon-pencil"
+                  className="glyphicon glyphicon-pencil"
                 />
               </span>
               <input
