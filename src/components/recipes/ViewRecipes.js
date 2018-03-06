@@ -113,7 +113,6 @@ class ViewRecipes extends Component {
     this.setState(previousState=>({
         current_page: selectedPage
     }),()=>{
-        console.log(this.state.searching)
         if(this.state.searching){
             this.searchRecipes(this.state.q);
         }else{
