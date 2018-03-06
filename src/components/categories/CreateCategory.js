@@ -34,7 +34,7 @@ class CreateCategory extends Component {
             if (error.response) {
                 notify.show(error.response.data.message, 'error', 4000)
             } else if (error.request) {
-                notify.show("Request not made")
+                notify.show("Request not made", 'error', 3000)
             }
         });
     }

@@ -22,10 +22,13 @@ class Pagination extends Component {
     };
 
     changePage = (event)=>{
-        event.preventDefault()
+        // preventing default link behaviour
+        event.preventDefault();
+        // do nothing if the selected page doesnot exist and is not a number
         if(Number.isNaN(Number(event.target.dataset.page))){
             return;
         }
+        // call the change page function if selected page exists
         this.props.changePage((Number(event.target.dataset.page)));
     }
 

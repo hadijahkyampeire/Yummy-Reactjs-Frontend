@@ -27,7 +27,8 @@ class Search extends Component {
     handleInputChange = (event) => {
         const {name, value} = event.target;
         this.setState({[name]: value},()=>{
-        this.props.handleSearch(this.state.q);
+            // search items after state has been updated
+         this.props.handleSearch(this.state.q);
         });
     }
 
