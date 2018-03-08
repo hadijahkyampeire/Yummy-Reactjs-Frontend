@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import toJson, { shallowToJson } from 'enzyme-to-json';
 
-import Search from '../components/searchQuery';
+import Search from '../components/SearchQuery';
 
 describe('Search component',()=>{
     const wrapper = shallow(<Search handleSearch={jest.fn()}/>)

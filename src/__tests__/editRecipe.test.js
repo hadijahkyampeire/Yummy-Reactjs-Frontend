@@ -6,7 +6,7 @@ import sinon from 'sinon';
 
 import EditRecipe from '../components/recipes/editRecipe';
 
-describe('Signup component', () => {
+describe('EditRecipe component', () => {
   const wrapper = shallow(<EditRecipe  editRecipe={jest.fn()}/>);
   const preventDefault = jest.fn();
 

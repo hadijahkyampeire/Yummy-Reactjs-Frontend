@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import toJson, { shallowToJson } from 'enzyme-to-json';
 import sinon from 'sinon';
 
-import Categories ,{Category} from '../components/categories/dashboard';
+import Categories ,{Category} from '../components/categories/Dashboard';
 import CreateCategory from '../components/categories/CreateCategory';
 
 describe('ViewCategories component', () => {

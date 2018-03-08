@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme';
 import toJson, { shallowToJson } from 'enzyme-to-json';
 import sinon from 'sinon';
 
-import Landing from '../components/auth/landing';
+import Landing from '../components/auth/Landing';
 
 
 describe('Landing component', () => {

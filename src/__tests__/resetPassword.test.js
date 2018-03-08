@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import toJson, { shallowToJson } from 'enzyme-to-json';
 import sinon from 'sinon';
 
-import ResetPassword from '../components/auth/resetPassword';
+import ResetPassword from '../components/auth/ResetPassword';
 
 describe('ResetPassword component', () => {
   const wrapper = shallow(<ResetPassword location={{ search: 'testUrl' }} />);

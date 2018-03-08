@@ -31,7 +31,6 @@ class CreateCategory extends Component {
                     .getCategories()
                 this.setState({ title: '' })
 
-<<<<<<< HEAD
             }).catch(error => {
                 if (error.response) {
                     notify.show(error.response.data.message, 'error', 4000)
@@ -39,15 +38,6 @@ class CreateCategory extends Component {
                     notify.show("Request not made")
                 }
             });
-=======
-        }).catch(error => {
-            if (error.response) {
-                notify.show(error.response.data.message, 'error', 4000)
-            } else if (error.request) {
-                notify.show("Request not made", 'error', 3000)
-            }
-        });
->>>>>>> 725f55ca400dc79f019e5b6d2215271003c3b3f3
     }
 
     render() {
