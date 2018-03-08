@@ -36,22 +36,23 @@ class CreateRecipe extends Component {
     render() {
         return (
             <div>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addRecipeModal">
+                <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#addRecipeModal">
                 <i className="fa fa-plus" />{' '}
                 Add Recipe
                 </button>
                 <div id="recipesbar">
-                    <div class="modal fade" id="addRecipeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Add recipes to <strong>{this.props.categoryName}</strong></h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <div className="modal fade" id="addRecipeModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div className="modal-dialog" role="document">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title" 
+                                    id="exampleModalLongTitle">Add recipes to <strong>{this.props.categoryName}</strong></h5>
+                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <form onSubmit={this.handleAddRecipes}>
-                                <div class="modal-body">
+                                <div className="modal-body">
                                 
                                     <div className="input-group">
                                         <span className="input-group-addon pr-4"><i className="fa fa-pencil"></i></span>
@@ -80,8 +81,8 @@ class CreateRecipe extends Component {
 
                                     </div>
                                  </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeRecipeModal">Close</button>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" data-dismiss="modal" id="closeRecipeModal">Close</button>
                                     <input type="submit" className="btn btn-primary" value="Add Recipe" />
                                 </div>
                                 </form>

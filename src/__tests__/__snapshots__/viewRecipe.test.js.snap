@@ -91,3 +91,73 @@ exports[`Recipe renders correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`ViewRecipes component renders properly 1`] = `
+<div>
+  <div
+    className="viewrecipes"
+  >
+    <h4
+      className="text-center"
+    >
+      <span
+        className="label label-primary"
+      >
+        Category 
+      </span>
+    </h4>
+    <br />
+    <div
+      className="row justify-content-md-center"
+    >
+      <CreateRecipe
+        getRecipes={[Function]}
+        location={
+          Object {
+            "state": Object {},
+          }
+        }
+        match={
+          Object {
+            "params": Object {},
+          }
+        }
+      />
+      <Search
+        handleSearch={[Function]}
+        placeholder="recipes"
+      />
+    </div>
+    <div
+      className="col-md-6 offset-md-3"
+    >
+      <div
+        aria-multiselectable="true"
+        id="accordion"
+        role="tablist"
+      >
+        <div
+          className="col-md-5 offset-sm-4"
+        >
+          <div
+            className="alert alert-info"
+            role="alert"
+          >
+            <strong>
+              Ooops!
+            </strong>
+             No recipes ,add some
+          </div>
+        </div>
+      </div>
+    </div>
+    <Pagination
+      activePage={null}
+      changePage={[Function]}
+      nextPage={null}
+      previousPage={null}
+      totalPages={null}
+    />
+  </div>
+</div>
+`;

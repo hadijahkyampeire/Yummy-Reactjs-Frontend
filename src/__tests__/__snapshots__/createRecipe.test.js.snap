@@ -3,7 +3,7 @@
 exports[`CreateRecipe component renders properly 1`] = `
 <div>
   <button
-    class="btn btn-primary"
+    className="btn btn-primary"
     data-target="#addRecipeModal"
     data-toggle="modal"
     type="button"
@@ -20,23 +20,23 @@ exports[`CreateRecipe component renders properly 1`] = `
     <div
       aria-hidden="true"
       aria-labelledby="exampleModalLongTitle"
-      class="modal fade"
+      className="modal fade"
       id="addRecipeModal"
       role="dialog"
-      tabindex="-1"
+      tabIndex="-1"
     >
       <div
-        class="modal-dialog"
+        className="modal-dialog"
         role="document"
       >
         <div
-          class="modal-content"
+          className="modal-content"
         >
           <div
-            class="modal-header"
+            className="modal-header"
           >
             <h5
-              class="modal-title"
+              className="modal-title"
               id="exampleModalLongTitle"
             >
               Add recipes to 
@@ -44,7 +44,7 @@ exports[`CreateRecipe component renders properly 1`] = `
             </h5>
             <button
               aria-label="Close"
-              class="close"
+              className="close"
               data-dismiss="modal"
               type="button"
             >
@@ -59,7 +59,7 @@ exports[`CreateRecipe component renders properly 1`] = `
             onSubmit={[Function]}
           >
             <div
-              class="modal-body"
+              className="modal-body"
             >
               <div
                 className="input-group"
@@ -103,10 +103,10 @@ exports[`CreateRecipe component renders properly 1`] = `
               </div>
             </div>
             <div
-              class="modal-footer"
+              className="modal-footer"
             >
               <button
-                class="btn btn-secondary"
+                className="btn btn-secondary"
                 data-dismiss="modal"
                 id="closeRecipeModal"
                 type="button"

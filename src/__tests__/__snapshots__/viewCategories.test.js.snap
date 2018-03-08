@@ -23,7 +23,7 @@ exports[`Category component renders correctly 1`] = `
         Date_modified: 
       </div>
       <div
-        className="card-footer text-center"
+        className="card-block text-center"
       >
         <Link
           className="btn btn-sm btn-primary card-link"
@@ -35,6 +35,7 @@ exports[`Category component renders correctly 1`] = `
           <i
             className="fa fa-edit"
           />
+           Edit
         </Link>
         <Link
           className="btn btn-sm btn-danger card-link"
@@ -46,6 +47,7 @@ exports[`Category component renders correctly 1`] = `
           <i
             className="fa fa-trash"
           />
+           Delete
         </Link>
         <Link
           className="btn btn-sm btn-success card-link"
@@ -62,6 +64,7 @@ exports[`Category component renders correctly 1`] = `
           <i
             className="fa fa-eye"
           />
+           Recipes
         </Link>
       </div>
       <EditCategory
