@@ -18,6 +18,13 @@ exports[`Category component renders correctly 1`] = `
       <div
         className="card-block"
       >
+        Date_created: 
+        <br />
+        Date_modified: 
+      </div>
+      <div
+        className="card-footer text-center"
+      >
         <Link
           className="btn btn-sm btn-primary card-link"
           data-target="#edit_category1"
@@ -43,7 +50,14 @@ exports[`Category component renders correctly 1`] = `
         <Link
           className="btn btn-sm btn-success card-link"
           replace={false}
-          to="/category/1/recipes"
+          to={
+            Object {
+              "pathname": "/category/1/recipes",
+              "state": Object {
+                "categoryName": "lunch",
+              },
+            }
+          }
         >
           <i
             className="fa fa-eye"
@@ -67,21 +81,26 @@ exports[`Category component renders correctly 1`] = `
 
 exports[`ViewCategories component renders properly 1`] = `
 <div>
-  <CreateCategory
-    getCategories={[Function]}
-  />
   <div
     className="viewcategories"
   >
-    <Search
-      handleSearch={[Function]}
-      placeholder="categories "
-    />
+    <div
+      className="row justify-content-md-center"
+    >
+      <CreateCategory
+        getCategories={[Function]}
+      />
+      <Search
+        handleSearch={[Function]}
+        placeholder="categories "
+      />
+    </div>
+    <br />
     <div
       className="row categories"
     >
       <div
-        className="col-sm-5 offset-sm-6"
+        className="col-sm-5 offset-sm-3"
       >
         <div
           className="alert alert-info"

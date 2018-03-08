@@ -31,15 +31,11 @@ describe('CreateRecipe component', () => {
   });
 
   it('has component in divs', () => {
-    expect(wrapper.find('div')).toHaveLength(9);
+    expect(wrapper.find('div')).toHaveLength(10);
   });
 
   it('renders component in spans', () => {
-    expect(wrapper.find('span')).toHaveLength(2);
-  });
-
-  it('renders component in h2', () => {
-    expect(wrapper.find('h2')).toHaveLength(1);
+    expect(wrapper.find('span')).toHaveLength(3);
   });
 
   it('has input field', () => {
@@ -47,7 +43,7 @@ describe('CreateRecipe component', () => {
   });
 
   it('has breaks br field', () => {
-    expect(wrapper.find('br')).toHaveLength(3);
+    expect(wrapper.find('br')).toHaveLength(1);
   });
 
   it('renders a form', () => {

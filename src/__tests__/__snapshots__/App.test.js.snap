@@ -423,6 +423,7 @@ exports[`App component fully renders properly 1`] = `
                               src="food4.jpg"
                               style={
                                 Object {
+                                  "backgroundPosition": "cover",
                                   "height": "100%",
                                   "width": "100%",
                                 }
@@ -430,6 +431,11 @@ exports[`App component fully renders properly 1`] = `
                             />
                             <div
                               className="carousel-caption"
+                              style={
+                                Object {
+                                  "padding": 0,
+                                }
+                              }
                             >
                               <div
                                 id="welcome"
@@ -486,6 +492,7 @@ exports[`App component fully renders properly 1`] = `
                               src="new1.jpg"
                               style={
                                 Object {
+                                  "backgroundPosition": "cover",
                                   "height": "100%",
                                   "width": "100%",
                                 }
@@ -493,6 +500,11 @@ exports[`App component fully renders properly 1`] = `
                             />
                             <div
                               className="carousel-caption"
+                              style={
+                                Object {
+                                  "padding": 0,
+                                }
+                              }
                             >
                               <div
                                 id="welcome"
@@ -549,6 +561,7 @@ exports[`App component fully renders properly 1`] = `
                               src="new2.jpg"
                               style={
                                 Object {
+                                  "backgroundPosition": "cover",
                                   "height": "100%",
                                   "width": "100%",
                                 }
@@ -556,6 +569,11 @@ exports[`App component fully renders properly 1`] = `
                             />
                             <div
                               className="carousel-caption"
+                              style={
+                                Object {
+                                  "padding": 0,
+                                }
+                              }
                             >
                               <div
                                 id="welcome"

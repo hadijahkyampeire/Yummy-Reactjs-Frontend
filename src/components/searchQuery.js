@@ -33,7 +33,7 @@ class Search extends Component {
 
     render() {
         return (
-            <div className="col-sm-3 pull-right" style={{marginRight: 30,}}>
+            <div className="col-md-3">
                 <form onSubmit={this.handleSearchInput}>
                     <div className="input-group">
                         <input

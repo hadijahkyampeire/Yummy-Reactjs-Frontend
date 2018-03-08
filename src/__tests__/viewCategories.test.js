@@ -21,7 +21,7 @@ describe('ViewCategories component', () => {
   });
 
   it('has a div', () => {
-    expect(wrapper.find('div')).toHaveLength(5);
+    expect(wrapper.find('div')).toHaveLength(6);
   });
 
   it('renders get categories functions', () => {

@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import Slideshow from '../slideshow';
+import Slideshow from '../SlideShow';
 
 /**
  * Component for landing page.

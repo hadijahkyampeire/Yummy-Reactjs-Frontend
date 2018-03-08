@@ -13,9 +13,9 @@ describe('Search component',()=>{
       });
 
     it('renders a form', () => {
-    expect(wrapper.find('form')).toHaveLength(1);
-    expect(wrapper.find('form').simulate('submit', {preventDefault}))
-    expect(preventDefault).toBeCalled();
-    expect(wrapper.find('[name="q"]').simulate('change', {target:{name:'q', value:'lunch'}}))
+        expect(wrapper.find('form')).toHaveLength(1);
+        expect(wrapper.find('form').simulate('submit', {preventDefault}))
+        expect(preventDefault).toBeCalled();
+        expect(wrapper.find('[name="q"]').simulate('change', {target:{name:'q', value:'lunch'}}))
     });
 })

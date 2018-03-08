@@ -16,11 +16,11 @@ exports[`Recipe renders correctly 1`] = `
     <h3
       className="mb-0"
     >
-      <button
-        className="btn btn-link"
+      <span
+        className="word-font"
       >
         mockTitle
-      </button>
+      </span>
     </h3>
   </div>
   <div
@@ -87,57 +87,6 @@ exports[`Recipe renders correctly 1`] = `
       description="mockDesc"
       id={1}
       title="mockTitle"
-    />
-  </div>
-</div>
-`;
-
-exports[`ViewRecipes component renders properly 1`] = `
-<div>
-  <CreateRecipe
-    getRecipes={[Function]}
-    match={
-      Object {
-        "params": Object {},
-      }
-    }
-  />
-  <div
-    className="viewrecipes"
-  >
-    <Search
-      handleSearch={[Function]}
-      placeholder="recipes"
-    />
-    <div
-      className="col-md-6 offset-md-3"
-    >
-      <div
-        aria-multiselectable="true"
-        id="accordion"
-        role="tablist"
-      >
-        <div
-          className="col-sm-5 offset-sm-6"
-        >
-          <div
-            className="alert alert-info"
-            role="alert"
-          >
-            <strong>
-              Ooops!
-            </strong>
-             No recipes ,add some
-          </div>
-        </div>
-      </div>
-    </div>
-    <Pagination
-      activePage={null}
-      changePage={[Function]}
-      nextPage={null}
-      previousPage={null}
-      totalPages={null}
     />
   </div>
 </div>

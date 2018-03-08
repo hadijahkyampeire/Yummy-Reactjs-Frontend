@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import {notify} from 'react-notify-toast';
 import {Link} from 'react-router-dom';
 import CreateRecipe from './CreateRecipes';
-import EditRecipe from './editRecipe';
-import DeleteRecipe from './deleteRecipe';
-import Pagination from '../pagination';
-import Search from '../searchQuery';
+import EditRecipe from './EditRecipe';
+import DeleteRecipe from './DeleteRecipe';
+import Pagination from '../Pagination';
+import Search from '../SearchQuery';
 import axiosInstance from '../Apicalls';
 
 
@@ -16,9 +16,9 @@ export const Recipe = (props) => (
           aria-expanded="true"
           aria-controls="collapseOne">
       <h3 className="mb-0">
-        <button className="btn btn-link">
+        <span className="word-font">
           {props.title}
-        </button>
+        </span>
       </h3>
     </div>
 
@@ -144,19 +144,25 @@ class ViewRecipes extends Component {
       .recipes
       .map(recipe => (<Recipe {...recipe.recipe} key={recipe.recipe.id} 
         deleteRecipe={() => this.deleteRecipe(recipe.recipe.id)} 
-      editRecipe={this.editRecipe} viewDetails={this.viewDetails}/>));
+      editRecipe={this.editRecipe} viewDetails={this.viewDetails}
+      categoryName={this.props.location.state.categoryName}/>));
 
     return (
       <div >
-        <CreateRecipe getRecipes={this.getRecipes} {...this.props}/>
         <div className="viewrecipes">
+        <h4 className="text-center">
+        <span className="label label-primary">Category {this.props.location.state.categoryName}</span></h4>
+        <br/>
+        <div className="row justify-content-md-center">
+        <CreateRecipe getRecipes={this.getRecipes} {...this.props} categoryName={this.props.location.state.categoryName}/>
         <Search handleSearch={this.searchRecipes} placeholder="recipes"/>
+        </div>
         <div className="col-md-6 offset-md-3">
           <div id="accordion" role="tablist" aria-multiselectable="true">
           {this.state.recipes.length
           ?recipeitems
           :
-         < div className="col-sm-5 offset-sm-6">
+         < div className="col-md-5 offset-sm-4">
           <div className="alert alert-info" role="alert">
         <strong>Ooops!</strong> No recipes ,add some
         </div></div>}

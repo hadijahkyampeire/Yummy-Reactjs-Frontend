@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axiosInstance from '../Apicalls';
 import {notify} from 'react-notify-toast';
 import {Link, Redirect} from 'react-router-dom';
-import PasswordResetEmail from './resetEmail';
+import PasswordResetEmail from './ResetEmail';
 import PropTypes from 'prop-types'
 
 /**

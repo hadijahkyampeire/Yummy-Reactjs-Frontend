@@ -2,7 +2,7 @@ import React from 'react';
 import food4 from '../css/images/food4.jpg';
 import new1 from '../css/images/new1.jpg';
 import new2 from '../css/images/new2.jpg';
-import {Clock} from './auth/landing';
+import {Clock} from './auth/Landing';
 
 const FoodImages = props => (
   <div
@@ -15,10 +15,11 @@ const FoodImages = props => (
       alt={props.text}
       style={{
       width: '100%',
-      height: '100%'
+      height: '100%',
+      backgroundPosition: 'cover',
     }}
       className="d-block img-fluid"/>
-    <div className="carousel-caption">
+    <div className="carousel-caption" style={{padding:0}}>
       <div id="welcome">
         <h3>YOU LOVE COOKING?</h3>
         <h3 >

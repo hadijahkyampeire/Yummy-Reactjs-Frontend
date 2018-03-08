@@ -29,19 +29,12 @@
     height: 3em;
     float: left;
     margin-top: -10px;
-}
-#updatebar{
-    text-align: left;
-    background: palegreen;
+    padding-right: 10px;
 }
 #main {
     padding-right: 100px;
     padding-left: 100px;
     text-align: center; 
-}
-#header {
-   background-color: #999999;
-   height: 60px;  
 }
 #menu{
     float: right;
@@ -93,9 +86,9 @@
     color: white;
 }
 
-#welcome{
-   text-align: center; 
-   padding-top: 341px; 
+#welcome {
+   padding: 0;
+   margin: 0;
    color: black;
    font-family: 'Karma', serif;
    font-size:800px;
@@ -141,7 +134,7 @@ background: lightgrey;
     margin: 9px auto;
 }
 #changepassword{
-    font-family: 'Tillana', cursive;
+    font-family: 'Karma', serif;
     background: url("images/restaurant_icons.png");
     text-align: center;
     height: 500px;
@@ -151,28 +144,7 @@ background: lightgrey;
     font-size:20px;
     margin: 9px auto;
 }
-#save {
-	position:absolute;
-	z-index: 10;
-	border:1;
-    background: green;
-    width: 80px;
-    height: 30px;
-    padding-bottom: 20px;
-}
-#home{
-    background: lightgrey;
-    width: 70px;
-    height: 20px;
-}
-#view{
-    background: lightblue;
-    width: 120px;
-    height: 20px;
-}
-#words{
-text-align: center;
-}
+
 .change_link{
     padding-bottom: 5px;
     color:black;
@@ -219,11 +191,17 @@ text-align: center;
     background: url("images/restaurant_icons.png") no-repeat; 
     background-size: cover;
     height:100vh;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .viewrecipes{
     background: url("images/restaurant_icons.png") no-repeat; 
     background-size: cover;
     height:100vh;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .mb-0 .btn {
@@ -260,7 +238,7 @@ li:disabled {
       
   }
   .color:hover{
-      background-color: rgb(226, 236, 227);
+      background-color: #009688;
   }
   .recipe{
       background-color:  #26A69A;
@@ -272,6 +250,7 @@ li:disabled {
   }
 .word-font{
     font-family: 'Karma', serif;
+    color:white;
 }
 #about{
     background: url("images/restaurant_icons.png");
@@ -302,3 +281,7 @@ li:disabled {
   .error-template {padding: 40px 15px;text-align: center;}
   .error-actions {margin-top:15px;margin-bottom:15px;}
 
+.navbar-brand {
+    color: #f3f3f3 !important;
+    font-weight: 1000px;
+}

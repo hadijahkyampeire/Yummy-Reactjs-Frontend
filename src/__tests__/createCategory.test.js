@@ -28,15 +28,11 @@ describe('CreateCategory component', () => {
   });
 
   it('renders component in divs', () => {
-    expect(wrapper.find('div')).toHaveLength(6);
+    expect(wrapper.find('div')).toHaveLength(8);
   });
 
   it('renders component in spans', () => {
-    expect(wrapper.find('span')).toHaveLength(1);
-  });
-
-  it('renders component in h2', () => {
-    expect(wrapper.find('h2')).toHaveLength(1);
+    expect(wrapper.find('span')).toHaveLength(2);
   });
 
   it('has input field', () => {
