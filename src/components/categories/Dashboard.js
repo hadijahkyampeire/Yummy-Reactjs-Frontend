@@ -23,12 +23,12 @@ export const Category = (props) => (
                         className="btn btn-sm btn-primary card-link"
                         data-toggle="modal"
                         data-target={`#edit_category${props.id}`}
-                        to="#"><i className="fa fa-edit" /></Link>
+                        to="#"><i className="fa fa-edit" /> Edit</Link>
                     <Link
                         className="btn btn-sm btn-danger card-link"
                         data-toggle="modal"
                         data-target={`#delete_category${props.id}`}
-                        to="#"><i className="fa fa-trash" /></Link>
+                        to="#"><i className="fa fa-trash" /> Delete</Link>
 
                     <Link
                         className="btn btn-sm btn-success card-link"
@@ -36,7 +36,7 @@ export const Category = (props) => (
                             pathname: `/category/${props.id}/recipes`,
                             state: { categoryName: props.name }
                         }}>
-                        <i className="fa fa-eye" />
+                        <i className="fa fa-eye" /> Recipes
                     </Link>
                 </div>
                 <EditCategory name={props.name} id={props.id} editCategory={props.editCategory} />

@@ -246,7 +246,7 @@ li:disabled {
 
   }
   .recipe:hover{
-      background-color: rgb(226, 236, 227);
+      background-color: #009688;
   }
 .word-font{
     font-family: 'Karma', serif;
