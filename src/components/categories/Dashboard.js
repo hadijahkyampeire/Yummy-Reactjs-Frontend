@@ -18,7 +18,7 @@ export const Category = (props) => (
                 <h3 className="card-title">{props.name}</h3>
                 <div className="card-block">Date_created: {props.date_created}<br/>
                     Date_modified: {props.date_modified}</div>
-                <div className="card-footer text-center">
+                <div className="card-block text-center">
                     <Link
                         className="btn btn-sm btn-primary card-link"
                         data-toggle="modal"
