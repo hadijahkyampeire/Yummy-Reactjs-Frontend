@@ -285,3 +285,11 @@ li:disabled {
     color: #f3f3f3 !important;
     font-weight: 1000px;
 }
+.h5, h5 {
+    font-size: 1.25rem;
+    color: #141c1f;
+}
+.h4, h4 {
+    font-size: 1.25rem;
+    color: #141c1f;
+}
