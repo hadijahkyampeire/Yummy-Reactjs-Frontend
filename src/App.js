@@ -3,16 +3,14 @@ import {Switch, Route, BrowserRouter, Link} from 'react-router-dom';
 import Notifications from 'react-notify-toast';
 import {notify} from 'react-notify-toast';
 
-import Signup from './components/auth/signup';
-import ResetPassword from './components/auth/resetPassword';
-import Login from './components/auth/login';
+import Signup from './components/auth/Signup';
+import ResetPassword from './components/auth/ResetPassword';
+import Login from './components/auth/Login';
 import About from './components/auth/About';
-import Categories from './components/categories/dashboard';
-import {Nav} from './components/auth/landing';
-// import { Footer } from './components/auth/login';
+import Categories from './components/categories/Dashboard';
 import ViewRecipes from './components/recipes/ViewRecipes';
 import PrivateRoute from './components/auth/PrivateRoute';
-import Landing from './components/auth/landing';
+import Landing, {Nav} from './components/auth/Landing';
 
 import axiosInstance from './components/Apicalls';
 

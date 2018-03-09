@@ -4,9 +4,9 @@ import { MemoryRouter } from 'react-router-dom';
 import toJson, { shallowToJson } from 'enzyme-to-json';
 import sinon from 'sinon';
 
-import EditRecipe from '../components/recipes/editRecipe';
+import EditRecipe from '../components/recipes/EditRecipe';
 
-describe('Signup component', () => {
+describe('EditRecipe component', () => {
   const wrapper = shallow(<EditRecipe  editRecipe={jest.fn()}/>);
   const preventDefault = jest.fn();
 

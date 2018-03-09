@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import toJson, { shallowToJson } from 'enzyme-to-json';
 import sinon from 'sinon';
 
-import Categories ,{Category} from '../components/categories/dashboard';
+import Categories ,{Category} from '../components/categories/Dashboard';
 import CreateCategory from '../components/categories/CreateCategory';
 
 describe('ViewCategories component', () => {
@@ -21,7 +21,7 @@ describe('ViewCategories component', () => {
   });
 
   it('has a div', () => {
-    expect(wrapper.find('div')).toHaveLength(5);
+    expect(wrapper.find('div')).toHaveLength(6);
   });
 
   it('renders get categories functions', () => {

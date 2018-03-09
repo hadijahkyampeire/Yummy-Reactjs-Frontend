@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Search component renders properly 1`] = `
+exports[`pagination component renders properly 1`] = `
 <nav
   aria-label="Page navigation example"
 >

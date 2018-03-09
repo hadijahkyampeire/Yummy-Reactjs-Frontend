@@ -6,7 +6,7 @@ import sinon from 'sinon';
 import ViewRecipes, {Recipe} from '../components/recipes/ViewRecipes';
 
 describe('ViewRecipes component', () => {
-  const wrapper = shallow(<ViewRecipes match={{ params: {} }} />);
+  const wrapper = shallow(<ViewRecipes match={{ params: {} }} location={{state:{}}} />);
   const recipe = {id: 1, title:'mockTitle', description:'mockDesc'}
 
   it('renders properly', () => {
@@ -20,7 +20,7 @@ describe('ViewRecipes component', () => {
   });
 
   it('has a div', () => {
-    expect(wrapper.find('div')).toHaveLength(6);
+    expect(wrapper.find('div')).toHaveLength(7);
   });
 
   it('has initial states', () => {
@@ -56,7 +56,7 @@ describe('ViewRecipes component', () => {
 
   it('calls component did mount', () => {
     sinon.spy(ViewRecipes.prototype, 'componentDidMount');
-    const fullWrapper = mount(<ViewRecipes match={{ params: {} }} />);
+    const fullWrapper = mount(<ViewRecipes match={{ params: {} }} location={{state:{}}}/>);
     expect(ViewRecipes.prototype.componentDidMount).toHaveProperty('callCount', 1);
     ViewRecipes.prototype.componentDidMount.restore();
   });
@@ -68,6 +68,6 @@ describe('Recipe', ()=>{
 
   it('renders correctly', ()=>{
     expect(shallowToJson(wrapper)).toMatchSnapshot();
-    wrapper.find('.btn .btn-link').simulate('click')
+    wrapper.find('.word-font').simulate('click')
   })
 })

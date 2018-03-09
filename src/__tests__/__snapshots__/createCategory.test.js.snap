@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateCategory component renders properly 1`] = `
+<div>
+  <button
+    aria-hidden="true"
+    className="btn btn-primary"
+    data-target="#createCategoryModal"
+    data-toggle="modal"
+    type="button"
+  >
+    <i
+      className="fa fa-plus"
+    />
+     
+    Add category
+  </button>
+  <div
+    className="modal fade"
+    id="createCategoryModal"
+  >
+    <div
+      className="modal-dialog"
+      role="document"
+    >
+      <div
+        className="modal-content"
+      >
+        <div
+          className="modal-header"
+        >
+          <h5
+            className="modal-title"
+          >
+            Add category
+          </h5>
+          <button
+            aria-label="Close"
+            className="close"
+            data-dismiss="modal"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+            >
+              ×
+            </span>
+          </button>
+        </div>
+        <form
+          onSubmit={[Function]}
+        >
+          <div
+            className="modal-body"
+          >
+            <div
+              className="input-group "
+            >
+              <span
+                className="input-group-addon pr-4"
+              >
+                <i
+                  className="glyphicon glyphicon-pencil"
+                />
+              </span>
+              <input
+                className="form-control"
+                name="title"
+                onChange={[Function]}
+                placeholder="category name"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="modal-footer"
+          >
+            <input
+              className="btn btn-primary"
+              type="submit"
+              value="Add"
+            />
+            <button
+              className="btn btn-secondary"
+              data-dismiss="modal"
+              id="closeAddModal"
+              type="button"
+            >
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;

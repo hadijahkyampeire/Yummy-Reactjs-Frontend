@@ -4,9 +4,9 @@ import { MemoryRouter } from 'react-router-dom';
 import toJson, { shallowToJson } from 'enzyme-to-json';
 import sinon from 'sinon';
 
-import PasswordResetEmail from '../components/auth/resetEmail';
+import PasswordResetEmail from '../components/auth/ResetEmail';
 
-describe('Signup component', () => {
+describe('ResetEmail component', () => {
   const wrapper = shallow(<PasswordResetEmail />);
   const preventDefault = jest.fn();
 

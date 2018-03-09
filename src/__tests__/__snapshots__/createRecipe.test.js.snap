@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateRecipe component renders properly 1`] = `
+<div>
+  <button
+    className="btn btn-primary"
+    data-target="#addRecipeModal"
+    data-toggle="modal"
+    type="button"
+  >
+    <i
+      className="fa fa-plus"
+    />
+     
+    Add Recipe
+  </button>
+  <div
+    id="recipesbar"
+  >
+    <div
+      aria-hidden="true"
+      aria-labelledby="exampleModalLongTitle"
+      className="modal fade"
+      id="addRecipeModal"
+      role="dialog"
+      tabIndex="-1"
+    >
+      <div
+        className="modal-dialog"
+        role="document"
+      >
+        <div
+          className="modal-content"
+        >
+          <div
+            className="modal-header"
+          >
+            <h5
+              className="modal-title"
+              id="exampleModalLongTitle"
+            >
+              Add recipes to 
+              <strong />
+            </h5>
+            <button
+              aria-label="Close"
+              className="close"
+              data-dismiss="modal"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <form
+            onSubmit={[Function]}
+          >
+            <div
+              className="modal-body"
+            >
+              <div
+                className="input-group"
+              >
+                <span
+                  className="input-group-addon pr-4"
+                >
+                  <i
+                    className="fa fa-pencil"
+                  />
+                </span>
+                <input
+                  className="form-control"
+                  name="title"
+                  onChange={[Function]}
+                  placeholder="recipe title"
+                  type="text"
+                  value=""
+                />
+              </div>
+              <br />
+              <div
+                className="input-group"
+              >
+                <span
+                  className="input-group-addon pr-4"
+                >
+                  <i
+                    className="fa fa-list-alt"
+                  />
+                </span>
+                <textarea
+                  className="form-control description"
+                  cols="50"
+                  name="description"
+                  onChange={[Function]}
+                  placeholder="description or instructions"
+                  rows="4"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              className="modal-footer"
+            >
+              <button
+                className="btn btn-secondary"
+                data-dismiss="modal"
+                id="closeRecipeModal"
+                type="button"
+              >
+                Close
+              </button>
+              <input
+                className="btn btn-primary"
+                type="submit"
+                value="Add Recipe"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import toJson, { shallowToJson } from 'enzyme-to-json';
-import Slideshow from '../components/slideshow';
+import Slideshow from '../components/SlideShow';
 
 describe('Slideshow component', () => {
   const wrapper = shallow(<Slideshow />);

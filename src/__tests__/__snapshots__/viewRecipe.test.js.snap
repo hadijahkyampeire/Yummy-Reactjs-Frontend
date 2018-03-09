@@ -16,11 +16,11 @@ exports[`Recipe renders correctly 1`] = `
     <h3
       className="mb-0"
     >
-      <button
-        className="btn btn-link"
+      <span
+        className="word-font"
       >
         mockTitle
-      </button>
+      </span>
     </h3>
   </div>
   <div
@@ -94,21 +94,40 @@ exports[`Recipe renders correctly 1`] = `
 
 exports[`ViewRecipes component renders properly 1`] = `
 <div>
-  <CreateRecipe
-    getRecipes={[Function]}
-    match={
-      Object {
-        "params": Object {},
-      }
-    }
-  />
   <div
     className="viewrecipes"
   >
-    <Search
-      handleSearch={[Function]}
-      placeholder="recipes"
-    />
+    <h4
+      className="text-center"
+    >
+      <span
+        className="label label-primary"
+      >
+        Category 
+      </span>
+    </h4>
+    <br />
+    <div
+      className="row justify-content-md-center"
+    >
+      <CreateRecipe
+        getRecipes={[Function]}
+        location={
+          Object {
+            "state": Object {},
+          }
+        }
+        match={
+          Object {
+            "params": Object {},
+          }
+        }
+      />
+      <Search
+        handleSearch={[Function]}
+        placeholder="recipes"
+      />
+    </div>
     <div
       className="col-md-6 offset-md-3"
     >
@@ -118,7 +137,7 @@ exports[`ViewRecipes component renders properly 1`] = `
         role="tablist"
       >
         <div
-          className="col-sm-5 offset-sm-6"
+          className="col-md-5 offset-sm-4"
         >
           <div
             className="alert alert-info"

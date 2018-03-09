@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import toJson, { shallowToJson } from 'enzyme-to-json';
 import sinon from 'sinon';
 
-import Login from '../components/auth/login';
+import Login from '../components/auth/Login';
 
 describe('Login component', () => {
   const login = jest.fn();
