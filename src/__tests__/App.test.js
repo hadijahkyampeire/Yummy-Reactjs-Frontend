@@ -5,7 +5,7 @@ import toJson, { shallowToJson } from 'enzyme-to-json';
 import sinon from 'sinon';
 
 import App from '../App';
-import { Nav } from '../components/auth/landing';
+import { Nav } from '../components/auth/Landing';
 import PrivateRoute from '../components/auth/PrivateRoute';
 
 const constantDate = new Date('2018-02-13T12:41:20');

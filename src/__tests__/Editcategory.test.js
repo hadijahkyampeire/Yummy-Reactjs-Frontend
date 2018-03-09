@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import toJson, { shallowToJson } from 'enzyme-to-json';
 import sinon from 'sinon';
 
-import EditCategory from '../components/categories/editCategory';
+import EditCategory from '../components/categories/EditCategory';
 
 describe('EditCategory component', () => {
   const wrapper = shallow(<EditCategory editCategory={jest.fn()}/>);
