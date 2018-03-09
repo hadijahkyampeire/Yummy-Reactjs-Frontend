@@ -6,7 +6,8 @@ import {Link, Redirect} from 'react-router-dom';
 class Signup extends Component {
     state = {
         password_field: '',
-        email_field: ''
+        email_field: '',
+        error:null,
     }
 
     handleInputChange = (event) => {
@@ -30,7 +31,8 @@ class Signup extends Component {
             })
             .catch(error => {
                 if (error.response) {
-                    notify.show(error.response.data.message, 'error', 3000)
+                    this.setState({error: error.response.data.message})
+                    // notify.show(error.response.data.message, 'error', 3000)
                 } else if (error.request) {
                     notify.show("Request not made", 'error', 3000)
                 }
@@ -53,6 +55,19 @@ class Signup extends Component {
                     <div> REGISTER </div>
                 </div>
                     <form onSubmit={this.handleRegister}>
+                    {this.state.error ? (
+                    <div className="alert alert-danger">{this.state.error}
+                     <button
+                    type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button></div>
+                  ) : (
+                    ""
+                  )}
                         <div className="input-group">
                             <span className="input-group-addon pr-4" id="email"><i className='fa fa-envelope'/></span>
                             <input

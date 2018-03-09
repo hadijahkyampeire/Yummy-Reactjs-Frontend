@@ -13,7 +13,8 @@ class Login extends Component {
     // initial states
     state = {
         password_field: '',
-        email_field: ''
+        email_field: '',
+        error:null,
     }
 
     static propTypes = {
@@ -41,7 +42,8 @@ class Login extends Component {
             // error handling
             .catch(error => {
                 if (error.response) {
-                    notify.show(error.response.data.message, 'error', 3000)
+                    this.setState({error: error.response.data.message})
+                    // notify.show(error.response.data.message, 'error', 3000)
                 } else if (error.request) {
                     notify.show("Request not made", 'error', 3000)
                 }
@@ -68,6 +70,19 @@ class Login extends Component {
                             LOGIN
                         </div>
                         <form onSubmit={this.handleLogin}>
+                        {this.state.error ? (
+                    <div className="alert alert-danger">{this.state.error}
+                     <button
+                    type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button></div>
+                  ) : (
+                    ""
+                  )}
                             <div className="input-group">
                                 <div className="input-group-addon pr-4" ><i className='fa fa-envelope'/></div>
                                 <input

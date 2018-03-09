@@ -42,6 +42,19 @@ class EditCategory extends Component {
                         </div>
                         <form onSubmit={this.handleEditCategory}>
                         <div className="modal-body">
+                        {this.props.error ? (
+                    <div className="alert alert-danger">{this.props.error}
+                     <button
+                    type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button></div>
+                  ) : (
+                    ""
+                  )}
                             <div className="form-group">
                                 <input type="text" name="name" onChange={this.handleInput} className='form-control' value={this.state.name}/>
                             </div>

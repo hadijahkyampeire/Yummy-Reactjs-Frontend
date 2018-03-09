@@ -9,6 +9,7 @@ import axiosInstance from '../Apicalls';
 class PasswordResetEmail extends Component {
     state = {
         email:'',
+        error:null,
     }
 
     handleEmail =(event) =>{
@@ -25,7 +26,8 @@ class PasswordResetEmail extends Component {
             notify.show(response.data.message, 'success', 4000);
         }).catch(error=>{
           if(error.response){
-            notify.show(error.response.data.message, 'error', 4000)
+            this.setState({error: error.response.data.message})
+            // notify.show(error.response.data.message, 'error', 4000)
           }else if(error.request){
             notify.show("Request not made", 'error', 3000)
           }
@@ -47,6 +49,19 @@ class PasswordResetEmail extends Component {
             </div>
             <form onSubmit={this.handleResetEmail}>
             <div className="modal-body">
+            {this.state.error ? (
+                    <div className="alert alert-danger">{this.state.error}
+                     <button
+                    type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button></div>
+                  ) : (
+                    ""
+                  )}
               <input
                 type="email"
                 name="email"
