@@ -38,7 +38,7 @@ export const Recipe = (props) => (
     <button className="btn btn-sm btn-danger " data-toggle="modal" 
     data-target={`#delete_recipe${props.id}`} to="#"><i className="fa fa-trash"/> Delete</button>
     </div>
-    <EditRecipe title={props.title} description={props.description} id={props.id} editRecipe={props.editRecipe}/>
+    <EditRecipe title={props.title} description={props.description} id={props.id} editRecipe={props.editRecipe} error={props.error}/>
     <DeleteRecipe title={props.title} description={props.description} id={props.id} deleteRecipe={props.deleteRecipe}/>
     </div>
   </div>
@@ -57,6 +57,7 @@ class ViewRecipes extends Component {
     total_pages: null,
     total_Items: null,
     searching: false,
+    error:null,
   }
 
   getRecipes = () => {
@@ -105,8 +106,17 @@ class ViewRecipes extends Component {
       axiosInstance.put(`categories/${category_id}/recipes/${id}`,{title,description})
       .then(response =>{
         document.getElementById(`close${id}`).click();
+        notify.show(response.data.message, 'success', 4000);
         this.getRecipes();
-      })
+      }).catch(error => {
+        if (error.response) {
+            // notify users incase of an error from response
+            this.setState({error: error.response.data.message});
+        } else if (error.request) {
+            notify.show("Request not made", 'error', 3000)
+        }
+
+    })
 
   }
   changePage = (selectedPage)=>{
@@ -145,6 +155,7 @@ class ViewRecipes extends Component {
       .map(recipe => (<Recipe {...recipe.recipe} key={recipe.recipe.id} 
         deleteRecipe={() => this.deleteRecipe(recipe.recipe.id)} 
       editRecipe={this.editRecipe} viewDetails={this.viewDetails}
+      error={this.state.error}
       categoryName={this.props.location.state.categoryName}/>));
 
     return (

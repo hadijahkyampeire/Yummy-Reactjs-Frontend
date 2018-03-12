@@ -39,7 +39,7 @@ export const Category = (props) => (
                         <i className="fa fa-eye" /> Recipes
                     </Link>
                 </div>
-                <EditCategory name={props.name} id={props.id} editCategory={props.editCategory} />
+                <EditCategory name={props.name} id={props.id} editCategory={props.editCategory} error={props.error}/>
                 <DeleteCategory id={props.id} name={props.name} deleteCategory={props.deleteCategory} />
             </div>
         </div>
@@ -64,6 +64,7 @@ class Categories extends Component {
         total_pages: null,
         total_Items: null,
         searching: false,
+        error: null,
     }
 
     getCategories = () => {
@@ -116,6 +117,14 @@ class Categories extends Component {
                 notify.show(response.data.message, 'success', 4000);
                 document.getElementById(`close${id}`).click();
                 this.getCategories();
+            }).catch(error => {
+                if (error.response) {
+                    // notify users incase of an error from response
+                    this.setState({ error: error.response.data.message });
+                } else if (error.request) {
+                    notify.show("Request not made", 'error', 3000)
+                }
+    
             })
     }
     // pagination with search and normal request
@@ -163,6 +172,7 @@ class Categories extends Component {
                 date_modified={category.cat.date_modified}
                 deleteCategory={() => this.deleteCategory(category.cat.id)}
                 editCategory={this.editCategory}
+                error={this.state.error}
                 key={category.cat.id} />))
 
         return (

@@ -27,7 +27,7 @@ class CreateRecipe extends Component {
 
             }).catch(error => {
                 if (error.response) {
-                    notify.show(error.response.data.message, 'error', 3000)
+                    this.setState({ error: error.response.data.message });
                 } else if (error.request) {
                     notify.show("Request not made", 4000)
                 }
@@ -53,6 +53,19 @@ class CreateRecipe extends Component {
                                 </div>
                                 <form onSubmit={this.handleAddRecipes}>
                                 <div className="modal-body">
+                                {this.state.error ? (
+                    <div className="alert alert-danger">{this.state.error}
+                     <button
+                    type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button></div>
+                  ) : (
+                    ""
+                  )}
                                 
                                     <div className="input-group">
                                         <span className="input-group-addon pr-4"><i className="fa fa-pencil"></i></span>

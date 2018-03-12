@@ -38,6 +38,19 @@ class EditRecipe extends Component{
                     </div>
                     <form onSubmit={this.handleEditRecipe}>
                     <div className="modal-body">
+                    {this.props.error ? (
+                    <div className="alert alert-danger">{this.props.error}
+                     <button
+                    type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button></div>
+                  ) : (
+                    ""
+                  )}
                         <div className="form-group">
                             <input type="text" name="title" onChange={this.handleInput} className='form-control' value={this.state.title}/>
                         </div>
