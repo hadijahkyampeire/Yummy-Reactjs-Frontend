@@ -21,19 +21,15 @@ describe('Signup component', () => {
   });
 
   it('renders inputs', () => {
-    expect(wrapper.find('input').length).toBe(3);
-  });
-
-  it('it has br', () => {
-    expect(wrapper.find('br').length).toBe(2);
+    expect(wrapper.find('input').length).toBe(4);
   });
 
   it('renders component in div', () => {
-    expect(wrapper.find('div').length).toBe(8);
+    expect(wrapper.find('div').length).toBe(9);
   });
 
   it('renders component in span', () => {
-    expect(wrapper.find('span').length).toBe(2);
+    expect(wrapper.find('span').length).toBe(3);
   });
 
   it('has the correct form fields', () => {
