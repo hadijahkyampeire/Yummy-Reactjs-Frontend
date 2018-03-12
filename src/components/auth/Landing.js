@@ -164,6 +164,12 @@ export const Nav = props => (
             style={{
             color: 'white'
           }}>
+          <li className="nav-item">
+              <NavLink to="/#" exact className="nav-link" style={linkTextStyles}
+              activeStyle={activeLinkStyles}>
+                <i className="fa fa-user "/> {' '}{localStorage.getItem('userEmail')}</NavLink>
+
+            </li>
             <li className="nav-item">
               <NavLink to="/dashboard" className="nav-link" style={linkTextStyles} activeStyle={activeLinkStyles}>
                 Categories {' '}<i className="fa fa-coffee"/>

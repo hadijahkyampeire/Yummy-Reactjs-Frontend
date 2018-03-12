@@ -34,6 +34,7 @@ class Login extends Component {
             .post('auth/login', {email, password})
             .then(response => {
                 localStorage.setItem('accessToken', response.data.access_token);
+                localStorage.setItem('userEmail', response.data.user_email);
                 this
                     .props
                     .login();
