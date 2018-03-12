@@ -26,7 +26,7 @@ class CreateCategory extends Component {
     axiosInstance
       .post("categories/", { name })
       .then(response => {
-        this.setState({ mess: response.data.message, error: "" });
+        notify.show(response.data.message, 'success', 4000);
         document.getElementById("closeAddModal").click();
 
         this.props.getCategories();
@@ -69,11 +69,6 @@ class CreateCategory extends Component {
               </div>
               <form onSubmit={this.handleAddCategories}>
                 <div className="modal-body">
-                  {this.state.mess ? (
-                    <div className="alert alert-success">{this.state.mess}</div>
-                  ) : (
-                    ""
-                  )}
                   {this.state.error ? (
                     <div className="alert alert-danger">{this.state.error}
                      <button

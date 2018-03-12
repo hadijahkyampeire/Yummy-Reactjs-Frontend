@@ -1,7 +1,7 @@
 # [React](https://reactjs.org/) 
 [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react)
 [![Build Status](https://travis-ci.org/hadijahkyampeire/Yummy-Reactjs-Frontend.svg?branch=ft-tests-app-155121666)](https://travis-ci.org/hadijahkyampeire/Yummy-Reactjs-Frontend)
-[![Coverage Status](https://coveralls.io/repos/github/hadijahkyampeire/Yummy-Reactjs-Frontend/badge.svg?branch=ft-tests-app-155121666)](https://coveralls.io/github/hadijahkyampeire/Yummy-Reactjs-Frontend?branch=ft-tests-app-155121666)
+[![Build Status](https://travis-ci.org/hadijahkyampeire/Yummy-Reactjs-Frontend.svg?branch=develop)](https://travis-ci.org/hadijahkyampeire/Yummy-Reactjs-Frontend)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a90f1e627ae7458592927e2ef5411f5b)](https://www.codacy.com/app/hadijahkyampeire/Yummy-Reactjs-Frontend?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hadijahkyampeire/Yummy-Reactjs-Frontend&amp;utm_campaign=Badge_Grade)
 # yummy-recipes-react
 
