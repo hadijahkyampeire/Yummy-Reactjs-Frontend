@@ -261,6 +261,83 @@ exports[`App component fully renders properly 1`] = `
                 </li>
               </ul>
             </div>
+            <Profile>
+              <div
+                aria-hidden="true"
+                aria-labelledby="exampleModalLabel"
+                class="modal fade"
+                id="userprofile"
+                role="dialog"
+                tabIndex="-1"
+              >
+                <div
+                  class="modal-dialog"
+                  role="document"
+                >
+                  <div
+                    class="modal-content"
+                  >
+                    <div
+                      class="modal-body"
+                    >
+                      <div
+                        className="card"
+                      >
+                        <div
+                          className="card-body text-center"
+                        >
+                          <i
+                            className="fa fa-address-card fa-5x"
+                          />
+                          <ul>
+                            <h4
+                              className="card-title "
+                            >
+                              User details
+                            </h4>
+                          </ul>
+                          <p
+                            className="card-text"
+                          >
+                            <strong>
+                              Email
+                            </strong>
+                            : 
+                          </p>
+                          <p
+                            className="card-text"
+                          >
+                            <strong>
+                              Username
+                            </strong>
+                            : 
+                          </p>
+                          <p
+                            className="card-text"
+                          >
+                            <strong>
+                              Identity
+                            </strong>
+                            : 
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="modal-footer"
+                    >
+                      <button
+                        class="btn btn-secondary"
+                        data-dismiss="modal"
+                        type="button"
+                      >
+                        Back
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Profile>
           </nav>
         </Component>
         <_class

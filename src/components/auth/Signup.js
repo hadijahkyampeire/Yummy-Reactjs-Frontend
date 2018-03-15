@@ -10,7 +10,6 @@ class Signup extends Component {
         email_field: '',
         username: '',
         error:null,
-        user:null
     }
 
     handleInputChange = (event) => {
@@ -26,7 +25,6 @@ class Signup extends Component {
             .post('auth/register', {username, email, password})
             .then(response => {
                 notify.show(response.data.message, 'success', 4000);
-                this.setState({user: response.data.user.username})
                 this
                     .props
                     .history

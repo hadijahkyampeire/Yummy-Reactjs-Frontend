@@ -1,8 +1,6 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import { MemoryRouter } from 'react-router-dom';
-import toJson, { shallowToJson } from 'enzyme-to-json';
-import sinon from 'sinon';
+import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import Signup from '../components/auth/Signup';
 
@@ -15,9 +13,8 @@ describe('Signup component', () => {
   });
   it('has a form', () => {
     expect(wrapper.find('form').length).toBe(1);
-    expect(wrapper.find('form').simulate('submit', {preventDefault}))
+    expect(wrapper.find('form').simulate('submit', { preventDefault }));
     expect(preventDefault).toBeCalled();
-    // expect(wrapper.find('[name="email_field"]').simulate('change', {target:{name:'email_field', value:'had@hmail.com'}}))
   });
 
   it('renders inputs', () => {
