@@ -265,20 +265,20 @@ exports[`App component fully renders properly 1`] = `
               <div
                 aria-hidden="true"
                 aria-labelledby="exampleModalLabel"
-                class="modal fade"
+                className="modal fade"
                 id="userprofile"
                 role="dialog"
                 tabIndex="-1"
               >
                 <div
-                  class="modal-dialog"
+                  className="modal-dialog"
                   role="document"
                 >
                   <div
-                    class="modal-content"
+                    className="modal-content"
                   >
                     <div
-                      class="modal-body"
+                      className="modal-body"
                     >
                       <div
                         className="card"
@@ -324,10 +324,10 @@ exports[`App component fully renders properly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="modal-footer"
+                      className="modal-footer"
                     >
                       <button
-                        class="btn btn-secondary"
+                        className="btn btn-secondary"
                         data-dismiss="modal"
                         type="button"
                       >

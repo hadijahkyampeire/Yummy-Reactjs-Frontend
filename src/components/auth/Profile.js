@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Profile = () => (
-    <div class="modal fade" id="userprofile" tabIndex="-1" role="dialog"
-     aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
+    <div className="modal fade" id="userprofile" tabIndex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog" role="document">
+    <div className="modal-content">
+      <div className="modal-body">
       <div className="card"  >
   <div className="card-body text-center">
   <i className="fa fa-address-card fa-5x"/>
@@ -16,8 +16,8 @@ const Profile = () => (
   </div>
 </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-dismiss="modal">Back</button>
       </div>
     </div>
   </div>

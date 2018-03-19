@@ -41,7 +41,7 @@ describe('CreateCategory component', () => {
 
   it('renders a form', () => {
     expect(wrapper.find('form')).toHaveLength(1);
-    expect(wrapper.find('form').simulate('submit', {preventDefault}))
+    expect(wrapper.find('form').simulate('submit', { preventDefault }));
     expect(preventDefault).toBeCalled();
     // expect(wrapper.find('[name="name"]').simulate('change', {target:{name:'name', value:'lunch'}}))
   });

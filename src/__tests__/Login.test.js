@@ -1,8 +1,6 @@
 import React from 'react';
-import { shallow, enzyme } from 'enzyme';
-import { MemoryRouter } from 'react-router-dom';
-import toJson, { shallowToJson } from 'enzyme-to-json';
-import sinon from 'sinon';
+import { shallow} from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import Login from '../components/auth/Login';
 

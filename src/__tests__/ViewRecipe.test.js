@@ -69,5 +69,5 @@ describe('Recipe', ()=>{
   it('renders correctly', ()=>{
     expect(shallowToJson(wrapper)).toMatchSnapshot();
     wrapper.find('.word-font').simulate('click')
-  })
-})
+  });
+});
