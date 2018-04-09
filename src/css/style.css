@@ -293,3 +293,6 @@ li:disabled {
     font-size: 1.25rem;
     color: #141c1f;
 }
+.modal-content{
+    background-color: #f8f9fae8;
+}

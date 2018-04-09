@@ -3,6 +3,7 @@ import {Link, NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Slideshow from '../SlideShow';
+import Profile from './Profile';
 
 /**
  * Component for landing page.
@@ -164,6 +165,14 @@ export const Nav = props => (
             style={{
             color: 'white'
           }}>
+          <li className="nav-item">
+              <NavLink to="/#" data-toggle="modal" data-target="#userprofile" exact className="nav-link" style={linkTextStyles}
+              activeStyle={activeLinkStyles}>
+                <i className="fa fa-user "/> {' '}{localStorage.getItem('username')}{' '}
+                <i className="fa fa-angle-double-down"/>
+                </NavLink>
+
+            </li>
             <li className="nav-item">
               <NavLink to="/dashboard" className="nav-link" style={linkTextStyles} activeStyle={activeLinkStyles}>
                 Categories {' '}<i className="fa fa-coffee"/>
@@ -189,6 +198,7 @@ export const Nav = props => (
 
         )}
     </div>
+    <Profile/>
   </nav>
 );
 

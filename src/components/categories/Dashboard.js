@@ -77,7 +77,6 @@ class Categories extends Component {
             .get('categories/', { params: { page } })
             .then(response => {
                 this.setState({ ...response.data, searching: false });
-                console.log(response)
             })
             .catch(error => {
                 if (error.response) {
@@ -151,7 +150,9 @@ class Categories extends Component {
         }).catch(error => {
             if (error.response) {
                 // notify users incase of an error from response
+
                 notify.show(error.response.data.message, 'error', 3000)
+                
             } else if (error.request) {
                 notify.show("Request not made", 'error', 3000)
             }

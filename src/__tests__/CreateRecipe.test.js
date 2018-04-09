@@ -1,13 +1,11 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import { MemoryRouter } from 'react-router-dom';
-import toJson, { shallowToJson } from 'enzyme-to-json';
-import sinon from 'sinon';
+import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import CreateRecipe from '../components/recipes/CreateRecipes';
 
 describe('CreateRecipe component', () => {
-  const wrapper = shallow(<CreateRecipe match={{params:{id:1}}} />);
+  const wrapper = shallow(<CreateRecipe match={{ params: { id: 1 } }} />);
   const preventDefault = jest.fn();
 
   it('renders properly', () => {
@@ -48,8 +46,8 @@ describe('CreateRecipe component', () => {
 
   it('renders a form', () => {
     expect(wrapper.find('form')).toHaveLength(1);
-    expect(wrapper.find('form').simulate('submit', {preventDefault}))
+    expect(wrapper.find('form').simulate('submit', { preventDefault }));
     expect(preventDefault).toBeCalled();
-    expect(wrapper.find('[name="title"]').simulate('change', {target:{name:'title', value:'hi'}}))
+    expect(wrapper.find('[name="title"]').simulate('change', { target: { name: 'title', value: 'hi' } }));
   });
 });

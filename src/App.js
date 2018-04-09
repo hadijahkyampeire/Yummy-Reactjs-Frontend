@@ -15,19 +15,19 @@ import Landing, {Nav} from './components/auth/Landing';
 import axiosInstance from './components/Apicalls';
 
 const NotFound = () => (
-  <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="error-template">
+  <div className="container">
+    <div className="row">
+        <div className="col-md-12">
+            <div className="error-template">
                 <h1>
                     Oops!</h1>
                 <h2>
                     Page Not Found, 404</h2>
-                <div class="error-details">
+                <div className="error-details">
                     Sorry, an error has occured, Requested page can not be found!
                 </div>
-                <div class="error-actions">
-                    <Link to="/" class="btn btn-primary btn-lg" style={{backgroundColor:'#009688'}}><span class="fa fa-home"></span>
+                <div className="error-actions">
+                    <Link to="/" className="btn btn-primary btn-lg" style={{backgroundColor:'#009688'}}><span className="fa fa-home"></span>
                         Take Me Home </Link>
                 </div>
             </div>

@@ -12,8 +12,7 @@ exports[`CreateCategory component renders properly 1`] = `
     <i
       className="fa fa-plus"
     />
-     
-    Add category
+     Add category
   </button>
   <div
     className="modal fade"

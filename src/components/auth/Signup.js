@@ -2,11 +2,13 @@ import React, {Component} from 'react';
 import axiosInstance from '../Apicalls';
 import {notify} from 'react-notify-toast'
 import {Link, Redirect} from 'react-router-dom';
+import {Nav} from './Landing'
 
 class Signup extends Component {
     state = {
         password_field: '',
         email_field: '',
+        username: '',
         error:null,
     }
 
@@ -16,18 +18,17 @@ class Signup extends Component {
     }
 
     handleRegister = (event) => {
-        const {email_field: email, password_field: password} = this.state;
+        const {email_field: email, password_field: password, username: username} = this.state;
 
         event.preventDefault();
         axiosInstance
-            .post('auth/register', {email, password})
+            .post('auth/register', {username, email, password})
             .then(response => {
                 notify.show(response.data.message, 'success', 4000);
                 this
                     .props
                     .history
                     .push('/login');
-                console.log(response);
             })
             .catch(error => {
                 if (error.response) {
@@ -40,7 +41,8 @@ class Signup extends Component {
     }
 
     render() {
-        const {password_field, email_field} = this.state;
+        const {username, password_field, email_field} = this.state;
+        let user = this.state.username
         
         if(this.props.loggedIn){
             // if one is loggedin it should not show signup anymore
@@ -48,6 +50,7 @@ class Signup extends Component {
         }
 
         return (
+            
             <div className="background">
                 <div id="signbar">
                         <div >
@@ -68,6 +71,18 @@ class Signup extends Component {
                   ) : (
                     ""
                   )}
+                        <div className="input-group">
+                            <span className="input-group-addon pr-4" id="username"><i className='fa fa-user'/></span>
+                            <input
+                                id="username"
+                                name="username"
+                                aria-describedby="username"
+                                className="form-control"
+                                placeholder="example"
+                                onChange={this.handleInputChange}
+                                value={username}/>
+                        </div>
+                        <br/>
                         <div className="input-group">
                             <span className="input-group-addon pr-4" id="email"><i className='fa fa-envelope'/></span>
                             <input
