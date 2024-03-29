@@ -74,4 +74,4 @@ $ npm test -- -coverage or
 $yarn test --coverage -u
 ```
 ## Test Live App
-- [Yummy Recipes React App](https://hadijahz-recipes-react.herokuapp.com/)
+- [Yummy Recipes React App](https://vercel.com/hadijahkyampeire/yummy-reactjs-frontend)
